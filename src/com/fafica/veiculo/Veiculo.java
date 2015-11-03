@@ -2,14 +2,16 @@ package com.fafica.veiculo;
 
 public class Veiculo {
 	
-	private int quantPassageiro;
+	private Integer idVeiculo;
+	private Integer quantPassageiro;
 	private String modelo;
 	private String placa;
 	private String chassi;
 	private String cor;
-	private String ano;
+	private Integer ano;
 	
-	public Veiculo(int quantPassageiro,String modelo, String placa, String chassi, String cor, String ano){
+	public Veiculo(Integer idVeiculo, Integer quantPassageiro,String modelo, String placa, String chassi, String cor, Integer ano){
+		this.setIdVeiculo(idVeiculo);
 		this.setQuantPassageiro(quantPassageiro);
 		this.setModelo(modelo);
 		this.setPlaca(placa);
@@ -18,10 +20,18 @@ public class Veiculo {
 		this.setAno(ano);
 	}
 	
-	public int quantPassageiro(){
+	public Integer getidVeiculo(){
+		return idVeiculo;
+	}
+	
+	public void setIdVeiculo(Integer idVeiculo){
+		this.idVeiculo = idVeiculo;
+	}
+	
+	public Integer getQuantPassageiro(){
 		return quantPassageiro;
 	}
-	public void setQuantPassageiro(int quantPassageiro){
+	public void setQuantPassageiro(Integer quantPassageiro){
 		this.quantPassageiro = quantPassageiro;
 	}
 	
@@ -49,16 +59,16 @@ public class Veiculo {
 	public void setCor(String cor) {
 		this.cor = cor;
 	}
-	public String getAno() {
+	public Integer getAno() {
 		return ano;
 	}
-	public void setAno(String ano) {
+	public void setAno(Integer ano) {
 		this.ano = ano;
 	}
 	
 	@Override
 	public String toString() {
-		return "Veiculo [ quantPassageiro=" + quantPassageiro + "modelo=" + modelo + ", placa=" + placa + ", chassi="
+		return "Veiculo [idVeiculo="+ idVeiculo +" quantPassageiro=" + quantPassageiro + "modelo=" + modelo + ", placa=" + placa + ", chassi="
 				+ chassi + ", cor=" + cor + ", ano=" + ano + "]";
 	}
 	

@@ -2,40 +2,80 @@ package com.fafica.fornecedor;
 
 public class Fornecedor {
 	
-	private String nome;
-	private String endereco;
-	private String cpf;
+	private Integer idFornecedor;
+	private String nomeFornecedor;
+	private String enderecoFornecedor;
+	private String cpfFornecedor;
+	private String emailFornecedor;
+	private String telefoneFornecedor;
 	
-	public Fornecedor (String nome, String endereco, String cpf){
-		this.setNome(nome);
-		this.setEndereco(endereco);
-		this.setCpf(cpf);	
-	}
+	public Fornecedor (Integer idFornecedor, String nomeFornecedor, String enderecoFornecedor, String cpfFornecedor, String emailFornecedor,String telefoneFornecedor){
+		this.setIdFornecedor(idFornecedor);
+		this.setNomeFornecedor(nomeFornecedor);
+		this.setEnderecoFornecedor(enderecoFornecedor);
+		this.setCpfFornecedor(cpfFornecedor);	
+		this.setEmailFornecedor(emailFornecedor);
+		this.setTelefoneFornecedor(telefoneFornecedor);
 	
-	public String getNome() {
-		return nome;
 	}
-	public void setNome(String nome) {
-		this.nome = nome;
+
+	public Integer getIdFornecedor() {
+		return idFornecedor;
 	}
-	public String getEndereco() {
-		return endereco;
+
+	public void setIdFornecedor(Integer idFornecedor) {
+		this.idFornecedor = idFornecedor;
 	}
-	public void setEndereco(String endereco) {
-		this.endereco = endereco;
+
+	public String getNomeFornecedor() {
+		return nomeFornecedor;
 	}
-	public String getCpf() {
-		return cpf;
+
+	public void setNomeFornecedor(String nomeFornecedor) {
+		this.nomeFornecedor = nomeFornecedor;
 	}
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
+
+	public String getEnderecoFornecedor() {
+		return enderecoFornecedor;
 	}
-	
+
+	public void setEnderecoFornecedor(String enderecoFornecedor) {
+		this.enderecoFornecedor = enderecoFornecedor;
+	}
+
+	public String getCpfFornecedor() {
+		return cpfFornecedor;
+	}
+
+	public void setCpfFornecedor(String cpfFornecedor) {
+		this.cpfFornecedor = cpfFornecedor;
+	}
+
+	public String getEmailFornecedor() {
+		return emailFornecedor;
+	}
+
+	public void setEmailFornecedor(String emailFornecedor) {
+		this.emailFornecedor = emailFornecedor;
+	}
+
+	public String getTelefoneFornecedor() {
+		return telefoneFornecedor;
+	}
+
+	public void setTelefoneFornecedor(String telefoneFornecedor) {
+		this.telefoneFornecedor = telefoneFornecedor;
+	}
+
 	@Override
 	public String toString() {
-		return "Fornecedor [nome=" + nome + ", endereco=" + endereco + ", cpf="
-				+ cpf + "]";
+		return "Fornecedor [idFornecedor=" + idFornecedor + ", nomeFornecedor="
+				+ nomeFornecedor + ", enderecoFornecedor=" + enderecoFornecedor
+				+ ", cpfFornecedor=" + cpfFornecedor + ", emailFornecedor="
+				+ emailFornecedor + ", telefoneFornecedor="
+				+ telefoneFornecedor + "]";
 	}
+	
 	
 
 }

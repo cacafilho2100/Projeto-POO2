@@ -1,41 +1,81 @@
 package com.fafica.motorista;
 
 public class Motorista {
+
+	private Integer idMotorista;
+	private String nomeMotorista;
+	private String cpfMotorista;
+	private String enderecoMotorista;
+	private String salarioMotorista;
+	private String telefoneMotorista;
 	
-	private String nome;
-	private String cpf;
-	private String endereco;
-	
-	public Motorista(String nome, String cpf, String endereco){
-		this.setNome(nome);
-		this.setCpf(cpf);
-		this.setEndereco(endereco);	
+	public Motorista(Integer idMotorista, String nomeMotorista,
+			String cpfMotorista, String enderecoMotorista,
+			String salarioMotorista, String telefoneMotorista) {
+		
+		this.idMotorista = idMotorista;
+		this.nomeMotorista = nomeMotorista;
+		this.cpfMotorista = cpfMotorista;
+		this.enderecoMotorista = enderecoMotorista;
+		this.salarioMotorista = salarioMotorista;
+		this.telefoneMotorista = telefoneMotorista;
 	}
-	
-	public String getNome() {
-		return nome;
+
+	public Integer getIdMotorista() {
+		return idMotorista;
 	}
-	public void setNome(String nome) {
-		this.nome = nome;
+
+	public void setIdMotorista(Integer idMotorista) {
+		this.idMotorista = idMotorista;
 	}
-	public String getCpf() {
-		return cpf;
+
+	public String getNomeMotorista() {
+		return nomeMotorista;
 	}
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
+
+	public void setNomeMotorista(String nomeMotorista) {
+		this.nomeMotorista = nomeMotorista;
 	}
-	public String getEndereco() {
-		return endereco;
+
+	public String getCpfMotorista() {
+		return cpfMotorista;
 	}
-	public void setEndereco(String endereco) {
-		this.endereco = endereco;
+
+	public void setCpfMotorista(String cpfMotorista) {
+		this.cpfMotorista = cpfMotorista;
 	}
-	
+
+	public String getEnderecoMotorista() {
+		return enderecoMotorista;
+	}
+
+	public void setEnderecoMotorista(String enderecoMotorista) {
+		this.enderecoMotorista = enderecoMotorista;
+	}
+
+	public String getSalarioMotorista() {
+		return salarioMotorista;
+	}
+
+	public void setSalarioMotorista(String salarioMotorista) {
+		this.salarioMotorista = salarioMotorista;
+	}
+
+	public String getTelefoneMotorista() {
+		return telefoneMotorista;
+	}
+
+	public void setTelefoneMotorista(String telefoneMotorista) {
+		this.telefoneMotorista = telefoneMotorista;
+	}
+
 	@Override
 	public String toString() {
-		return "Motorista [nome=" + nome + ", cpf=" + cpf + ", endereco="
-				+ endereco + "]";
+		return "Motorista [idMotorista=" + idMotorista + ", nomeMotorista="
+				+ nomeMotorista + ", cpfMotorista=" + cpfMotorista
+				+ ", enderecoMotorista=" + enderecoMotorista
+				+ ", salarioMotorista=" + salarioMotorista
+				+ ", telefoneMotorista=" + telefoneMotorista + "]";
 	}
-	
 
 }

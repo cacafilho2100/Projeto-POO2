@@ -2,42 +2,93 @@ package com.fafica.funcionario;
 
 public class Funcionario {
 	
-	private String nome;
-	private String endereco;
-	private String cpf;
+	private Integer idFuncionario;
+	private String nomeFuncionario;
+	private String enderecoFuncionario;
+	private String cpfFuncionario;
+	private String emailFuncionario;
+	private String salarioFuncionario;
+	private String telefoneFuncionario;
 	
-	public Funcionario(String nome, String endereco, String cpf){
-		this.setNome(nome);
-		this.setEndereco(endereco);
-		this.setCpf(cpf);	
+	public Funcionario(Integer idFuncionario, String nomeFuncionario, String enderecoFuncionario, String cpfFuncionario, String emailFncionario, String salarioFuncionario, String telefoneFuncionario){
+		this.setIdFuncionario(idFuncionario);
+		this.setSalarioFuncionario(salarioFuncionario);
+		this.setTelefoneFuncionario(telefoneFuncionario);
+		this.setNomeFuncionario(nomeFuncionario);
+		this.setEnderecoFuncionario(enderecoFuncionario);
+		this.setCpfFuncionario(cpfFuncionario);
+		this.setEmailFuncionario(emailFuncionario);
+		
 	}
-	
-	public String getNome() {
-		return nome;
+
+
+	public Integer getIdFuncionario() {
+		return idFuncionario;
 	}
-	public void setNome(String nome) {
-		this.nome = nome;
+
+	public void setIdFuncionario(Integer idFuncionario) {
+		this.idFuncionario = idFuncionario;
 	}
-	public String getEndereco() {
-		return endereco;
+
+	public String getNomeFuncionario() {
+		return nomeFuncionario;
 	}
-	public void setEndereco(String endereco) {
-		this.endereco = endereco;
+
+	public void setNomeFuncionario(String nomeFuncionario) {
+		this.nomeFuncionario = nomeFuncionario;
 	}
-	public String getCpf() {
-		return cpf;
+
+	public String getEnderecoFuncionario() {
+		return enderecoFuncionario;
 	}
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
+
+	public void setEnderecoFuncionario(String enderecoFuncionario) {
+		this.enderecoFuncionario = enderecoFuncionario;
 	}
-	
+
+	public String getCpfFuncionario() {
+		return cpfFuncionario;
+	}
+
+	public void setCpfFuncionario(String cpfFuncionario) {
+		this.cpfFuncionario = cpfFuncionario;
+	}
+
+	public String getEmailFuncionario() {
+		return emailFuncionario;
+	}
+
+	public void setEmailFuncionario(String emailFuncionario) {
+		this.emailFuncionario = emailFuncionario;
+	}
+
+	public String getSalarioFuncionario() {
+		return salarioFuncionario;
+	}
+
+	public void setSalarioFuncionario(String salarioFuncionario) {
+		this.salarioFuncionario = salarioFuncionario;
+	}
+
+	public String getTelefoneFuncionario() {
+		return telefoneFuncionario;
+	}
+
+	public void setTelefoneFuncionario(String telefoneFuncionario) {
+		this.telefoneFuncionario = telefoneFuncionario;
+	}
+
 	@Override
 	public String toString() {
-		return "Funcionario [nome=" + nome + ", endereco=" + endereco
-				+ ", cpf=" + cpf + "]";
+		return "Funcionario [idFuncionario=" + idFuncionario
+				+ ", nomeFuncionario=" + nomeFuncionario
+				+ ", enderecoFuncionario=" + enderecoFuncionario
+				+ ", cpfFuncionario=" + cpfFuncionario + ", emailFuncionario="
+				+ emailFuncionario + ", salarioFuncionario="
+				+ salarioFuncionario + ", telefoneFuncionario="
+				+ telefoneFuncionario + "]";
 	}
-	
-	
+
 	
 
 }
