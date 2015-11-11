@@ -48,6 +48,34 @@ public class RepositorioFornecedorList implements IRepositorioFornecedor {
 				}
 				return aux;
 			}
+
+
+		@Override
+		public boolean remover(Integer idFornecedor) {
+			// TODO Auto-generated method stub
+			return false;
+		}
+
+
+		@Override
+		public Fornecedor procurar(Integer idFornecedor) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+
+		@Override
+		public boolean existe(Integer idFornecedor) {
+			// TODO Auto-generated method stub
+			return false;
+		}
+
+
+		@Override
+		public ArrayList<Fornecedor> listar() {
+			// TODO Auto-generated method stub
+			return null;
+		}
 		   
 	    }
 		   
