@@ -7,12 +7,10 @@ public class Funcionario {
 	private String enderecoFuncionario;
 	private String cpfFuncionario;
 	private String emailFuncionario;
-	private String salarioFuncionario;
 	private String telefoneFuncionario;
 	
-	public Funcionario(Integer idFuncionario, String nomeFuncionario, String enderecoFuncionario, String cpfFuncionario, String emailFncionario, String salarioFuncionario, String telefoneFuncionario){
+	public Funcionario(Integer idFuncionario, String nomeFuncionario, String enderecoFuncionario, String cpfFuncionario, String emailFncionario, String telefoneFuncionario){
 		this.setIdFuncionario(idFuncionario);
-		this.setSalarioFuncionario(salarioFuncionario);
 		this.setTelefoneFuncionario(telefoneFuncionario);
 		this.setNomeFuncionario(nomeFuncionario);
 		this.setEnderecoFuncionario(enderecoFuncionario);
@@ -62,14 +60,6 @@ public class Funcionario {
 		this.emailFuncionario = emailFuncionario;
 	}
 
-	public String getSalarioFuncionario() {
-		return salarioFuncionario;
-	}
-
-	public void setSalarioFuncionario(String salarioFuncionario) {
-		this.salarioFuncionario = salarioFuncionario;
-	}
-
 	public String getTelefoneFuncionario() {
 		return telefoneFuncionario;
 	}
@@ -85,7 +75,6 @@ public class Funcionario {
 				+ ", enderecoFuncionario=" + enderecoFuncionario
 				+ ", cpfFuncionario=" + cpfFuncionario + ", emailFuncionario="
 				+ emailFuncionario + ", salarioFuncionario="
-				+ salarioFuncionario + ", telefoneFuncionario="
 				+ telefoneFuncionario + "]";
 	}
 
