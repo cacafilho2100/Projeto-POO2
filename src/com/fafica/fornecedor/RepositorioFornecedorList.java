@@ -2,8 +2,6 @@ package com.fafica.fornecedor;
 
 import java.util.ArrayList;
 
-import com.fafica.atividade04.cliente.Cliente;
-
 
 
 public class RepositorioFornecedorList implements IRepositorioFornecedor {

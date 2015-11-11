@@ -5,8 +5,8 @@ import java.util.TreeMap;
 public class RepositorioMotoristaMap implements IRepositorioMotorista {
 	
 
-	TreeMap<Integer,Motorista> arrayMapMotorista;
-	Integer id;
+	 private TreeMap<Integer,Motorista> arrayMapMotorista;
+	 private Integer id;
 	
 	public RepositorioMotoristaMap(){
 		
@@ -15,38 +15,40 @@ public class RepositorioMotoristaMap implements IRepositorioMotorista {
 		
 	}
 	
-	public void cadastrar(Motorista motorista){
-		if(existe(motorista.getIdMotorista()));
+	public void cadastrar(Motorista motorista) throws MotoristaJaCadastradoException{
+		if(existe(motorista.getIdMotorista())) throw new MotoristaJaCadastradoException();
 		motorista.setIdMotorista(id);
 		arrayMapMotorista.put(id, motorista);
 		id++;
 		
 	}
 	
-	public void atualizar(Motorista motorista){
+	public void atualizar(Motorista motorista)throws MotoristaNaoEncontradoException{
 		int i = getId(motorista.getIdMotorista());
-		if(i == -1);
+		if(i == -1) throw new MotoristaNaoEncontradoException();
 		arrayMapMotorista.put(i, motorista);
 		
 	}
-	public boolean remover(Integer idMotorista){
+	public boolean remover(Integer idMotorista)throws MotoristaNaoEncontradoException{
 		int i = getId(idMotorista);
-		if(i == -1) ;
+		if(i == -1)throw new MotoristaNaoEncontradoException();
 		arrayMapMotorista.remove(i);
 		return true;
 			
 	}
 
-	public Motorista procurar(Integer idMotorista){
+	public Motorista procurar(Integer idMotorista)throws MotoristaNaoEncontradoException{
 		int i = getId(idMotorista);
-		if(i== -1);
+		if(i== -1)throw new MotoristaNaoEncontradoException();
 		return arrayMapMotorista.get(i);
 	}
 
-	public boolean existe(Integer idMotorista) {
+	public boolean existe(Integer idMotorista){
+		
 		for (int i = 1; i < arrayMapMotorista.size(); i++) {
 			Motorista motorista = arrayMapMotorista.get(i);
 			if(idMotorista.equals(motorista.getIdMotorista())){
+			
 			return true;	
 			}
 			}

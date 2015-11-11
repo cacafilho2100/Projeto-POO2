@@ -1,5 +1,5 @@
 package com.fafica.motorista;
-
+import java.util.TreeSet;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.TreeSet;
@@ -17,41 +17,67 @@ public class RepositorioMotoristaSet implements IRepositorioMotorista {
 	}
 	
 	
-	public void cadastrar(Motorista motorista) {
-		if(existe(motorista.getIdMotorista()));
+	public void cadastrar(Motorista motorista) throws MotoristaJaCadastradoException {
+		if(existe(motorista.getIdMotorista())) throw new MotoristaJaCadastradoException();
 		motorista.setIdMotorista(id);
 		arraySetMotorista.add(motorista);
 		id++;	
 	}
 
 	
-	public void atualizar(Motorista motorista) {
+	public void atualizar(Motorista motorista)throws MotoristaNaoEncontradoException {
 		int i = getId(motorista.getIdMotorista());
-		if(i == -1);
+		if(i == -1)throw new MotoristaNaoEncontradoException();
 		arraySetMotorista.add(motorista);	
 	}
+	
+	public boolean remover(Integer idMotorista) throws MotoristaNaoEncontradoException  {
+				
+				
+				for (Motorista motorista : arraySetMotorista) {
+					if (idMotorista.equals(motorista.getIdMotorista())) {
+		
+						arraySetMotorista.remove(motorista);
+		
+				} else {
+					throw new MotoristaNaoEncontradoException();
+					}
+				}
+				return true;
+		
+      	 	}
 
 	
-	public boolean remover(Integer idMotorista) {
-		int i = getId(idMotorista);
-		if(i == -1) ;
-		arraySetMotorista.remove(i);
-		return true;
+	//public boolean remover(Integer idMotorista)throws MotoristaNaoEncontradoException  {
+		//int i = getId(idMotorista);
+		//if(i == -1)throw new MotoristaNaoEncontradoException() ;
+		//arraySetMotorista.remove(i);
+		//return true;
 	
-	}
+	//}
 
 	
-	public Motorista procurar(Integer idMotorista) {
-		int i = getId(idMotorista);
-		if(i == -1);
-		return ((List<Motorista>) arraySetMotorista).get(i);	
+	public Motorista procurar(Integer idMotorista) throws MotoristaNaoEncontradoException{
+		
+		for (Motorista motorista : arraySetMotorista) {
+			if (idMotorista.equals(motorista.getIdMotorista())) {
+
+				return motorista;
+
+		} else {
+			throw new MotoristaNaoEncontradoException();
+			}
+		}
+		return null;
+		
+
 	}
 
 
 	
 	public boolean existe(Integer idMotorista) {
 		for (Motorista motorista : arraySetMotorista) {
-				if (id.equals(motorista.getIdMotorista())) {
+				if (idMotorista.equals(motorista.getIdMotorista())) {
 							return true;
 						}
 					}
@@ -61,11 +87,11 @@ public class RepositorioMotoristaSet implements IRepositorioMotorista {
 
 	
 	public ArrayList<Motorista> listar() {
-				ArrayList<Motorista> arraySetMotorista = new ArrayList<Motorista>();
-				for (Motorista motorista : arraySetMotorista) {
-					arraySetMotorista.add(motorista);
+				ArrayList<Motorista> arrayListMotorista = new ArrayList<Motorista>();
+				for (Motorista motorista : arrayListMotorista) {
+					arrayListMotorista.add(motorista);
 				}
-				return arraySetMotorista;
+				return arrayListMotorista;
 		
 		
 	}

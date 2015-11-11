@@ -9,6 +9,10 @@ public class Motorista {
 	private String salarioMotorista;
 	private String telefoneMotorista;
 	
+	public Motorista(){
+		
+	}
+	
 	public Motorista(Integer idMotorista, String nomeMotorista,
 			String cpfMotorista, String enderecoMotorista,
 			String salarioMotorista, String telefoneMotorista) {

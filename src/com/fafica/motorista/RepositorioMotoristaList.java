@@ -15,8 +15,8 @@ public class RepositorioMotoristaList implements IRepositorioMotorista {
 	}
 	 
 
-	public void cadastrar(Motorista motorista) {
-		if(existe(motorista.getIdMotorista()));
+	public void cadastrar(Motorista motorista) throws MotoristaJaCadastradoException {
+		if(existe(motorista.getIdMotorista())) throw new MotoristaJaCadastradoException();
 		motorista.setIdMotorista(id);
 		arrayListMotorista.add(motorista);
 		id++;
@@ -24,18 +24,17 @@ public class RepositorioMotoristaList implements IRepositorioMotorista {
 	}
 
 	
-	public void atualizar(Motorista motorista) {
+	public void atualizar(Motorista motorista) throws MotoristaNaoEncontradoException {
 		int i = getId(motorista.getIdMotorista());
-		if(i == -1);
+		if(i == -1) throw new MotoristaNaoEncontradoException();
 		arrayListMotorista.add(i,motorista);
 		
 	}
 
 	
-	
-	public boolean remover(Integer idMotorista) {
+	public boolean remover(Integer idMotorista) throws MotoristaNaoEncontradoException{
 		int i = getId(idMotorista);
-		if(i == -1);
+		if(i == -1)throw new MotoristaNaoEncontradoException();
 		arrayListMotorista.remove(i);
 	
 		return true;
@@ -43,15 +42,15 @@ public class RepositorioMotoristaList implements IRepositorioMotorista {
 	
 
 	
-	public Motorista procurar(Integer idMotorista) {
+	public Motorista procurar(Integer idMotorista)throws MotoristaNaoEncontradoException {
 		
 		int i = getId(idMotorista);
-		if(i == -1);
+		if(i == -1)throw new MotoristaNaoEncontradoException();
 		return arrayListMotorista.get(i);	
 	}
 
 
-	public boolean existe(Integer idMotorista) {
+	public boolean existe(Integer idMotorista){
 		boolean existe = false;
 		for (Motorista motorista : arrayListMotorista) {
 			if(idMotorista.equals(motorista.getIdMotorista())){

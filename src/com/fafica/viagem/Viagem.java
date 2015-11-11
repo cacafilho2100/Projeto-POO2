@@ -7,6 +7,11 @@ public class Viagem {
 	private String custo;
 	private String data;
 	
+	
+	public Viagem(){
+		
+	}
+	
 	public Viagem(Integer idViagem, String destino, String custo, String data){
 		this.setIdViagem(idViagem);
 		this.setDestino(destino);
