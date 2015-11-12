@@ -1,6 +1,7 @@
 package com.fafica.motorista;
 import java.util.ArrayList;
-import Util.CampoObrigatorioInvalidoException;
+
+import com.fafica.util.CampoObrigatorioInvalidoException;
 
 
 public class ControladorMotorista {

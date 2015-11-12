@@ -1,4 +1,4 @@
-package main;
+package com.fafica.main;
 
 public class telaCadastroFornecedor {
 
