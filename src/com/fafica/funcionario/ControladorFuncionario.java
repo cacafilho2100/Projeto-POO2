@@ -2,6 +2,9 @@ package com.fafica.funcionario;
 
 import java.util.ArrayList;
 
+import com.fafica.util.CampoObrigatorioInvalidoException;
+import com.fafica.util.ValidarCPF;
+
 public class ControladorFuncionario {
 	
 	private IRepositorioFuncionario repositorioFuncionario;
@@ -11,7 +14,17 @@ public class ControladorFuncionario {
 		this.repositorioFuncionario = new RepositorioFuncionarioArrayList();
 	}
 	
-	public void cadastrar(Funcionario funcionario)throws IllegalArgumentException,CPFInvalidoException,FuncionarioJaCadastradoException,CampoInvalidoException{
+	public void cadastrar(Funcionario funcionario)throws IllegalArgumentException,CPFInvalidoException,FuncionarioJaCadastradoException,CampoObrigatorioInvalidoException{
+		if(!ValidarCPF.validaCPF(funcionario.getCpfFuncionario())){ 
+			throw new CPFInvalidoException(funcionario.getCpfFuncionario());
+		}
+		if(funcionario == null){
+			throw new IllegalArgumentException("Cliente Invalido");
+		}
+		if(funcionario.getNomeFuncionario().equals(" ")){
+			throw new CampoObrigatorioInvalidoException("Nome");
+		}
+		
 		repositorioFuncionario.cadastrar(funcionario);
 	}
 	
