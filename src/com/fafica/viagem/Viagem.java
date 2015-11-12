@@ -2,10 +2,12 @@ package com.fafica.viagem;
 
 public class Viagem {
 	
+	
 	private Integer idViagem;
 	private String destino;
 	private String custo;
 	private String data;
+	
 	
 	
 	public Viagem(){

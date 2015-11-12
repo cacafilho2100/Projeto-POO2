@@ -1,15 +1,24 @@
 package com.fafica.fachada;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import com.fafica.fornecedor.ControladorFornecedor;
 import com.fafica.funcionario.CPFInvalidoException;
 import com.fafica.funcionario.ControladorFuncionario;
 import com.fafica.funcionario.Funcionario;
 import com.fafica.funcionario.FuncionarioJaCadastradoException;
+import com.fafica.motorista.ControladorMotorista;
+import com.fafica.motorista.Motorista;
+import com.fafica.motorista.MotoristaJaCadastradoException;
+import com.fafica.motorista.MotoristaNaoEncontradoException;
 import com.fafica.util.CampoObrigatorioInvalidoException;
 import com.fafica.veiculo.ControladorVeiculo;
 import com.fafica.veiculo.Veiculo;
+import com.fafica.viagem.ControladorViagem;
+import com.fafica.viagem.Viagem;
+import com.fafica.viagem.ViagemJaCadastradaException;
+import com.fafica.viagem.ViagemNaoEncontradaException;
 
 public class Fachada{
 	
@@ -17,12 +26,16 @@ public class Fachada{
 	private ControladorFornecedor controladorFornecedor;
 	private ControladorFuncionario controladorFuncionario;
 	private ControladorVeiculo controladorVeiculo;
+	private ControladorMotorista controladorMotorista;
+	private ControladorViagem controladorViagem;
 	
 	
 	private Fachada() {
 		this.controladorFornecedor = new ControladorFornecedor();
 		this.controladorFuncionario = new ControladorFuncionario();
 		this.controladorVeiculo = new ControladorVeiculo();
+		this.controladorMotorista = new ControladorMotorista();
+		this.controladorViagem =  new ControladorViagem();
 	}
 	
 	public static Fachada getInstance(){
@@ -82,4 +95,81 @@ public class Fachada{
 	public ArrayList<Veiculo> listarVeiculo(){
 		return controladorVeiculo.listar();
 	}
+	
+ 
+                                                    //Metodos de Motorista
+//...................................................................................................................................	
+    
+
+    public void cadastrarMotorista(Motorista motorista) throws MotoristaJaCadastradoException, MotoristaNaoEncontradoException, CampoObrigatorioInvalidoException{
+         
+    	 controladorMotorista.cadastrar(motorista);
+
+     }
+
+    public void atualizarMotorista(Motorista motorista) throws MotoristaJaCadastradoException, MotoristaNaoEncontradoException, CampoObrigatorioInvalidoException{
+         
+    	 controladorMotorista.atualizar(motorista);
+     }
+
+    public boolean existeMotorista(Integer idMotorista){
+
+         return controladorMotorista.existe(idMotorista);
+    }
+
+    public boolean removerMotorista(Integer idMotorista) throws MotoristaJaCadastradoException, MotoristaNaoEncontradoException, CampoObrigatorioInvalidoException{
+
+        return controladorMotorista.remover(idMotorista);
+
+     }
+
+    public Motorista procurarMotorista(Integer idMotorista) throws MotoristaJaCadastradoException, MotoristaNaoEncontradoException, CampoObrigatorioInvalidoException{
+
+         return controladorMotorista.procurar(idMotorista);
+
+     }
+
+    public List<Motorista> listarMotorista(){
+        
+    	return controladorMotorista.listar();
+    }
+    
+                                                          //Metodos de Viagem
+  //...................................................................................................................................	
+    
+    public void cadastrarViagem(Viagem viagem) throws ViagemJaCadastradaException, ViagemNaoEncontradaException, CampoObrigatorioInvalidoException {
+        
+   	 controladorViagem.cadastrar(viagem);
+
+    }
+
+   public void atualizarViagem(Viagem viagem) throws ViagemJaCadastradaException, ViagemNaoEncontradaException, CampoObrigatorioInvalidoException {
+   	 
+	   controladorViagem.atualizar(viagem);
+    }
+
+   public boolean existeViagem(Integer idViagem){
+
+        return  controladorViagem.existe(idViagem);
+   }
+
+   public boolean removerViagem(Integer idViagem) throws ViagemJaCadastradaException, ViagemNaoEncontradaException, CampoObrigatorioInvalidoException {
+
+       return  controladorViagem.remover(idViagem);
+
+    }
+
+   public Viagem procurarViagem(Integer idViagem) throws ViagemJaCadastradaException, ViagemNaoEncontradaException, CampoObrigatorioInvalidoException {
+
+        return controladorViagem.procurar(idViagem);
+
+    }
+
+   public List<Viagem> listarViagem(){
+       
+   	return controladorViagem.listar();
+   }
+    
+    
+
 }

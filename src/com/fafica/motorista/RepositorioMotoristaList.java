@@ -17,7 +17,7 @@ public class RepositorioMotoristaList implements IRepositorioMotorista {
 
 	public void cadastrar(Motorista motorista) throws MotoristaJaCadastradoException {
 		if(existe(motorista.getIdMotorista())) throw new MotoristaJaCadastradoException();
-		motorista.setIdMotorista(id);
+		//motorista.setIdMotorista(id);
 		arrayListMotorista.add(motorista);
 		id++;
 			
