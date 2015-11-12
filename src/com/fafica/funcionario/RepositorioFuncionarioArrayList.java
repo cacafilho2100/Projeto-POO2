@@ -3,16 +3,26 @@ package com.fafica.funcionario;
 import java.util.ArrayList;
 
 public class RepositorioFuncionarioArrayList implements IRepositorioFuncionario {
+	
+	private ArrayList<Funcionario> funcionarioArrayList;
+	private Integer id;
+	
+	public RepositorioFuncionarioArrayList(){
+		funcionarioArrayList = new ArrayList<Funcionario>();
+		id = 1;
+	}
 
 	@Override
 	public void cadastrar(Funcionario funcionario) {
-		// TODO Auto-generated method stub
+		funcionario.setIdFuncionario(this.id);
+		funcionarioArrayList.add(funcionario);
+		id++;
 		
 	}
 
 	@Override
 	public void atualizar(Funcionario funcionario) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
@@ -36,8 +46,8 @@ public class RepositorioFuncionarioArrayList implements IRepositorioFuncionario 
 
 	@Override
 	public ArrayList<Funcionario> listar() {
-		// TODO Auto-generated method stub
-		return null;
+	
+		return funcionarioArrayList;
 	}
 
 }

@@ -11,7 +11,7 @@ public class ControladorFuncionario {
 		this.repositorioFuncionario = new RepositorioFuncionarioArrayList();
 	}
 	
-	public void cadastrar(Funcionario funcionario){
+	public void cadastrar(Funcionario funcionario)throws IllegalArgumentException,CPFInvalidoException,FuncionarioJaCadastradoException,CampoInvalidoException{
 		repositorioFuncionario.cadastrar(funcionario);
 	}
 	
