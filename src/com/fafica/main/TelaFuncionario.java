@@ -30,8 +30,26 @@ public class TelaFuncionario {
 			e1.printStackTrace();
 		}
 		
+		Funcionario funcionario02 = new Funcionario(9,"astoufo","rua da peda","891","funfun@gmail.com","1234567");
 		try {
-			System.out.println(fachada.procurarFuncionario("123"));
+			fachada.cadastrarFuncionario(funcionario02);
+			System.out.println("cadastrado com sucesso");
+		} catch (IllegalArgumentException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (CPFInvalidoException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (FuncionarioJaCadastradoException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (CampoObrigatorioInvalidoException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		try {
+			System.out.println(fachada.procurarFuncionario("891"));
 		} catch (FuncionarioNaoEncontradoException e) {
 			// TODO Auto-generated catch block
 			System.out.println(e.getMessage());

@@ -132,7 +132,7 @@ public class Fachada{
 
      }
 
-    public List<Motorista> listarMotorista(){
+    public ArrayList<Motorista> listarMotorista(){
         
     	return controladorMotorista.listar();
     }

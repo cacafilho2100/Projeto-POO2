@@ -8,6 +8,6 @@ public class MotoristaJaCadastradoException extends Exception {
 	
 	public MotoristaJaCadastradoException(String msg){
         super ("Motorista " + msg + " já cadastrado!");
-    }
+   }
 
 }

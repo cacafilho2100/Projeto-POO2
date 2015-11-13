@@ -17,7 +17,7 @@ public class RepositorioMotoristaMap implements IRepositorioMotorista {
 	
 	public void cadastrar(Motorista motorista) throws MotoristaJaCadastradoException{
 		if(existe(motorista.getIdMotorista())) throw new MotoristaJaCadastradoException();
-		motorista.setIdMotorista(id);
+		//motorista.setIdMotorista(id);
 		arrayMapMotorista.put(id, motorista);
 		id++;
 		
@@ -29,6 +29,8 @@ public class RepositorioMotoristaMap implements IRepositorioMotorista {
 		arrayMapMotorista.put(i, motorista);
 		
 	}
+	
+
 	public boolean remover(Integer idMotorista)throws MotoristaNaoEncontradoException{
 		int i = getId(idMotorista);
 		if(i == -1)throw new MotoristaNaoEncontradoException();

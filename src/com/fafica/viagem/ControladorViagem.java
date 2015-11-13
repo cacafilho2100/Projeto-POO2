@@ -20,8 +20,13 @@ public class ControladorViagem {
 		
 
 		//Validar as Informações de viagem
-		if(viagem == null) throw new CampoObrigatorioInvalidoException("Viagem não encontrada");
-		if(viagem.getDestino().equals(""))throw new CampoObrigatorioInvalidoException("Destino");
+		if(viagem == null) {
+			throw new CampoObrigatorioInvalidoException("Viagem não encontrada");
+		}
+		
+		if(viagem.getDestino().equals("")){
+			throw new CampoObrigatorioInvalidoException("Destino");
+		}
 		
 		//Cadastrando viagem
 		repositorioViagem.cadastrar(viagem);
@@ -31,7 +36,7 @@ public class ControladorViagem {
 	public void atualizar(Viagem viagem)throws ViagemJaCadastradaException, ViagemNaoEncontradaException, CampoObrigatorioInvalidoException {
 		
 		//Validar As Informações de viagem
-		if (viagem.getDestino().equals("")) throw new CampoObrigatorioInvalidoException("Nome é nulo ou Inválido.");
+		//if (viagem.getDestino().equals("")) throw new CampoObrigatorioInvalidoException("Nome é nulo ou Inválido.");
 		
 		//Atualização da Viagem
 		repositorioViagem.atualizar(viagem);
@@ -39,22 +44,23 @@ public class ControladorViagem {
 	}
 	
 	public boolean remover(Integer idViagem)throws ViagemJaCadastradaException, ViagemNaoEncontradaException, CampoObrigatorioInvalidoException {
-		Viagem viagem = null;
+		//Viagem viagem = null;
+
 		
+		if(idViagem == idViagem){
+			return repositorioViagem.remover(idViagem);
+			}
 		
-		viagem = procurar(idViagem);
-		
-		//Removendo viagem
-	  return repositorioViagem.remover(idViagem);
+	  return false;
 		
 		
 	}
 	
 	public Viagem procurar(Integer idViagem)throws ViagemJaCadastradaException, ViagemNaoEncontradaException, CampoObrigatorioInvalidoException{
-		Viagem viagem = null;
+		//Viagem viagem = null;
 		
-		viagem = this.repositorioViagem.procurar(idViagem);
-		return viagem;
+		 return repositorioViagem.procurar(idViagem);
+		
 	}
 	
 	public boolean existe(Integer idViagem){
@@ -64,11 +70,8 @@ public class ControladorViagem {
 	
 	
 	public ArrayList<Viagem> listar(){
-		
-		ArrayList<Viagem> viagem = null;
-		
-		viagem =  this.repositorioViagem.listar();
-        return viagem;
+	
+        return repositorioViagem.listar();
 		
 	}
 	

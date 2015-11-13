@@ -10,9 +10,12 @@ public class Viagem {
 	
 	
 	
-	public Viagem(){
-		
+	public Viagem(String destino, String custo, String data){
+		this.setDestino(destino);
+		this.setCusto(custo);	
+		this.setData(data);
 	}
+			
 	
 	public Viagem(Integer idViagem, String destino, String custo, String data){
 		this.setIdViagem(idViagem);
@@ -55,7 +58,7 @@ public class Viagem {
 
 	@Override
 	public String toString() {
-		return "Viagem [idViagem="+ idViagem + "destino=" + destino + ", custo=" + custo + " data=" + data +"]";
+		return "Viagem [ idViagem = "+ idViagem + " destino= " + destino + ", custo = " + custo + " data = " + data + "]";
 	}
 	
 	

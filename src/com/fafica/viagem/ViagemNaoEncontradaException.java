@@ -2,12 +2,12 @@ package com.fafica.viagem;
 
 public class ViagemNaoEncontradaException extends Exception {
 	
-	public ViagemNaoEncontradaException(){
+	  public ViagemNaoEncontradaException(){
 		super("Viagem Não Encontrada");
 	}
 	
 	public ViagemNaoEncontradaException(String msg){
-		super("Viagem" + msg + "Não Encontrada");
+	     super("Viagem Não Encontrada");
 		
 	}
 

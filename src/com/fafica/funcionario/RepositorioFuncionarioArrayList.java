@@ -51,9 +51,9 @@ public class RepositorioFuncionarioArrayList implements IRepositorioFuncionario 
 		for(Funcionario funcionario : funcionarioArrayList){
 			if(funcionario.getCpfFuncionario() == cpfFuncionario){
 				return funcionario;
-			}else{throw new FuncionarioNaoEncontradoException("Funcionario nao Encontrado ou Nulo");}
+			}
 		}
-		return null;
+		throw new FuncionarioNaoEncontradoException("Funcionario nao Encontrado ou Nulo"); 
 	}
 
 	@Override

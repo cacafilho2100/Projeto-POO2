@@ -9,7 +9,15 @@ public class Motorista {
 	private String salarioMotorista;
 	private String telefoneMotorista;
 	
-	public Motorista(){
+	public Motorista(String nomeMotorista,
+			String cpfMotorista, String enderecoMotorista,
+			String salarioMotorista, String telefoneMotorista){
+		
+		this.nomeMotorista = nomeMotorista;
+		this.cpfMotorista = cpfMotorista;
+		this.enderecoMotorista = enderecoMotorista;
+		this.salarioMotorista = salarioMotorista;
+		this.telefoneMotorista = telefoneMotorista;
 		
 	}
 	
@@ -75,11 +83,11 @@ public class Motorista {
 
 	@Override
 	public String toString() {
-		return "Motorista [idMotorista=" + idMotorista + ", nomeMotorista="
-				+ nomeMotorista + ", cpfMotorista=" + cpfMotorista
-				+ ", enderecoMotorista=" + enderecoMotorista
-				+ ", salarioMotorista=" + salarioMotorista
-				+ ", telefoneMotorista=" + telefoneMotorista + "]";
+		return "Motorista [idMotorista= " + idMotorista + ", nomeMotorista= "
+				+ nomeMotorista + ", cpfMotorista= " + cpfMotorista
+				+ ", enderecoMotorista= " + enderecoMotorista
+				+ ", salarioMotorista= " + salarioMotorista
+				+ ", telefoneMotorista= " + telefoneMotorista + "]";
 	}
 
 }

@@ -12,16 +12,23 @@ public class ControladorMotorista {
 	
 	public ControladorMotorista(){
 		
-		this.repositorioMotorista = new RepositorioMotoristaList();
+		this.repositorioMotorista = new RepositorioMotoristaArrayList();
 	}
 
-	public void cadastrar(Motorista motorista)throws MotoristaJaCadastradoException, MotoristaNaoEncontradoException, CampoObrigatorioInvalidoException {
+	public void cadastrar(Motorista motorista)throws IllegalArgumentException, MotoristaJaCadastradoException, MotoristaNaoEncontradoException, CampoObrigatorioInvalidoException {
 		
 
 		//Validar As Informações de Motorista
-		//if(motorista.getIdMotorista() == motorista.getIdMotorista())throw new MotoristaJaCadastradoException("Motorista ja Cadastrado");
-		if(motorista == null) throw new CampoObrigatorioInvalidoException("Motorista Invalido");
-		if(motorista.getNomeMotorista().equals(""))throw new CampoObrigatorioInvalidoException("Nome");
+		//if(motorista.getIdMotorista() == motorista.getIdMotorista())throw new MotoristaJaCadastradoException();
+		if(motorista == null){  
+			throw new IllegalArgumentException("Motorista Invalido");
+			
+		}
+		
+		if(motorista.getNomeMotorista().equals("")){
+			throw new CampoObrigatorioInvalidoException("Nome");
+			
+		}
 		
 		
 		//Cadastrando Motorista
@@ -32,7 +39,7 @@ public class ControladorMotorista {
 	public void atualizar(Motorista motorista)throws  MotoristaJaCadastradoException, MotoristaNaoEncontradoException, CampoObrigatorioInvalidoException {
 		
 		//Validar As Informações de Motorista
-		if (motorista.getNomeMotorista().equals("")) throw new CampoObrigatorioInvalidoException("Nome é nulo ou Inválido.");
+		//if (motorista.getNomeMotorista().equals("")) throw new CampoObrigatorioInvalidoException("Nome é nulo ou Inválido.");
 		
 		//Atualização do Motorista
 		repositorioMotorista.atualizar(motorista);
@@ -40,22 +47,25 @@ public class ControladorMotorista {
 	}
 	
 	public boolean remover(Integer idMotorista)throws  MotoristaJaCadastradoException, MotoristaNaoEncontradoException, CampoObrigatorioInvalidoException {
-		Motorista motorista = null;
+		//Motorista motorista = null;
 		
 		//idMotorista.idMotorista = null;
-		motorista = procurar(idMotorista);
+		//motorista = procurar(idMotorista);
+		if(idMotorista == idMotorista){
+		return repositorioMotorista.remover(idMotorista);
 		
+		}
 		//Removendo Motorista
-	  return repositorioMotorista.remover(idMotorista);
-		
+	  //return repositorioMotorista.remover(idMotorista);
+		return false;
 		
 	}
-	
+
 	public Motorista procurar(Integer idMotorista)throws  MotoristaJaCadastradoException, MotoristaNaoEncontradoException, CampoObrigatorioInvalidoException{
-		Motorista motorista = null;
+		//Motorista motorista = null;
 		
-		motorista = this.repositorioMotorista.procurar(idMotorista);
-		return motorista;
+		//motorista = this.repositorioMotorista.procurar(idMotorista);
+		return repositorioMotorista.procurar(idMotorista);
 	}
 	
 	public boolean existe(Integer idMotorista){
@@ -64,12 +74,11 @@ public class ControladorMotorista {
 	}
 	
 	
-	public List<Motorista> listar(){
+	public ArrayList<Motorista> listar(){
 		
-		ArrayList<Motorista> motoristas = null;
-		
-	    motoristas =  this.repositorioMotorista.listar();
-        return motoristas;
+		//ArrayList<Motorista> motoristas = null;
+	    return repositorioMotorista.listar();
+   
 		
 	}
 	
