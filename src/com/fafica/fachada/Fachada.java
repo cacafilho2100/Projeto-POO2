@@ -8,6 +8,7 @@ import com.fafica.funcionario.CPFInvalidoException;
 import com.fafica.funcionario.ControladorFuncionario;
 import com.fafica.funcionario.Funcionario;
 import com.fafica.funcionario.FuncionarioJaCadastradoException;
+import com.fafica.funcionario.FuncionarioNaoEncontradoException;
 import com.fafica.motorista.ControladorMotorista;
 import com.fafica.motorista.Motorista;
 import com.fafica.motorista.MotoristaJaCadastradoException;
@@ -45,11 +46,12 @@ public class Fachada{
 		return Fachada.instance;
 	}
 	//motodos de funcionario
+	//*******************************************************************************************************************************************************************************************************************************************************
 	public void cadastrarFuncionario(Funcionario funcionario) throws IllegalArgumentException, CPFInvalidoException, FuncionarioJaCadastradoException, CampoObrigatorioInvalidoException{
 		controladorFuncionario.cadastrar(funcionario);
 	}
 	
-	public void atualizarFuncionario(Funcionario funcionario){
+	public void atualizarFuncionario(Funcionario funcionario) throws FuncionarioNaoEncontradoException{
 		controladorFuncionario.atualizar(funcionario);
 	}
 	
@@ -57,12 +59,12 @@ public class Fachada{
 		return controladorFuncionario.existe(cpfFuncionario);
 	}
 	
-	public void remorverFuncionario(String cpfFuncionario){
+	public void remorverFuncionario(String cpfFuncionario) throws FuncionarioNaoEncontradoException{
 		controladorFuncionario.remover(cpfFuncionario);
 		
 	}
 	
-	public Funcionario procurarFuncionario(String cpfFuncionario){
+	public Funcionario procurarFuncionario(String cpfFuncionario) throws FuncionarioNaoEncontradoException{
 		return controladorFuncionario.procurar(cpfFuncionario);
 	}
 	
@@ -71,6 +73,7 @@ public class Fachada{
 	}
 	
 	//metodos Veiculos
+	//******************************************************************************************************************************
 	
 	public void cadastrarVeiculo(Veiculo veiculo){
 		controladorVeiculo.cadastrar(veiculo);

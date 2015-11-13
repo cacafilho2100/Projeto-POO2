@@ -15,9 +15,9 @@ public class ControladorFuncionario {
 	}
 	
 	public void cadastrar(Funcionario funcionario)throws IllegalArgumentException,CPFInvalidoException,FuncionarioJaCadastradoException,CampoObrigatorioInvalidoException{
-		if(!ValidarCPF.validaCPF(funcionario.getCpfFuncionario())){ 
+		/*if(!ValidarCPF.validaCPF(funcionario.getCpfFuncionario())){ 
 			throw new CPFInvalidoException(funcionario.getCpfFuncionario());
-		}
+		}*/
 		if(funcionario == null){
 			throw new IllegalArgumentException("Cliente Invalido");
 		}
@@ -28,7 +28,7 @@ public class ControladorFuncionario {
 		repositorioFuncionario.cadastrar(funcionario);
 	}
 	
-	public void atualizar(Funcionario funcionario){
+	public void atualizar(Funcionario funcionario) throws FuncionarioNaoEncontradoException{
 		repositorioFuncionario.atualizar(funcionario);
 	}
 	
@@ -36,11 +36,11 @@ public class ControladorFuncionario {
 		return repositorioFuncionario.existe(cpfFuncionario);
 	}
 	
-	public void remover (String cpfFuncionario){
+	public void remover (String cpfFuncionario) throws FuncionarioNaoEncontradoException{
 		repositorioFuncionario.remover(cpfFuncionario);
 	}
 	
-	public Funcionario procurar(String cpfFuncionario){
+	public Funcionario procurar(String cpfFuncionario) throws FuncionarioNaoEncontradoException{
 		return repositorioFuncionario.procurar(cpfFuncionario);
 	}
 	
