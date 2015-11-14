@@ -70,11 +70,11 @@ public class Funcionario {
 
 	@Override
 	public String toString() {
-		return "Funcionario [idFuncionario=" + idFuncionario
-				+ ", nomeFuncionario=" + nomeFuncionario
-				+ ", enderecoFuncionario=" + enderecoFuncionario
-				+ ", cpfFuncionario=" + cpfFuncionario + ", emailFuncionario="
-				+ emailFuncionario + ", salarioFuncionario="
+		return "Funcionario [idFuncionario= " + idFuncionario
+				+ ", nomeFuncionario= " + nomeFuncionario
+				+ ", enderecoFuncionario= " + enderecoFuncionario
+				+ ", cpfFuncionario= " + cpfFuncionario + ", emailFuncionario= "
+				+ emailFuncionario + ", telefoneFuncionario= "
 				+ telefoneFuncionario + "]";
 	}
 

@@ -51,20 +51,20 @@ public class Fachada{
 		controladorFuncionario.cadastrar(funcionario);
 	}
 	
-	public void atualizarFuncionario(Funcionario funcionario) throws FuncionarioNaoEncontradoException{
+	public void atualizarFuncionario(Funcionario funcionario) throws FuncionarioNaoEncontradoException, CPFInvalidoException, CampoObrigatorioInvalidoException{
 		controladorFuncionario.atualizar(funcionario);
 	}
 	
-	public Boolean existeFuncionario(String cpfFuncionario){
+	public Boolean existeFuncionario(String cpfFuncionario) throws FuncionarioNaoEncontradoException{
 		return controladorFuncionario.existe(cpfFuncionario);
 	}
 	
-	public void remorverFuncionario(String cpfFuncionario) throws FuncionarioNaoEncontradoException{
+	public void remorverFuncionario(String cpfFuncionario) throws FuncionarioNaoEncontradoException, CPFInvalidoException, CampoObrigatorioInvalidoException{
 		controladorFuncionario.remover(cpfFuncionario);
 		
 	}
 	
-	public Funcionario procurarFuncionario(String cpfFuncionario) throws FuncionarioNaoEncontradoException{
+	public Funcionario procurarFuncionario(String cpfFuncionario) throws FuncionarioNaoEncontradoException, CPFInvalidoException{
 		return controladorFuncionario.procurar(cpfFuncionario);
 	}
 	

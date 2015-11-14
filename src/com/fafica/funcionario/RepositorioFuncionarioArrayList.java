@@ -57,7 +57,7 @@ public class RepositorioFuncionarioArrayList implements IRepositorioFuncionario 
 	}
 
 	@Override
-	public boolean existe(String cpfFuncionario) {
+	public boolean existe(String cpfFuncionario)  {
 		for(Funcionario funcionario : funcionarioArrayList){
 			if(cpfFuncionario == funcionario.getCpfFuncionario()){
 				return true;
