@@ -20,9 +20,6 @@ public class Veiculo {
 		this.setAno(ano);
 	}
 	
-	public Integer getidVeiculo(){
-		return idVeiculo;
-	}
 	
 	public void setIdVeiculo(Integer idVeiculo){
 		this.idVeiculo = idVeiculo;
@@ -70,6 +67,12 @@ public class Veiculo {
 	public String toString() {
 		return "Veiculo [idVeiculo="+ idVeiculo +" quantPassageiro=" + quantPassageiro + "modelo=" + modelo + ", placa=" + placa + ", chassi="
 				+ chassi + ", cor=" + cor + ", ano=" + ano + "]";
+	}
+
+
+	public Integer getidVeiculo() {
+		// TODO Auto-generated method stub
+		return idVeiculo;
 	}
 	
 

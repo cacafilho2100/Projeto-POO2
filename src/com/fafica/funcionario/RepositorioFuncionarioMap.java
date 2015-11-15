@@ -26,21 +26,22 @@ public class RepositorioFuncionarioMap implements IRepositorioFuncionario {
 
 	@Override
 	public void atualizar(Funcionario funcionario) throws FuncionarioNaoEncontradoException {
-		Integer i = funcionario.getIdFuncionario();
-		funcionarioMap.put(i, funcionario);
 		if(!existe(funcionario.getCpfFuncionario())){
 			throw new FuncionarioNaoEncontradoException(); 
+		}else{
+		Integer i = funcionario.getIdFuncionario();
+		funcionarioMap.put(i, funcionario);
 		}
 		
 	}
 
 	@Override
-	public void remover(String cpfFuncionario) {
+	public void remover(String cpfFuncionario) throws FuncionarioNaoEncontradoException {
 		for(int i = 0; i < funcionarioMap.size();i++){
 			Funcionario funcionario = funcionarioMap.get(i);
 			if(cpfFuncionario == funcionario.getCpfFuncionario()){
 				funcionarioMap.remove(funcionario);
-			}
+			}else{ throw new FuncionarioNaoEncontradoException(); }
 		}
 		
 	}

@@ -22,7 +22,7 @@ public class ControladorFuncionario {
 			throw new IllegalArgumentException("Cliente Invalido");
 		}
 		if(funcionario.getNomeFuncionario().equals(" ")){
-			throw new CampoObrigatorioInvalidoException("O Campo e nulo ou Invalido");
+			throw new CampoObrigatorioInvalidoException("Nome");
 		}
 		
 		repositorioFuncionario.cadastrar(funcionario);
@@ -33,7 +33,7 @@ public class ControladorFuncionario {
 			throw new CPFInvalidoException(funcionario.getCpfFuncionario());
 		}
 		if(funcionario.getCpfFuncionario().equals(" ")){
-			throw new CampoObrigatorioInvalidoException("O Campo e Nulo ou Invalido");
+			throw new CampoObrigatorioInvalidoException();
 		}
 		repositorioFuncionario.atualizar(funcionario);
 	}

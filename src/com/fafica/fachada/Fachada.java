@@ -16,6 +16,8 @@ import com.fafica.motorista.MotoristaNaoEncontradoException;
 import com.fafica.util.CampoObrigatorioInvalidoException;
 import com.fafica.veiculo.ControladorVeiculo;
 import com.fafica.veiculo.Veiculo;
+import com.fafica.veiculo.VeiculoJaCadastradoException;
+import com.fafica.veiculo.VeiculoNaoEncontradoException;
 import com.fafica.viagem.ControladorViagem;
 import com.fafica.viagem.Viagem;
 import com.fafica.viagem.ViagemJaCadastradaException;
@@ -75,11 +77,11 @@ public class Fachada{
 	//metodos Veiculos
 	//******************************************************************************************************************************
 	
-	public void cadastrarVeiculo(Veiculo veiculo){
+	public void cadastrarVeiculo(Veiculo veiculo) throws VeiculoJaCadastradoException, IllegalArgumentException, CampoObrigatorioInvalidoException{
 		controladorVeiculo.cadastrar(veiculo);
 	}
 	
-	public void atualizarVeiculo(Veiculo veiculo){
+	public void atualizarVeiculo(Veiculo veiculo) throws VeiculoNaoEncontradoException, CampoObrigatorioInvalidoException{
 		controladorVeiculo.atualizar(veiculo);
 	}
 	
@@ -87,11 +89,11 @@ public class Fachada{
 		return controladorVeiculo.existe(idVeiculo);
 	}
 	
-	public void removerVeiculo(Integer idVeiculo){
+	public void removerVeiculo(Integer idVeiculo) throws VeiculoNaoEncontradoException{
 		controladorVeiculo.remover(idVeiculo);
 	}
 	
-	public Veiculo procurarVeiculo(Integer idVeiculo){
+	public Veiculo procurarVeiculo(Integer idVeiculo) throws VeiculoNaoEncontradoException{
 		return controladorVeiculo.procurar(idVeiculo);
 	}
 	
