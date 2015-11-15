@@ -33,11 +33,11 @@ public class RepositorioVeiculoArrayList implements IRepositorioVeiculo {
 	}
 
 	@Override
-	public void remover(Integer idVeiculo) {
+	public void remover(Integer idVeiculo) throws VeiculoNaoEncontradoException {
 		for(Veiculo veiculo : veiculoArrayList){
-			if(idVeiculo == veiculo.getidVeiculo()){
+			if(veiculo.getidVeiculo().equals(idVeiculo)){
 				veiculoArrayList.remove(veiculo);
-			}
+			}else{ throw new VeiculoNaoEncontradoException(); }
 		}
 		
 	}

@@ -34,7 +34,9 @@ public class ControladorVeiculo {
 	}
 	
 	public void remover(Integer idVeiculo) throws VeiculoNaoEncontradoException{
-		repositorioVeiculo.remover(idVeiculo);
+		if(idVeiculo == idVeiculo){
+			repositorioVeiculo.remover(idVeiculo);
+		}
 	}
 	
 	public Veiculo procurar(Integer idVeiculo) throws VeiculoNaoEncontradoException{
