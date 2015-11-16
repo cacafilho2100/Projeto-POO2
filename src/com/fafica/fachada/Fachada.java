@@ -117,18 +117,18 @@ public class Fachada{
     	 controladorMotorista.atualizar(motorista);
      }
 
-    public boolean existeMotorista(Integer idMotorista){
+    public boolean existeMotorista(int idMotorista){
 
          return controladorMotorista.existe(idMotorista);
     }
 
-    public boolean removerMotorista(Integer idMotorista) throws MotoristaJaCadastradoException, MotoristaNaoEncontradoException, CampoObrigatorioInvalidoException{
-
-        return controladorMotorista.remover(idMotorista);
-
+    public boolean removerMotorista(int idMotorista) throws MotoristaJaCadastradoException, MotoristaNaoEncontradoException, CampoObrigatorioInvalidoException{
+   
+    	return controladorMotorista.remover(idMotorista);
+       
      }
 
-    public Motorista procurarMotorista(Integer idMotorista) throws MotoristaJaCadastradoException, MotoristaNaoEncontradoException, CampoObrigatorioInvalidoException{
+    public Motorista procurarMotorista(int idMotorista) throws MotoristaJaCadastradoException, MotoristaNaoEncontradoException, CampoObrigatorioInvalidoException{
 
          return controladorMotorista.procurar(idMotorista);
 

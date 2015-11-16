@@ -3,7 +3,7 @@ package com.fafica.viagem;
 public class Viagem {
 	
 	
-	private Integer idViagem;
+	private int idViagem;
 	private String destino;
 	private String custo;
 	private String data;
@@ -17,7 +17,7 @@ public class Viagem {
 	}
 			
 	
-	public Viagem(Integer idViagem, String destino, String custo, String data){
+	public Viagem(int idViagem, String destino, String custo, String data){
 		this.setIdViagem(idViagem);
 		this.setDestino(destino);
 		this.setCusto(custo);	
@@ -39,11 +39,11 @@ public class Viagem {
 		this.custo = custo;
 	}
 	
-	public Integer getIdViagem(){
+	public int getIdViagem(){
 		return idViagem;
 	}
 	
-	public void setIdViagem(Integer idViagem){
+	public void setIdViagem(int idViagem){
 		this.idViagem = idViagem;
 	}
 	

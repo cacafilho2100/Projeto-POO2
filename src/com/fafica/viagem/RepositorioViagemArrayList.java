@@ -21,7 +21,7 @@ public class RepositorioViagemArrayList implements IRepositorioViagem {
 		//viagem.setIdViagem(id);
 		arrayListViagem.add(viagem);
 	    id++;
-	    System.out.println("viagem cadastrada com sucesso");
+	    
 		}else{
 			throw new ViagemJaCadastradaException();
 		  }
@@ -36,13 +36,13 @@ public class RepositorioViagemArrayList implements IRepositorioViagem {
 		for(Viagem viagem1 : arrayListViagem){
 			if((viagem1.getIdViagem() == viagem1.getIdViagem())){
 				arrayListViagem.remove(viagem1);
-				arrayListViagem.add(viagem1);
+				arrayListViagem.add(viagem);
 			}
 		}
 	}
 
 	
-	  public boolean remover(Integer idViagem) throws ViagemNaoEncontradaException{
+	  public boolean remover(int idViagem) throws ViagemNaoEncontradaException{
 	    for(Viagem viagem : arrayListViagem){
 		   if(viagem.getIdViagem() == idViagem){
 			   arrayListViagem.remove(viagem);
@@ -56,7 +56,7 @@ public class RepositorioViagemArrayList implements IRepositorioViagem {
 	
 
 	
-	public Viagem procurar(Integer idViagem)throws ViagemNaoEncontradaException {
+	public Viagem procurar(int idViagem)throws ViagemNaoEncontradaException {
 		for(Viagem viagem : arrayListViagem){
 			if(viagem.getIdViagem() == idViagem){
 				return viagem;	
@@ -69,7 +69,7 @@ public class RepositorioViagemArrayList implements IRepositorioViagem {
 	}
 
 
-	public boolean existe(Integer idViagem){
+	public boolean existe(int idViagem){
 		for (Viagem viagem : arrayListViagem) {
 			if(idViagem == viagem.getIdViagem()){
 				

@@ -1,6 +1,6 @@
 package com.fafica.motorista;
 import java.util.ArrayList;
-import java.util.List;
+
 
 import com.fafica.util.CampoObrigatorioInvalidoException;
 
@@ -12,7 +12,7 @@ public class ControladorMotorista {
 	
 	public ControladorMotorista(){
 		
-		this.repositorioMotorista = new RepositorioMotoristaArrayList();
+		this.repositorioMotorista = new RepositorioMotoristaMap();
 	}
 
 	public void cadastrar(Motorista motorista)throws IllegalArgumentException, MotoristaJaCadastradoException, MotoristaNaoEncontradoException, CampoObrigatorioInvalidoException {
@@ -46,7 +46,7 @@ public class ControladorMotorista {
 			
 	}
 	
-	public boolean remover(Integer idMotorista)throws  MotoristaJaCadastradoException, MotoristaNaoEncontradoException, CampoObrigatorioInvalidoException {
+	public boolean remover(int idMotorista)throws  MotoristaJaCadastradoException, MotoristaNaoEncontradoException, CampoObrigatorioInvalidoException {
 		//Motorista motorista = null;
 		
 		//idMotorista.idMotorista = null;
@@ -61,14 +61,14 @@ public class ControladorMotorista {
 		
 	}
 
-	public Motorista procurar(Integer idMotorista)throws  MotoristaJaCadastradoException, MotoristaNaoEncontradoException, CampoObrigatorioInvalidoException{
+	public Motorista procurar(int idMotorista)throws  MotoristaJaCadastradoException, MotoristaNaoEncontradoException, CampoObrigatorioInvalidoException{
 		//Motorista motorista = null;
 		
 		//motorista = this.repositorioMotorista.procurar(idMotorista);
 		return repositorioMotorista.procurar(idMotorista);
 	}
 	
-	public boolean existe(Integer idMotorista){
+	public boolean existe(int idMotorista){
 		
 		return repositorioMotorista.existe(idMotorista);
 	}

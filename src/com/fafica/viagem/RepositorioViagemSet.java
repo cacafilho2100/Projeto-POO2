@@ -1,11 +1,8 @@
 package com.fafica.viagem;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.TreeSet;
 
-import com.fafica.motorista.Motorista;
-import com.fafica.motorista.MotoristaNaoEncontradoException;
 
 public class RepositorioViagemSet implements IRepositorioViagem {
 	
@@ -35,11 +32,11 @@ public class RepositorioViagemSet implements IRepositorioViagem {
 		
 	}
 	
-	public boolean remover(Integer idViagem) throws ViagemNaoEncontradaException  {
+	public boolean remover(int idViagem) throws ViagemNaoEncontradaException  {
 		
 		
 		for (Viagem viagem : arraySetViagem) {
-			if (idViagem.equals(viagem.getIdViagem())) {
+			if (idViagem == viagem.getIdViagem()) {
 
 				arraySetViagem.remove(viagem);
 
@@ -60,10 +57,10 @@ public class RepositorioViagemSet implements IRepositorioViagem {
 	//}
 
 	
-	public Viagem procurar(Integer idViagem) throws ViagemNaoEncontradaException {
+	public Viagem procurar(int idViagem) throws ViagemNaoEncontradaException {
 
 		for (Viagem viagem : arraySetViagem) {
-			if (idViagem.equals(viagem.getIdViagem())) {
+			if (idViagem == viagem.getIdViagem()) {
 
 				return viagem;
 
@@ -76,9 +73,9 @@ public class RepositorioViagemSet implements IRepositorioViagem {
 	}
 
 	
-	public boolean existe(Integer idViagem) {
+	public boolean existe(int idViagem) {
 		for (Viagem viagem : arraySetViagem) {
-			if (idViagem.equals(viagem.getIdViagem())) {
+			if (idViagem == viagem.getIdViagem()) {
 						return true;
 					}
 				}
@@ -99,7 +96,7 @@ public class RepositorioViagemSet implements IRepositorioViagem {
   }
 	
 	
-	private int getId(Integer idViagem) {
+	private int getId(int idViagem) {
 		int aux = -1;
 		boolean aux1 = false;
 		for (int i = 0; !aux1 && (i < id); i = i + 1) {

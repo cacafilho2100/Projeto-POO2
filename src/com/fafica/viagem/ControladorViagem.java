@@ -2,7 +2,6 @@ package com.fafica.viagem;
 
 import java.util.ArrayList;
 
-
 import com.fafica.util.CampoObrigatorioInvalidoException;
 
 public class ControladorViagem {
@@ -12,7 +11,7 @@ public class ControladorViagem {
 	
 	public ControladorViagem(){
 		
-		this.repositorioViagem = new RepositorioViagemArrayList();
+		this.repositorioViagem = new RepositorioViagemMap();
 		
 	}
 	

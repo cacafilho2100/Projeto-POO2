@@ -2,7 +2,7 @@ package com.fafica.motorista;
 
 public class Motorista {
 
-	private Integer idMotorista;
+	private int idMotorista;
 	private String nomeMotorista;
 	private String cpfMotorista;
 	private String enderecoMotorista;
@@ -21,7 +21,7 @@ public class Motorista {
 		
 	}
 	
-	public Motorista(Integer idMotorista, String nomeMotorista,
+	public Motorista(int idMotorista, String nomeMotorista,
 			String cpfMotorista, String enderecoMotorista,
 			String salarioMotorista, String telefoneMotorista) {
 		
@@ -33,11 +33,11 @@ public class Motorista {
 		this.telefoneMotorista = telefoneMotorista;
 	}
 
-	public Integer getIdMotorista() {
+	public int getIdMotorista() {
 		return idMotorista;
 	}
 
-	public void setIdMotorista(Integer idMotorista) {
+	public void setIdMotorista(int idMotorista) {
 		this.idMotorista = idMotorista;
 	}
 

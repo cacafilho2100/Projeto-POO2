@@ -1,18 +1,18 @@
 package com.fafica.motorista;
-import java.util.TreeSet;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.TreeSet;
+import java.util.ArrayList;
+
 
 public class RepositorioMotoristaSet implements IRepositorioMotorista {
 	
-	private TreeSet<Motorista> arraySetMotorista;
+	private TreeSet<Integer,Motorista> motoristaSet;
 	private Integer id;
 	
 	public RepositorioMotoristaSet(){
 		
-		arraySetMotorista = new TreeSet<Motorista>();
-		id = 1;
+		motoristaSet = new TreeSet<Integer,Motorista>();
+		id = 0;
 		
 	}
 	
@@ -31,11 +31,11 @@ public class RepositorioMotoristaSet implements IRepositorioMotorista {
 		arraySetMotorista.add(motorista);	
 	}
 	
-	public boolean remover(Integer idMotorista) throws MotoristaNaoEncontradoException  {
+	public boolean remover(int idMotorista) throws MotoristaNaoEncontradoException  {
 				
 				
 				for (Motorista motorista : arraySetMotorista) {
-					if (idMotorista.equals(motorista.getIdMotorista())) {
+					if (idMotorista == (motorista.getIdMotorista())) {
 		
 						arraySetMotorista.remove(motorista);
 		
@@ -46,21 +46,11 @@ public class RepositorioMotoristaSet implements IRepositorioMotorista {
 				return true;
 		
       	 	}
-
 	
-	//public boolean remover(Integer idMotorista)throws MotoristaNaoEncontradoException  {
-		//int i = getId(idMotorista);
-		//if(i == -1)throw new MotoristaNaoEncontradoException() ;
-		//arraySetMotorista.remove(i);
-		//return true;
-	
-	//}
-
-	
-	public Motorista procurar(Integer idMotorista) throws MotoristaNaoEncontradoException{
+	public Motorista procurar(int idMotorista) throws MotoristaNaoEncontradoException{
 		
 		for (Motorista motorista : arraySetMotorista) {
-			if (idMotorista.equals(motorista.getIdMotorista())) {
+			if (idMotorista == (motorista.getIdMotorista())) {
 
 				return motorista;
 
@@ -75,9 +65,9 @@ public class RepositorioMotoristaSet implements IRepositorioMotorista {
 
 
 	
-	public boolean existe(Integer idMotorista) {
+	public boolean existe(int idMotorista) {
 		for (Motorista motorista : arraySetMotorista) {
-				if (idMotorista.equals(motorista.getIdMotorista())) {
+				if (idMotorista == (motorista.getIdMotorista())) {
 							return true;
 						}
 					}
@@ -96,11 +86,11 @@ public class RepositorioMotoristaSet implements IRepositorioMotorista {
 		
 	}
 	
-	private int getId(Integer idMotorista) {
+	private int getId(int idMotorista) {
 		int aux = -1;
 		boolean aux1 = false;
 		for (int i = 0; !aux1 && (i < id); i = i + 1) {
-			if (((List<Motorista>) arraySetMotorista).get(i).equals(idMotorista)) {
+			if (( arraySetMotorista).get(i).equals(idMotorista)) {
 				aux = i;
 				aux1 = true;
 			}

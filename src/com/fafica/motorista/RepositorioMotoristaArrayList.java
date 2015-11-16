@@ -29,7 +29,9 @@ public class RepositorioMotoristaArrayList implements IRepositorioMotorista {
 	
 	public void atualizar(Motorista motorista) throws MotoristaNaoEncontradoException {
 		
-		if(!existe(motorista.getIdMotorista()))throw new MotoristaNaoEncontradoException();
+		if(!existe(motorista.getIdMotorista())){
+			throw new MotoristaNaoEncontradoException();
+		}
 		
 		for(Motorista motorista1 : arrayListMotorista){
 			if((motorista1.getIdMotorista() == motorista1.getIdMotorista())){
@@ -40,11 +42,13 @@ public class RepositorioMotoristaArrayList implements IRepositorioMotorista {
 	}
 
 	
-	  public boolean remover(Integer idMotorista) throws MotoristaNaoEncontradoException{
+	  public boolean remover(int idMotorista) throws MotoristaNaoEncontradoException{
 	    for(Motorista motorista : arrayListMotorista){
 		   if(motorista.getIdMotorista() == idMotorista){
 		      arrayListMotorista.remove(motorista);
-		      return true;
+			   System.out.println("Motorista Removido Com Sucesso");
+			   return true;
+
 		   }   
 	    }
 		 
@@ -53,7 +57,7 @@ public class RepositorioMotoristaArrayList implements IRepositorioMotorista {
 	
 
 	
-	public Motorista procurar(Integer idMotorista)throws MotoristaNaoEncontradoException {
+	public Motorista procurar(int idMotorista)throws MotoristaNaoEncontradoException {
 		for(Motorista motorista : arrayListMotorista){
 			if(motorista.getIdMotorista() == idMotorista){
 				return motorista;
@@ -64,7 +68,7 @@ public class RepositorioMotoristaArrayList implements IRepositorioMotorista {
 	}
 
 
-	public boolean existe(Integer idMotorista){
+	public boolean existe(int idMotorista){
 		for (Motorista motorista : arrayListMotorista) {
 			if(idMotorista == motorista.getIdMotorista()){
 				

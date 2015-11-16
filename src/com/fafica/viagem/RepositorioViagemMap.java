@@ -1,61 +1,77 @@
 package com.fafica.viagem;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.TreeMap;
-
-import com.fafica.motorista.Motorista;
 
 public class RepositorioViagemMap implements IRepositorioViagem {
 
-	private TreeMap<Integer,Viagem> arrayMapViagem;
-	private int id;
+	private Map<Integer, Viagem> viagemMap;
+
 	
 	public RepositorioViagemMap(){
 		
-		arrayMapViagem = new TreeMap<Integer,Viagem>();
-		id = 1;
+		viagemMap = new TreeMap<Integer, Viagem>();
+		
 		
 	}
 	
 	public void cadastrar(Viagem viagem) throws ViagemJaCadastradaException {
-		if(existe(viagem.getIdViagem())) throw new ViagemJaCadastradaException() ;
-		viagem.setIdViagem(id);
-		arrayMapViagem.put(id, viagem);
-		id++;
+		if(existe(viagem.getIdViagem()))throw new ViagemJaCadastradaException();
+		viagemMap.put(viagem.getIdViagem(), viagem);
+		//System.out.println("Viagem cadastrada com sucesso");
+		
+	}
+	
+
+	public void atualizar(Viagem viagem) throws ViagemNaoEncontradaException {
+		if(existe(viagem.getIdViagem())){
+			viagemMap.remove(viagem.getIdViagem());
+			viagemMap.put(viagem.getIdViagem(), viagem);
+		}else{
+			throw new ViagemNaoEncontradaException();
+				
+		}	
 		
 	}
 
-	public void atualizar(Viagem viagem) throws ViagemNaoEncontradaException {
-		int i = getId(viagem.getIdViagem());
-		if(i == -1)throw new ViagemNaoEncontradaException();
-		arrayMapViagem.put(i, viagem);
+	
+	public boolean remover(int idViagem) throws ViagemNaoEncontradaException {
+		if(existe(idViagem)){
+			viagemMap.remove(idViagem);
+			return true;
+		}
+		else{
+			throw new ViagemNaoEncontradaException();	
+		}	
 	}
 
 	
-	public boolean remover(Integer idViagem) throws ViagemNaoEncontradaException {
-		int i = getId(idViagem);
-		if(i == -1)throw new ViagemNaoEncontradaException();
-		arrayMapViagem.remove(i);
-		return true;
+	public Viagem procurar(int idViagem) throws ViagemNaoEncontradaException {
+	     if(existe(idViagem)){
+	    	 return viagemMap.get(idViagem);
+	     }
+	     else{
+	    	 throw new ViagemNaoEncontradaException();
+	     }
+   	
 	}
 
 	
-	public Viagem procurar(Integer idViagem) throws ViagemNaoEncontradaException {
-		int i = getId(idViagem);
-		if(i ==-1)throw new ViagemNaoEncontradaException();
-		return arrayMapViagem.get(i);
-	}
-
-	
-	public boolean existe(Integer idViagem) {
-		for (int i = 1; i < arrayMapViagem.size(); i++) {
-			Viagem viagem = arrayMapViagem.get(i);
-			if(idViagem.equals(viagem.getIdViagem())){
+	public boolean existe(int idViagem) {
+		for (int i = 0; i < viagemMap.size(); i++) {
+			Viagem viagem = viagemMap.get(i);
+			if(idViagem == viagem.getIdViagem()){
+				
 			return true;	
+				 }
 			}
-			}
-		return false;
-	}
+		
+			return false;
+		}
+			
+	
 
 	
 	public ArrayList<Viagem> listar() {
@@ -67,16 +83,4 @@ public class RepositorioViagemMap implements IRepositorioViagem {
 	}
 		
 	
-	private int getId(Integer idViagem) {
-		int aux = -1;
-		boolean aux1 = false;
-		for (int i = 0; !aux1 && (i < id); i = i + 1) {
-			if (arrayMapViagem.get(i).equals(idViagem)) {
-				aux = i;
-				aux1 = true;
-			}
-		}
-		return aux;
-	}
-
 }
