@@ -1,5 +1,7 @@
 package com.fafica.viagem;
 
+import com.fafica.motorista.Motorista;
+
 public class Viagem {
 	
 	
@@ -7,25 +9,36 @@ public class Viagem {
 	private String destino;
 	private String custo;
 	private String data;
+	//private Motorista motorista;
 	
 	
-	
+	/*
 	public Viagem(String destino, String custo, String data){
+		//this.setMotorista(motorista);
 		this.setDestino(destino);
 		this.setCusto(custo);	
 		this.setData(data);
 	}
-			
+	*/		
 	
 	public Viagem(int idViagem, String destino, String custo, String data){
+		//this.setMotorista(motorista);
 		this.setIdViagem(idViagem);
 		this.setDestino(destino);
 		this.setCusto(custo);	
 		this.setData(data);
 	}
+
+/*
+	public Motorista getMotorista(){
+		return motorista;
+	}
 	
+	public void setMotorista(Motorista motorista){
+		this.motorista = motorista;
+	}
 
-
+*/
 	public String getDestino() {
 		return destino;
 	}

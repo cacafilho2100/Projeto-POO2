@@ -3,7 +3,7 @@ package com.fafica.viagem;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.TreeMap;
+
 
 public class RepositorioViagemMap implements IRepositorioViagem {
 
@@ -18,11 +18,15 @@ public class RepositorioViagemMap implements IRepositorioViagem {
 	}
 	
 	public void cadastrar(Viagem viagem) throws ViagemJaCadastradaException {
-		if(existe(viagem.getIdViagem()))throw new ViagemJaCadastradaException();
-		viagemMap.put(viagem.getIdViagem(), viagem);
-		//System.out.println("Viagem cadastrada com sucesso");
+		if(!existe(viagem.getIdViagem())){
+			viagemMap.put(viagem.getIdViagem(), viagem);
+			System.out.println("Viagem cadastrada com sucesso");
+		}else{
+		throw new ViagemJaCadastradaException();
+		}
+}
 		
-	}
+
 	
 
 	public void atualizar(Viagem viagem) throws ViagemNaoEncontradaException {
@@ -38,22 +42,24 @@ public class RepositorioViagemMap implements IRepositorioViagem {
 
 	
 	public boolean remover(int idViagem) throws ViagemNaoEncontradaException {
-		if(existe(idViagem)){
+		if(!existe(idViagem)){
+			throw new ViagemNaoEncontradaException();
+			
+		}
+		else{
 			viagemMap.remove(idViagem);
 			return true;
 		}
-		else{
-			throw new ViagemNaoEncontradaException();	
-		}	
 	}
 
 	
 	public Viagem procurar(int idViagem) throws ViagemNaoEncontradaException {
-	     if(existe(idViagem)){
-	    	 return viagemMap.get(idViagem);
+	     if(!existe(idViagem)){
+	    	 throw new ViagemNaoEncontradaException();
 	     }
 	     else{
-	    	 throw new ViagemNaoEncontradaException();
+	    	 return viagemMap.get(idViagem);
+	    	 
 	     }
    	
 	}
@@ -71,12 +77,7 @@ public class RepositorioViagemMap implements IRepositorioViagem {
 
 	
 	public ArrayList<Viagem> listar() {
-		ArrayList<Viagem> arrayListViagem = new ArrayList<Viagem>();
-			for (Viagem viagem : arrayListViagem) {
-				arrayListViagem.add(viagem);
-			}
-			return arrayListViagem;
-	}
 		
-	
+		return null;
+	}
 }

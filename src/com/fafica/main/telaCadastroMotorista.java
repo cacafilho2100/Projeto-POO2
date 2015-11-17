@@ -1,10 +1,12 @@
 package com.fafica.main;
 import java.util.ArrayList;
+
 import com.fafica.fachada.Fachada;
 import com.fafica.motorista.Motorista;
 import com.fafica.motorista.MotoristaJaCadastradoException;
 import com.fafica.motorista.MotoristaNaoEncontradoException;
 import com.fafica.util.CampoObrigatorioInvalidoException;
+import com.fafica.viagem.Viagem;
 
 public class telaCadastroMotorista {
 
@@ -12,61 +14,63 @@ public class telaCadastroMotorista {
 		Fachada fachada = Fachada.getInstance();
 
 	
-       //Motorista motorista2 = new Motorista(12, "Doido", "108.", "Rua 00", "1.000,00", "99885-4894");
-	   //fachada.cadastrarMotorista(motorista2);
-		//System.out.println(motorista2);
+      // Motorista motorista = new Motorista(12, "Doido", "108.", "Rua 00", "1.000,00", "99885-4894");
+       //Viagem viagem = new Viagem (motorista, 1, "Caruaru", "900,00 ","12/12/2015");
+	   //motorista.setViagem(viagem);
+      // fachada.cadastrarMotorista(motorista);
+	   //System.out.println(motorista);
 		
 		//Motorista motorista3 = new Motorista(2, "vvv", "178.522.668-55", "Rua 88", "1.000,00", "99885-4894");
 		//fachada.cadastrarMotorista(motorista3);
 		//System.out.println(motorista3);
 		
-		
-		//ArrayList<Motorista> motoristas = fachada.listarMotorista();
-		//for(Motorista m : motoristas){
-		///	System.out.println(m);
-			//
 			
-		//}
 		
 		Motorista motorista = new Motorista(1," Victor","884.592.667-85","Rua 89","90.000,00","3714-9874");
 		//System.out.println(motorista);
 		try {
 			fachada.cadastrarMotorista(motorista);
-			System.out.println("cadastrado com sucesso");
+			//System.out.println(motorista);
 		} catch (IllegalArgumentException e2) {
 			// TODO Auto-generated catch block
-			e2.printStackTrace();
+			System.out.println(e2.getMessage());
 		} catch (MotoristaJaCadastradoException e2) {
 			// TODO Auto-generated catch block
-			e2.printStackTrace();
+			System.out.println(e2.getMessage());
 		} catch (CampoObrigatorioInvalidoException e2) {
 			// TODO Auto-generated catch block
-			e2.printStackTrace();
+			System.out.println(e2.getMessage());
 		}
 		
 		
  
-	   Motorista motorista21 = new Motorista(6, "Julio", "88888", "rua", "100", "99999-99999");
-	   fachada.cadastrarMotorista(motorista21);
+	  // Motorista motorista21 = new Motorista(6, "Julio", "88888", "rua", "100", "99999-99999");
+	   //fachada.cadastrarMotorista(motorista21);
 	
-		Motorista motorista1 = new Motorista(2," Victor","884.592.667-85","Rua 89","90.000,00","3714-9874");
-		fachada.cadastrarMotorista(motorista1);
-		//System.out.println(motorista);
-/*
+		Motorista motorista1 = new Motorista(2," João","111.564.879-45","Rua 12","900,00","9854-5696");
+		//fachada.cadastrarMotorista(motorista1);
+		//System.out.println(motorista1);
+
 		try {
 			fachada.cadastrarMotorista(motorista1);
-			System.out.println("cadastrado com sucesso");
+			//System.out.println(motorista1);
 		} catch (IllegalArgumentException e1) {
 			// TODO Auto-generated catch block
-			e1.printStackTrace();
+			System.out.println(e1.getMessage());
 		} catch (MotoristaJaCadastradoException e1) {
 			// TODO Auto-generated catch block
-			e1.printStackTrace();
+			System.out.println(e1.getMessage());
 		} catch (CampoObrigatorioInvalidoException e1) {
 			// TODO Auto-generated catch block
-			e1.printStackTrace();
+			System.out.println(e1.getMessage());
 		}
 		
+		/*
+		ArrayList<Motorista> motoristas = fachada.listarMotorista();
+		for(Motorista m : motoristas){
+			System.out.println(m);
+			
+		}
 		/*
 		try{
 			fachada.atualizarMotorista(motorista);
@@ -117,11 +121,11 @@ public class telaCadastroMotorista {
 		
 		
 		
-		//System.out.println(fachada.removerMotorista(2));
+		System.out.println(fachada.removerMotorista(1));
 		
-		System.out.println(fachada.existeMotorista(6));
+		System.out.println(fachada.existeMotorista(2));
 		
-	   System.out.println(fachada.procurarMotorista(6));
+	    System.out.println(fachada.procurarMotorista(2));
 		
 		
 		
@@ -132,7 +136,7 @@ public class telaCadastroMotorista {
 			//TODO Auto-generated catch block
 		   System.out.println(e.getMessage());
 		}
-		/*
+		
 		try {
 			System.out.println(fachada.procurarMotorista(2));
 		} catch (MotoristaNaoEncontradoException t) {

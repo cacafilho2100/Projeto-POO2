@@ -12,15 +12,13 @@ public class RepositorioViagemArrayList implements IRepositorioViagem {
 	public RepositorioViagemArrayList(){
 		
 		arrayListViagem = new ArrayList<Viagem>();
-		id = 0;	
+			
 	}
 	
 
 	public void cadastrar(Viagem viagem) throws ViagemJaCadastradaException {
 		if(!existe(viagem.getIdViagem())){
-		//viagem.setIdViagem(id);
 		arrayListViagem.add(viagem);
-	    id++;
 	    
 		}else{
 			throw new ViagemJaCadastradaException();

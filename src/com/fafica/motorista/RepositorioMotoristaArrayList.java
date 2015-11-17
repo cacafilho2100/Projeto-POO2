@@ -1,25 +1,23 @@
 package com.fafica.motorista;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class RepositorioMotoristaArrayList implements IRepositorioMotorista {
 	
 	
 	private ArrayList<Motorista> arrayListMotorista;
-	private int id;
+	
 	
 	public RepositorioMotoristaArrayList(){
-		arrayListMotorista = new ArrayList<Motorista>();
-		id = 0;
-		
+		arrayListMotorista = new ArrayList<Motorista>();		
 	}
 	 
 
 	public void cadastrar(Motorista motorista) throws MotoristaJaCadastradoException {
 		if(!existe(motorista.getIdMotorista())){
-		//motorista.setIdMotorista(id);
 		arrayListMotorista.add(motorista);
-	    id++;
+	
 		 }else{
 			throw new MotoristaJaCadastradoException(); 
 		}

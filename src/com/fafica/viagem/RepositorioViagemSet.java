@@ -1,111 +1,93 @@
 package com.fafica.viagem;
 
 import java.util.ArrayList;
-import java.util.TreeSet;
+import java.util.HashSet;
+import java.util.Set;
+
 
 
 public class RepositorioViagemSet implements IRepositorioViagem {
 	
-	private TreeSet<Viagem> arraySetViagem;
-	private int id;
+	private Set<Viagem> viagemSet;
+	
 	
 	
 	public RepositorioViagemSet(){
 		
-		 arraySetViagem = new TreeSet<Viagem>();
-		 id = 1;
-		
+		viagemSet = new HashSet<>();
 	}
-		
+	
 	public void cadastrar(Viagem viagem) throws ViagemJaCadastradaException {
-		if(existe(viagem.getIdViagem()))throw new ViagemJaCadastradaException();
-		viagem.setIdViagem(id);
-		arraySetViagem.add(viagem);
-		id++;
-	}
+		if(!existe(viagem.getIdViagem())){
+			viagemSet.add(viagem);
+	    
+		}else{
+			throw new ViagemJaCadastradaException();
+		  }
+		}
+	
 
 	
 	public void atualizar(Viagem viagem) throws ViagemNaoEncontradaException {
-		int i = getId(viagem.getIdViagem());
-		if(i == -1)throw new ViagemNaoEncontradaException();
-		arraySetViagem.add(viagem);
-		
+		if(!existe(viagem.getIdViagem())){
+			throw new ViagemNaoEncontradaException();
+		}
+		for(Viagem viagem1 : viagemSet){
+			if((viagem1.getIdViagem() == viagem1.getIdViagem())){
+				viagemSet.remove(viagem1);
+				viagemSet.add(viagem);
+			}
+		}
+	}
+
+	
+	  public boolean remover(int idViagem) throws ViagemNaoEncontradaException{
+	    for(Viagem viagem : viagemSet){
+		   if(viagem.getIdViagem() == idViagem){
+			   viagemSet.remove(viagem);
+			   System.out.println("Viagem Removida Com Sucesso");
+		       return true;		   
+		   }   
+	    }
+	    throw new ViagemNaoEncontradaException();
+		 
 	}
 	
-	public boolean remover(int idViagem) throws ViagemNaoEncontradaException  {
-		
-		
-		for (Viagem viagem : arraySetViagem) {
-			if (idViagem == viagem.getIdViagem()) {
-
-				arraySetViagem.remove(viagem);
-
-		} else {
-			throw new ViagemNaoEncontradaException();
-			}
-		}
-		return true;
-
-	 	}
-	
-
-	//public boolean remover(Integer idViagem) throws ViagemNaoEncontradaException {
-		//int i = getId(idViagem);
-		//if(i == -1);
-		//arraySetViagem.remove(i);
-		//return true;
-	//}
 
 	
-	public Viagem procurar(int idViagem) throws ViagemNaoEncontradaException {
-
-		for (Viagem viagem : arraySetViagem) {
-			if (idViagem == viagem.getIdViagem()) {
-
-				return viagem;
-
-		} else {
-			throw new ViagemNaoEncontradaException();
+	public Viagem procurar(int idViagem)throws ViagemNaoEncontradaException {
+		for(Viagem viagem : viagemSet){
+			if(viagem.getIdViagem() == idViagem){
+				return viagem;	
 			}
+	
 		}
-		return null;
+		throw new ViagemNaoEncontradaException("viagem não Encontrado");
+
+		
+	}
+
+
+	public boolean existe(int idViagem){
+		for (Viagem viagem : viagemSet) {
+			if(idViagem == viagem.getIdViagem()){
+				
+	          	return true;
+	         }
 			
+		}
+		return false;
+	
 	}
-
-	
-	public boolean existe(int idViagem) {
-		for (Viagem viagem : arraySetViagem) {
-			if (idViagem == viagem.getIdViagem()) {
-						return true;
-					}
-				}
-		
-		 		return false;		
-	}
-	
-	
-	
 
 	@Override
 	public ArrayList<Viagem> listar() {
-		ArrayList<Viagem> arrayListViagem = new ArrayList<Viagem>();
-		for (Viagem viagem : arrayListViagem) {
-			arrayListViagem.add(viagem);
-		}
-		return arrayListViagem;
-  }
 	
-	
-	private int getId(int idViagem) {
-		int aux = -1;
-		boolean aux1 = false;
-		for (int i = 0; !aux1 && (i < id); i = i + 1) {
-			if (((List<Viagem>) arraySetViagem).get(i).equals(idViagem)) {
-				aux = i;
-				aux1 = true;
-			}
-		}
-		return aux;
+		
+		return null;
 	}
 
+	
+	
+	
 }

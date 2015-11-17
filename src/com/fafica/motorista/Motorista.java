@@ -1,7 +1,10 @@
 package com.fafica.motorista;
 
-public class Motorista {
+import com.fafica.viagem.Viagem;
 
+public class Motorista {
+	
+   // private Viagem viagem;
 	private int idMotorista;
 	private String nomeMotorista;
 	private String cpfMotorista;
@@ -9,30 +12,42 @@ public class Motorista {
 	private String salarioMotorista;
 	private String telefoneMotorista;
 	
+	/*
 	public Motorista(String nomeMotorista,
 			String cpfMotorista, String enderecoMotorista,
 			String salarioMotorista, String telefoneMotorista){
 		
-		this.nomeMotorista = nomeMotorista;
-		this.cpfMotorista = cpfMotorista;
-		this.enderecoMotorista = enderecoMotorista;
-		this.salarioMotorista = salarioMotorista;
-		this.telefoneMotorista = telefoneMotorista;
+		//this.setViagem (viagem);
+		this.setNomeMotorista (nomeMotorista);
+		this.setCpfMotorista (cpfMotorista);
+		this.setEnderecoMotorista(enderecoMotorista);
+		this.setSalarioMotorista (salarioMotorista);
+		this.setTelefoneMotorista(telefoneMotorista);
 		
 	}
-	
+ */
 	public Motorista(int idMotorista, String nomeMotorista,
 			String cpfMotorista, String enderecoMotorista,
 			String salarioMotorista, String telefoneMotorista) {
 		
-		this.idMotorista = idMotorista;
-		this.nomeMotorista = nomeMotorista;
-		this.cpfMotorista = cpfMotorista;
-		this.enderecoMotorista = enderecoMotorista;
-		this.salarioMotorista = salarioMotorista;
-		this.telefoneMotorista = telefoneMotorista;
+		this.setIdMotorista (idMotorista);
+		this.setNomeMotorista (nomeMotorista);
+		this.setCpfMotorista (cpfMotorista);
+		this.setEnderecoMotorista(enderecoMotorista);
+		this.setSalarioMotorista (salarioMotorista);
+		this.setTelefoneMotorista(telefoneMotorista);
 	}
-
+	
+	/*
+	public Viagem getViagem(){
+		return viagem;
+	}
+	
+	public void setViagem(Viagem viagem){
+		this.viagem = viagem;
+	}
+    */
+	
 	public int getIdMotorista() {
 		return idMotorista;
 	}
@@ -89,5 +104,7 @@ public class Motorista {
 				+ ", salarioMotorista= " + salarioMotorista
 				+ ", telefoneMotorista= " + telefoneMotorista + "]";
 	}
+
+	
 
 }
