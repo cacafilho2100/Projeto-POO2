@@ -38,11 +38,17 @@ public class RepositorioFuncionarioArrayList implements IRepositorioFuncionario 
 
 	@Override
 	public void remover(String cpfFuncionario) throws FuncionarioNaoEncontradoException {
-		for(Funcionario funcionario : funcionarioArrayList){
-			if(funcionario.getCpfFuncionario() == cpfFuncionario){
-				funcionarioArrayList.remove(funcionario);
+		if(existe(cpfFuncionario)){
+			Funcionario funcionarioR = null;
+			for(Funcionario funcionario1 : funcionarioArrayList){
+				if(cpfFuncionario == funcionario1.getCpfFuncionario()){
+					funcionarioR = funcionario1;
+				}
+			}
+			funcionarioArrayList.remove(funcionarioR);
 			}else{ throw new FuncionarioNaoEncontradoException(); }
-		}
+				
+		
 		
 	}
 

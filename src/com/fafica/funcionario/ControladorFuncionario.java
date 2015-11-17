@@ -11,8 +11,8 @@ public class ControladorFuncionario {
 	
 	
 	public ControladorFuncionario(){
-		this.repositorioFuncionario = new RepositorioFuncionarioArrayList();
-		//this.repositorioFuncionario = new RepositorioFuncionarioMap();
+		//this.repositorioFuncionario = new RepositorioFuncionarioArrayList();
+		this.repositorioFuncionario = new RepositorioFuncionarioMap();
 		//this.repositorioFuncionario = new RepositorioFuncionarioSet();
 	}
 	

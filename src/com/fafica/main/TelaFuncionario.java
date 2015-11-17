@@ -47,16 +47,16 @@ public class TelaFuncionario {
 		} catch (CampoObrigatorioInvalidoException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
-		}
+		}*/
 		
 		try {
-			System.out.println(fachada.procurarFuncionario("754.621.443-26"));
+			System.out.println(fachada.procurarFuncionario("071.611.844-01"));
 		} catch (FuncionarioNaoEncontradoException e) {
 			// TODO Auto-generated catch block
 			System.out.println(e.getMessage());
 		}
 		
-		try {
+		/*try {
 		fachada.atualizarFuncionario(funcionario03);
 		System.out.println("Funcionario foi Atualizado");
 	} catch (FuncionarioNaoEncontradoException e) {

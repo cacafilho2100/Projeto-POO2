@@ -37,34 +37,27 @@ public class RepositorioFuncionarioMap implements IRepositorioFuncionario {
 
 	@Override
 	public void remover(String cpfFuncionario) throws FuncionarioNaoEncontradoException {
-		for(int i = 0; i < funcionarioMap.size();i++){
-			Funcionario funcionario = funcionarioMap.get(i);
-			if(cpfFuncionario == funcionario.getCpfFuncionario()){
-				funcionarioMap.remove(funcionario);
-			}else{ throw new FuncionarioNaoEncontradoException(); }
-		}
+		if(existe(cpfFuncionario)){
+			funcionarioMap.remove(cpfFuncionario);
+		}else { throw new FuncionarioNaoEncontradoException(); }
 		
 	}
 
 	@Override
 	public Funcionario procurar(String cpfFuncionario) throws FuncionarioNaoEncontradoException {
-		for(int i = 0; i < funcionarioMap.size();i++){
-			Funcionario funcionario = funcionarioMap.get(i);
-			if(cpfFuncionario == funcionario.getCpfFuncionario()){
-				return funcionario;
+		if(existe(cpfFuncionario)){
+			return funcionarioMap.get(cpfFuncionario);
 			}
-		}
+		
 		throw new FuncionarioNaoEncontradoException();
 	}
 
 	@Override
 	public boolean existe(String cpfFuncionario) {
-		for(int i = 0; i < funcionarioMap.size();i++){
-			Funcionario funcionario = funcionarioMap.get(i);
-			if(cpfFuncionario == funcionario.getCpfFuncionario()){
+			if(funcionarioMap.containsKey(cpfFuncionario)){
 				return true;
 			}
-		}
+		
 		return false;
 	}
 
