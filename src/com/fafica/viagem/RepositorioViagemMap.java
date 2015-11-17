@@ -12,7 +12,7 @@ public class RepositorioViagemMap implements IRepositorioViagem {
 	
 	public RepositorioViagemMap(){
 		
-		viagemMap = new TreeMap<Integer, Viagem>();
+		viagemMap = new HashMap<>();
 		
 		
 	}
@@ -60,15 +60,11 @@ public class RepositorioViagemMap implements IRepositorioViagem {
 
 	
 	public boolean existe(int idViagem) {
-		for (int i = 0; i < viagemMap.size(); i++) {
-			Viagem viagem = viagemMap.get(i);
-			if(idViagem == viagem.getIdViagem()){
-				
-			return true;	
-				 }
-			}
-		
-			return false;
+		if(viagemMap.containsKey(idViagem)){
+			return true;
+		}
+		return false;
+
 		}
 			
 	

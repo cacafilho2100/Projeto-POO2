@@ -32,7 +32,7 @@ public class TelaFuncionario {
 			e1.printStackTrace();
 		}
 		
-		try {
+		/*try {
 			fachada.cadastrarFuncionario(funcionario02);
 			System.out.println("cadastrado com sucesso");
 		} catch (IllegalArgumentException e1) {
@@ -71,7 +71,7 @@ public class TelaFuncionario {
 	}
 		
 		System.out.println(fachada.listarFuncionario());
-		System.out.println(fachada.existeFuncionario("071.611.844-01"));
+		System.out.println(fachada.existeFuncionario("071.611.844-01"));*/
 		
 		try {
 			fachada.remorverFuncionario("071.611.844-01");
@@ -87,7 +87,7 @@ public class TelaFuncionario {
 			e.printStackTrace();
 			
 		}
-		System.out.println(fachada.listarFuncionario());
+		//System.out.println(fachada.listarFuncionario());
 	}
 }
 
