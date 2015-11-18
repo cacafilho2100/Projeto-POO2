@@ -1,5 +1,7 @@
 package com.fafica.main;
 
+import java.util.ArrayList;
+
 import com.fafica.fachada.Fachada;
 import com.fafica.util.CampoObrigatorioInvalidoException;
 import com.fafica.viagem.Viagem;
@@ -66,6 +68,7 @@ public class telaCadastroViagem {
 		   System.out.println(e.getMessage());
 		}
 		*/
+		/*
 		try {
 			System.out.println(fachada.procurarViagem(1));
 		} catch (ViagemNaoEncontradaException t) {
@@ -94,7 +97,10 @@ public class telaCadastroViagem {
    		
     	  // System.out.println(fachada.procurarViagem(1));
     	   
-    	   //ArrayList<viagem>
+		ArrayList<Viagem> viagem = fachada.listarViagem();
+		for(Viagem v: viagem) {
+			System.out.println(v);
+		}
     	   
     	   
     	   

@@ -80,8 +80,11 @@ public class RepositorioMotoristaSet implements IRepositorioMotorista {
 	
 	
 	public ArrayList<Motorista> listar() {
-		// TODO Auto-generated method stub
-		return (ArrayList<Motorista>) motoristaSet;
+		ArrayList<Motorista> lista = new ArrayList<Motorista>();
+		for(Motorista motorista: motoristaSet){
+			lista.add(motorista);
+		}
+		return lista;
 	}
 
 	

@@ -121,11 +121,11 @@ public class telaCadastroMotorista {
 		
 		
 		
-		System.out.println(fachada.removerMotorista(1));
+		//System.out.println(fachada.removerMotorista(1));
 		
-		System.out.println(fachada.existeMotorista(2));
+		//System.out.println(fachada.existeMotorista(2));
 		
-	    System.out.println(fachada.procurarMotorista(2));
+	    //System.out.println(fachada.procurarMotorista(2));
 		
 		
 		
@@ -161,7 +161,7 @@ public class telaCadastroMotorista {
 			
 		}
 		*/
-/*
+		
 		ArrayList<Motorista> motoristas = fachada.listarMotorista();
 		for(Motorista m: motoristas) {
 			System.out.println(m);

@@ -20,6 +20,7 @@ public class RepositorioViagemSet implements IRepositorioViagem {
 	public void cadastrar(Viagem viagem) throws ViagemJaCadastradaException {
 		if(!existe(viagem.getIdViagem())){
 			viagemSet.add(viagem);
+			System.out.println("Viagem cadastrada com Sucesso!");
 	    
 		}else{
 			throw new ViagemJaCadastradaException();
@@ -82,9 +83,13 @@ public class RepositorioViagemSet implements IRepositorioViagem {
 
 	@Override
 	public ArrayList<Viagem> listar() {
-	
+	    ArrayList<Viagem> lista = new ArrayList<Viagem>();
+	      for(Viagem viagem : viagemSet){
+	    	  lista.add(viagem);
+	      }
+	    return lista;
 		
-		return null;
+		
 	}
 
 	

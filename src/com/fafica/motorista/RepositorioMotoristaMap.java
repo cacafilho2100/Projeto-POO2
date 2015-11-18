@@ -1,7 +1,9 @@
 package com.fafica.motorista;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 
 public class RepositorioMotoristaMap implements IRepositorioMotorista {
@@ -66,8 +68,19 @@ public class RepositorioMotoristaMap implements IRepositorioMotorista {
 		return false;	
 	}
 	
+	
+
+	
 	public ArrayList<Motorista> listar() {
-		
-		return null;
-	}
+		ArrayList<Motorista> lista = new ArrayList<Motorista>();
+		Set<Integer> chave = motoristaMap.keySet();
+ 		for(Integer key : chave){
+ 			lista.add(motoristaMap.get(key)); 
+	      }
+ 		return lista;
+	
+   }
+	
+	
 }
+	

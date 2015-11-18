@@ -3,6 +3,9 @@ package com.fafica.viagem;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
+
+import com.fafica.motorista.Motorista;
 
 
 public class RepositorioViagemMap implements IRepositorioViagem {
@@ -75,9 +78,13 @@ public class RepositorioViagemMap implements IRepositorioViagem {
 			
 	
 
-	
 	public ArrayList<Viagem> listar() {
 		
-		return null;
+		ArrayList<Viagem> lista = new ArrayList<Viagem>();
+		Set<Integer> chave = viagemMap.keySet();
+ 		for(Integer key : chave){
+ 			lista.add(viagemMap.get(key)); 
+	      }
+ 		return lista;
 	}
 }

@@ -170,7 +170,7 @@ public class Fachada{
 
     }
 
-   public List<Viagem> listarViagem(){
+   public ArrayList<Viagem> listarViagem(){
        
    	return controladorViagem.listar();
    }
