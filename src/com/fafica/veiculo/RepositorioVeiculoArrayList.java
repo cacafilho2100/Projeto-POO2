@@ -34,12 +34,15 @@ public class RepositorioVeiculoArrayList implements IRepositorioVeiculo {
 
 	@Override
 	public void remover(Integer idVeiculo) throws VeiculoNaoEncontradoException {
-		for(Veiculo veiculo : veiculoArrayList){
-			if(veiculo.getidVeiculo().equals(idVeiculo)){
-				veiculoArrayList.remove(veiculo);
-			}else{ throw new VeiculoNaoEncontradoException(); }
-		}
-		
+		if(existe(idVeiculo)){
+			Veiculo veiculoR = null;
+			for(Veiculo veiculo1 : veiculoArrayList){
+				if(veiculo1.getidVeiculo().equals(idVeiculo)){
+					veiculoR = veiculo1;
+				}
+			}
+			veiculoArrayList.remove(veiculoR);
+		}else { throw new VeiculoNaoEncontradoException(); }
 	}
 
 	@Override

@@ -8,7 +8,7 @@ import java.util.TreeMap;
 public class RepositorioFuncionarioMap implements IRepositorioFuncionario {
 	
 	Map<Integer, Funcionario> funcionarioMap;
-	int index;
+	Integer index;
 	
 	public RepositorioFuncionarioMap(){
 		funcionarioMap = new HashMap<Integer, Funcionario>();
@@ -40,7 +40,7 @@ public class RepositorioFuncionarioMap implements IRepositorioFuncionario {
 	public void remover(String cpfFuncionario) throws FuncionarioNaoEncontradoException {
 		for(int i = 0; i < funcionarioMap.size();i++){
 			Funcionario funcionario = funcionarioMap.get(i);	
-			if(existe(cpfFuncionario)){
+			if(funcionario.getCpfFuncionario().equals(cpfFuncionario)){
 				funcionarioMap.remove(funcionario);
 			}
 		}
@@ -51,7 +51,7 @@ public class RepositorioFuncionarioMap implements IRepositorioFuncionario {
 	public Funcionario procurar(String cpfFuncionario) throws FuncionarioNaoEncontradoException {
 		for(int i = 0; i < funcionarioMap.size();i++){
 			Funcionario funcionario = funcionarioMap.get(i);
-			if(existe(cpfFuncionario)){
+			if(funcionario.getCpfFuncionario().equals(cpfFuncionario)){
 				return funcionario;
 			}
 		}

@@ -2,6 +2,7 @@ package com.fafica.veiculo;
 
 import java.util.ArrayList;
 import java.util.Map;
+import java.util.Set;
 import java.util.TreeMap;
 
 
@@ -34,34 +35,24 @@ public class RepositorioVeiculoMap implements IRepositorioVeiculo {
 
 	@Override
 	public void remover(Integer idVeiculo) throws VeiculoNaoEncontradoException {
-		for(int i = 0; i < veiculoMap.size();i++){
-			Veiculo veiculo1 = veiculoMap.get(idVeiculo);
-			if(idVeiculo == veiculo1.getidVeiculo()){
-				veiculoMap.remove(veiculo1.getidVeiculo());
-			}else {throw new VeiculoNaoEncontradoException();}
-		}
+		if(!existe(idVeiculo)){
+			throw new VeiculoNaoEncontradoException();
+		}else { veiculoMap.remove(idVeiculo); }
 		
 	}
 
 	@Override
 	public Veiculo procurar(Integer idVeiculo) throws VeiculoNaoEncontradoException {
-		for(int i = 0;i < veiculoMap.size();i++){
-			Veiculo veiculo1 = veiculoMap.get(idVeiculo);
-			if(idVeiculo == veiculo1.getidVeiculo()){
-				return veiculoMap.get(idVeiculo);
-			}
+		if(!existe(idVeiculo)){
+			throw new VeiculoNaoEncontradoException();
 		}
-		throw new VeiculoNaoEncontradoException();
+		return veiculoMap.get(idVeiculo);
 	}
 
 	@Override
 	public boolean existe(Integer idVeiculo) {
-		for(int i = 0; i < veiculoMap.size();i++){
-			Veiculo veiculo1 = veiculoMap.get(idVeiculo);
-			if(idVeiculo == veiculo1.getidVeiculo()){
-				
-				return true;
-			}
+		if(veiculoMap.containsKey(idVeiculo)){
+			return true;
 		}
 		return false;
 	}
@@ -69,9 +60,11 @@ public class RepositorioVeiculoMap implements IRepositorioVeiculo {
 	@Override
 	public ArrayList<Veiculo> listar() {
 		ArrayList<Veiculo> veiculolist = new ArrayList<Veiculo>();
-		for(Veiculo veiculo : veiculolist){
-			veiculolist.add(veiculo);
+		Set<Integer> keys = veiculoMap.keySet();
+		for(Integer key : keys){
+			veiculolist.add(veiculoMap.get(key));
 		}
+		
 		
 		return veiculolist;
 	}

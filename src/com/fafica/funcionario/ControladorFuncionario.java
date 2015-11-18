@@ -12,8 +12,8 @@ public class ControladorFuncionario {
 	
 	public ControladorFuncionario(){
 		this.repositorioFuncionario = new RepositorioFuncionarioArrayList();
-		//this.repositorioFuncionario = new RepositorioFuncionarioMap();
-		//this.repositorioFuncionario = new RepositorioFuncionarioSet();
+		this.repositorioFuncionario = new RepositorioFuncionarioMap();
+		this.repositorioFuncionario = new RepositorioFuncionarioSet();
 	}
 	
 	public void cadastrar(Funcionario funcionario)throws IllegalArgumentException,CPFInvalidoException,FuncionarioJaCadastradoException,CampoObrigatorioInvalidoException{

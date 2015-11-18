@@ -1,15 +1,16 @@
 package com.fafica.veiculo;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.TreeSet;
 
 public class RepositorioVeiculoSet implements IRepositorioVeiculo {
 	
-	TreeSet<Veiculo> veiculoSet;
+	HashSet<Veiculo> veiculoSet;
 	
 	public RepositorioVeiculoSet(){
-		veiculoSet = new TreeSet<Veiculo>();
+		veiculoSet = new HashSet<Veiculo>();
 	}
 	
 
@@ -37,12 +38,15 @@ public class RepositorioVeiculoSet implements IRepositorioVeiculo {
 
 	@Override
 	public void remover(Integer idVeiculo)throws VeiculoNaoEncontradoException {
-		for(Veiculo veiculo : veiculoSet){
-			if(idVeiculo == veiculo.getidVeiculo()){
-				veiculoSet.remove(veiculo);
-			}else{ throw new VeiculoNaoEncontradoException(); }
-		}
-		
+		if(existe(idVeiculo)){
+			Veiculo veiculoR = null;
+			for(Veiculo veiculo1 : veiculoSet){
+				if(veiculo1.getidVeiculo().equals(idVeiculo)){
+					veiculoR = veiculo1;
+				}
+			}
+			veiculoSet.remove(veiculoR);
+		}else { throw new VeiculoNaoEncontradoException(); }
 	}
 
 	@Override

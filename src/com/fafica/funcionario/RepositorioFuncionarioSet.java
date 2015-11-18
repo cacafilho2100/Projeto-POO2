@@ -42,11 +42,16 @@ public class RepositorioFuncionarioSet implements IRepositorioFuncionario {
 
 	@Override
 	public void remover(String cpfFuncionario) throws FuncionarioNaoEncontradoException {
-		for(Funcionario funcionario : funcionarioSet){
-			if(cpfFuncionario == funcionario.getCpfFuncionario()){
-				funcionarioSet.remove(funcionario);
+		if(existe(cpfFuncionario)){
+			Funcionario funcionarioR = null;
+			for(Funcionario funcionario1 : funcionarioSet){
+				if(cpfFuncionario == funcionario1.getCpfFuncionario()){
+					funcionarioR = funcionario1;
+				}
+			}
+			funcionarioSet.remove(funcionarioR);
 			}else{ throw new FuncionarioNaoEncontradoException(); }
-		}
+				
 		
 	}
 

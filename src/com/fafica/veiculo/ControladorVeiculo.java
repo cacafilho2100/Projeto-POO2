@@ -10,6 +10,8 @@ public class ControladorVeiculo {
 	
 	public ControladorVeiculo(){
 		this.repositorioVeiculo = new RepositorioVeiculoArrayList();
+		this.repositorioVeiculo = new RepositorioVeiculoMap();
+		this.repositorioVeiculo = new RepositorioVeiculoSet();
 	}
 	
 	public void cadastrar(Veiculo veiculo) throws VeiculoJaCadastradoException, IllegalArgumentException, CampoObrigatorioInvalidoException{
