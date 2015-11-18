@@ -1,14 +1,15 @@
 package com.fafica.funcionario;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.TreeSet;
 
 public class RepositorioFuncionarioSet implements IRepositorioFuncionario {
-	TreeSet<Funcionario> funcionarioSet;
+	HashSet<Funcionario> funcionarioSet;
 	int index;
 	
 	public RepositorioFuncionarioSet (){
-		funcionarioSet = new TreeSet<Funcionario>();
+		funcionarioSet = new HashSet<Funcionario>();
 		index = 1;
 		index++;
 	}

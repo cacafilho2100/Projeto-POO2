@@ -1,6 +1,7 @@
 package com.fafica.funcionario;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -10,7 +11,7 @@ public class RepositorioFuncionarioMap implements IRepositorioFuncionario {
 	int index;
 	
 	public RepositorioFuncionarioMap(){
-		funcionarioMap = new TreeMap<Integer, Funcionario>();
+		funcionarioMap = new HashMap<Integer, Funcionario>();
 		index = 1;
 	}
 
@@ -37,27 +38,34 @@ public class RepositorioFuncionarioMap implements IRepositorioFuncionario {
 
 	@Override
 	public void remover(String cpfFuncionario) throws FuncionarioNaoEncontradoException {
-		if(existe(cpfFuncionario)){
-			funcionarioMap.remove(cpfFuncionario);
-		}else { throw new FuncionarioNaoEncontradoException(); }
-		
+		for(int i = 0; i < funcionarioMap.size();i++){
+			Funcionario funcionario = funcionarioMap.get(i);	
+			if(existe(cpfFuncionario)){
+				funcionarioMap.remove(funcionario);
+			}
+		}
+		throw new FuncionarioNaoEncontradoException();
 	}
 
 	@Override
 	public Funcionario procurar(String cpfFuncionario) throws FuncionarioNaoEncontradoException {
-		if(existe(cpfFuncionario)){
-			return funcionarioMap.get(cpfFuncionario);
+		for(int i = 0; i < funcionarioMap.size();i++){
+			Funcionario funcionario = funcionarioMap.get(i);
+			if(existe(cpfFuncionario)){
+				return funcionario;
 			}
-		
+		}
 		throw new FuncionarioNaoEncontradoException();
 	}
 
 	@Override
 	public boolean existe(String cpfFuncionario) {
-			if(funcionarioMap.containsKey(cpfFuncionario)){
+		for(int i = 0; i < funcionarioMap.size();){
+			Funcionario funcionario = funcionarioMap.get(i);
+			if(funcionarioMap.containsKey(funcionario)){
 				return true;
 			}
-		
+		}
 		return false;
 	}
 
