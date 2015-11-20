@@ -11,7 +11,7 @@ public class ControladorViagem {
 	
 	public ControladorViagem(){
 		
-		this.repositorioViagem = new RepositorioViagemMap();
+		this.repositorioViagem = new RepositorioViagemArrayList();
 		
 	}
 	

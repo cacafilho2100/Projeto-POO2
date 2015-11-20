@@ -14,11 +14,11 @@ public class telaCadastroViagem {
     	   Fachada fachada = Fachada.getInstance();
 		
     	
-    	 Viagem viagem3 = new Viagem(2 , "Recife", "300,00 ", " 01/10/2016"  );
+    	 Viagem viagem = new Viagem(1 , "Recife", "300,00 ", " 01/10/2016"  );
    		//fachada.cadastrarViagem(viagem);
    		  //System.out.println(viagem);
    		try {
-   			fachada.cadastrarViagem(viagem3);
+   			fachada.cadastrarViagem(viagem);
    			//System.out.println(" cadastrado com sucesso");
    		} catch (IllegalArgumentException e) {
    			// TODO Auto-generated catch block
@@ -32,7 +32,7 @@ public class telaCadastroViagem {
    			System.out.println(e.getMessage());
 
    		}
-   	
+   	/*
    	 Viagem viagem2 = new Viagem(1, "Caruaru", "900,00 ", " 10/12/2015"  );
 		//fachada.cadastrarViagem(viagem);
 		  //System.out.println(viagem2);
@@ -96,12 +96,12 @@ public class telaCadastroViagem {
    		
    		
     	  // System.out.println(fachada.procurarViagem(1));
-    	   
+    	/*   
 		ArrayList<Viagem> viagem = fachada.listarViagem();
 		for(Viagem v: viagem) {
 			System.out.println(v);
 		}
-    	   
+    	   */
     	   
     	   
     	 //System.out.println(fachada.procurarViagem(1));

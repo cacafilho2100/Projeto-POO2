@@ -60,7 +60,7 @@ public class Viagem {
 		this.idViagem = idViagem;
 	}
 	
-	public String data(){
+	public String getData(){
 		return data;
 	}
 	

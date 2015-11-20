@@ -72,7 +72,6 @@ public  RepositorioMotoristaIO(){
 	public void cadastrar(Motorista motorista) throws MotoristaJaCadastradoException{
 		if(!existe(motorista.getIdMotorista())){
 			armazenarMotoristas(motorista);
-			//motoristaArrayList.add(motorista);
 			//System.out.println("Motorista cadastrado");
 		}
 		throw new MotoristaJaCadastradoException();		

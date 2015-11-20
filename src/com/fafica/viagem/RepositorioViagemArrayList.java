@@ -19,6 +19,7 @@ public class RepositorioViagemArrayList implements IRepositorioViagem {
 	public void cadastrar(Viagem viagem) throws ViagemJaCadastradaException {
 		if(!existe(viagem.getIdViagem())){
 		arrayListViagem.add(viagem);
+		System.out.println("Viagem Cadastrada Com Sucesso");
 	    
 		}else{
 			throw new ViagemJaCadastradaException();
