@@ -1,5 +1,6 @@
 package com.fafica.funcionario;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import com.fafica.util.CampoObrigatorioInvalidoException;
@@ -16,7 +17,7 @@ public class ControladorFuncionario {
 		this.repositorioFuncionario = new RepositorioFuncionarioSet();
 	}
 	
-	public void cadastrar(Funcionario funcionario)throws IllegalArgumentException,CPFInvalidoException,FuncionarioJaCadastradoException,CampoObrigatorioInvalidoException{
+	public void cadastrar(Funcionario funcionario)throws IllegalArgumentException,CPFInvalidoException,FuncionarioJaCadastradoException,CampoObrigatorioInvalidoException, SQLException{
 		if(!ValidarCPF.validaCPF(funcionario.getCpfFuncionario())){ 
 			throw new CPFInvalidoException(funcionario.getCpfFuncionario());
 		}
@@ -30,7 +31,7 @@ public class ControladorFuncionario {
 		repositorioFuncionario.cadastrar(funcionario);
 	}
 	
-	public void atualizar(Funcionario funcionario) throws FuncionarioNaoEncontradoException, CPFInvalidoException, CampoObrigatorioInvalidoException{
+	public void atualizar(Funcionario funcionario) throws FuncionarioNaoEncontradoException, CPFInvalidoException, CampoObrigatorioInvalidoException, SQLException{
 		if(!ValidarCPF.validaCPF(funcionario.getCpfFuncionario())){
 			throw new CPFInvalidoException(funcionario.getCpfFuncionario());
 		}

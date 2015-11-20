@@ -1,5 +1,6 @@
 package com.fafica.fachada;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,11 +50,11 @@ public class Fachada{
 	}
 	//motodos de funcionario
 	//*******************************************************************************************************************************************************************************************************************************************************
-	public void cadastrarFuncionario(Funcionario funcionario) throws IllegalArgumentException, CPFInvalidoException, FuncionarioJaCadastradoException, CampoObrigatorioInvalidoException{
+	public void cadastrarFuncionario(Funcionario funcionario) throws IllegalArgumentException, CPFInvalidoException, FuncionarioJaCadastradoException, CampoObrigatorioInvalidoException, SQLException{
 		controladorFuncionario.cadastrar(funcionario);
 	}
 	
-	public void atualizarFuncionario(Funcionario funcionario) throws FuncionarioNaoEncontradoException, CPFInvalidoException, CampoObrigatorioInvalidoException{
+	public void atualizarFuncionario(Funcionario funcionario) throws FuncionarioNaoEncontradoException, CPFInvalidoException, CampoObrigatorioInvalidoException, SQLException{
 		controladorFuncionario.atualizar(funcionario);
 	}
 	
