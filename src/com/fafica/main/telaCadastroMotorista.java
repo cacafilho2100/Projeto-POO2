@@ -14,17 +14,19 @@ public class telaCadastroMotorista {
 		Fachada fachada = Fachada.getInstance();
 
 	
-      // Motorista motorista = new Motorista(12, "Doido", "108.", "Rua 00", "1.000,00", "99885-4894");
+      //Motorista motorista = new Motorista(12, "Doido", "108.", "Rua 00", "1.000,00", "99885-4894");
        //Viagem viagem = new Viagem (motorista, 1, "Caruaru", "900,00 ","12/12/2015");
 	   //motorista.setViagem(viagem);
       // fachada.cadastrarMotorista(motorista);
 	   //System.out.println(motorista);
 		
-		//Motorista motorista3 = new Motorista(2, "vvv", "178.522.668-55", "Rua 88", "1.000,00", "99885-4894");
-		//fachada.cadastrarMotorista(motorista3);
-		//System.out.println(motorista3);
+		///Motorista motorista = new Motorista(2, "vvv", "178.522.668-55", "Rua 88", "1.000,00", "99885-4894");
+	     //fachada.cadastrarMotorista(motorista);
+		//System.out.println(motorista);
 		
-			
+		
+
+	
 		
 		Motorista motorista = new Motorista(1," Victor","884.592.667-85","Rua 89","90.000,00","3714-9874");
 		//System.out.println(motorista);
@@ -42,7 +44,7 @@ public class telaCadastroMotorista {
 			System.out.println(e2.getMessage());
 		}
 		
-		
+		/*
  
 	  // Motorista motorista21 = new Motorista(6, "Julio", "88888", "rua", "100", "99999-99999");
 	   //fachada.cadastrarMotorista(motorista21);
@@ -160,7 +162,6 @@ public class telaCadastroMotorista {
 			e.printStackTrace();
 			
 		}
-		*/
 		
 		ArrayList<Motorista> motoristas = fachada.listarMotorista();
 		for(Motorista m: motoristas) {

@@ -12,7 +12,7 @@ public class ControladorMotorista {
 	
 	public ControladorMotorista(){
 		
-		this.repositorioMotorista = new RepositorioMotoristaMap();
+		this.repositorioMotorista = new RepositorioMotoristaIO();
 	}
 
 	public void cadastrar(Motorista motorista)throws IllegalArgumentException, MotoristaJaCadastradoException, MotoristaNaoEncontradoException, CampoObrigatorioInvalidoException {
