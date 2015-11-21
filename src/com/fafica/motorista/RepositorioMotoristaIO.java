@@ -16,7 +16,7 @@ import java.util.List;
 public class RepositorioMotoristaIO implements IRepositorioMotorista {
 	
 	
-    Path path = Paths.get("C:/Users/Dennis/git/Projeto-POO2/Files/motorista.txt");
+    Path path = Paths.get("C:/Users/Ribeiro/git/Projeto-POO2/MotoristaIO/motorista.txt");
 	Charset utf8 = StandardCharsets.UTF_8;
 	private ArrayList<Motorista> motoristaArrayList;
 

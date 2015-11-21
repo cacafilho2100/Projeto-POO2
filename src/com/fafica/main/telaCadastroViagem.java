@@ -14,9 +14,9 @@ public class telaCadastroViagem {
     	   Fachada fachada = Fachada.getInstance();
 		
     	
-    	 Viagem viagem = new Viagem(1 , "Recife", "300,00 ", " 01/10/2016"  );
-   		//fachada.cadastrarViagem(viagem);
-   		  //System.out.println(viagem);
+    	 Viagem viagem = new Viagem(12 , "Recife", "300,00 ", " 01/10/2016"  );
+   		 fachada.cadastrarViagem(viagem);
+   		/*  //System.out.println(viagem);
    		try {
    			fachada.cadastrarViagem(viagem);
    			//System.out.println(" cadastrado com sucesso");
@@ -32,7 +32,7 @@ public class telaCadastroViagem {
    			System.out.println(e.getMessage());
 
    		}
-   	/*
+  /*
    	 Viagem viagem2 = new Viagem(1, "Caruaru", "900,00 ", " 10/12/2015"  );
 		//fachada.cadastrarViagem(viagem);
 		  //System.out.println(viagem2);

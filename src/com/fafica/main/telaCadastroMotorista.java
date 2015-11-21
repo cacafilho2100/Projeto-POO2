@@ -26,7 +26,7 @@ public class telaCadastroMotorista {
 		
 		
 
-	
+	/*
 		
 		Motorista motorista = new Motorista(1," Victor","884.592.667-85","Rua 89","90.000,00","3714-9874");
 		//System.out.println(motorista);
@@ -44,11 +44,10 @@ public class telaCadastroMotorista {
 			System.out.println(e2.getMessage());
 		}
 		
-		/*
- 
+		
 	  // Motorista motorista21 = new Motorista(6, "Julio", "88888", "rua", "100", "99999-99999");
 	   //fachada.cadastrarMotorista(motorista21);
-	
+	/*
 		Motorista motorista1 = new Motorista(2," João","111.564.879-45","Rua 12","900,00","9854-5696");
 		//fachada.cadastrarMotorista(motorista1);
 		//System.out.println(motorista1);
@@ -123,7 +122,7 @@ public class telaCadastroMotorista {
 		
 		
 		
-		//System.out.println(fachada.removerMotorista(1));
+		//System.out.println(fachada.removerMotorista(2));
 		
 		//System.out.println(fachada.existeMotorista(2));
 		
