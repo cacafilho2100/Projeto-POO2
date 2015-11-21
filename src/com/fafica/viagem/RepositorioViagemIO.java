@@ -15,6 +15,8 @@ import java.util.ArrayList;
 
 public class RepositorioViagemIO implements IRepositorioViagem {
 	
+	
+
 	Path path = Paths.get("C:/Users/Ribeiro/git/Projeto-POO2/ViagemIO/viagem.txt");
 	Charset utf8 = StandardCharsets.UTF_8;
 	private ArrayList<Viagem> viagemArrayList;
@@ -77,6 +79,8 @@ public  RepositorioViagemIO(){
 	
 
 	
+	
+
 	public void atualizar(Viagem viagem) throws ViagemNaoEncontradaException {
 		viagemArrayList = recuperaDados();
 		if(existe(viagem.getIdViagem())){
