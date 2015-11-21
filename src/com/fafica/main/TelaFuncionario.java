@@ -1,5 +1,7 @@
 package com.fafica.main;
 
+import java.sql.SQLException;
+
 import com.fafica.fachada.Fachada;
 import com.fafica.funcionario.CPFInvalidoException;
 import com.fafica.funcionario.Funcionario;
@@ -9,12 +11,12 @@ import com.fafica.util.CampoObrigatorioInvalidoException;
 
 public class TelaFuncionario {
 
-	public static void main(String[] args) throws CPFInvalidoException, FuncionarioNaoEncontradoException {
+	public static void main(String[] args) throws CPFInvalidoException, FuncionarioNaoEncontradoException, ClassNotFoundException {
 		Fachada fachada = Fachada.getInstance();
 		
-		Funcionario funcionario01 = new Funcionario(81,"astoufo","rua da peda","071.611.844-01","funfun@gmail.com","1234567");
-		Funcionario funcionario02 = new Funcionario(02,"maria","fim do mundo","754.621.443-26","maria@gmail.com","32165498");
-		Funcionario funcionario03 = new Funcionario(03,"sorte","perto","754.621.443-26","sorte@hotmail.com","123456789");
+		Funcionario funcionario01 = new Funcionario("astoufo","rua da peda","071.611.844-01","funfun@gmail.com","1234567");
+		Funcionario funcionario02 = new Funcionario("maria","fim do mundo","754.621.443-26","maria@gmail.com","32165498");
+		Funcionario funcionario03 = new Funcionario("sorte","perto","754.621.443-26","sorte@hotmail.com","123456789");
 		
 		
 		try {
@@ -32,6 +34,9 @@ public class TelaFuncionario {
 		} catch (CampoObrigatorioInvalidoException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		
 		try {
@@ -49,6 +54,9 @@ public class TelaFuncionario {
 		} catch (CampoObrigatorioInvalidoException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		
 		try {
@@ -56,6 +64,9 @@ public class TelaFuncionario {
 		} catch (FuncionarioNaoEncontradoException e) {
 			// TODO Auto-generated catch block
 			System.out.println(e.getMessage());
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		
 		try {
@@ -70,10 +81,18 @@ public class TelaFuncionario {
 	} catch (CampoObrigatorioInvalidoException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
 	}
 		
-		System.out.println(fachada.listarFuncionario());
-		System.out.println(fachada.existeFuncionario("071.611.844-01"));
+		try {
+			System.out.println(fachada.listarFuncionario());
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		//System.out.println(fachada.existeFuncionario("071.611.844-01"));
 		
 		try {
 			fachada.remorverFuncionario("071.611.844-01");
@@ -88,8 +107,16 @@ public class TelaFuncionario {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		System.out.println(fachada.listarFuncionario());
+		try {
+			System.out.println(fachada.listarFuncionario());
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }
 

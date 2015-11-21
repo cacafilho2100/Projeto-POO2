@@ -55,14 +55,36 @@ public class RepositorioFuncionarioBd implements IRepositorioFuncionario {
 	}
 
 	@Override
-	public void remover(String cpfFuncionario) throws FuncionarioNaoEncontradoException {
-		// TODO Auto-generated method stub
+	public void remover(String cpfFuncionario) throws FuncionarioNaoEncontradoException, SQLException {
+		String sql = "delete from Funcionario where cpfFuncionario = ?";
+		PreparedStatement prepareStatement = conec.prepareStatement(sql);
+		
+		prepareStatement.setString(1, cpfFuncionario);
+		
+		prepareStatement.executeUpdate();
 		
 	}
 
 	@Override
-	public Funcionario procurar(String cpfFuncionario) throws FuncionarioNaoEncontradoException {
-		// TODO Auto-generated method stub
+	public Funcionario procurar(String cpfFuncionario) throws FuncionarioNaoEncontradoException, SQLException {
+		String sql = "select*from Funcionario where cpffuncionario = ?";
+		PreparedStatement prepareStatement = conec.prepareStatement(sql);
+		
+		prepareStatement.setString(1, cpfFuncionario);
+		
+		ResultSet resultSet = prepareStatement.executeQuery();
+		
+		while(resultSet.next()){
+			//int codigo = resultSet.getInt(1);
+			String cpf = resultSet.getString(2);
+			String nome = resultSet.getString(3);
+			String endereco = resultSet.getString(4);
+			String email = resultSet.getString(5);
+			String telefone = resultSet.getString(6);
+			
+			Funcionario funcionario = new Funcionario(cpf,nome,endereco,email,telefone);
+			return funcionario;
+		}
 		return null;
 	}
 
@@ -73,9 +95,26 @@ public class RepositorioFuncionarioBd implements IRepositorioFuncionario {
 	}
 
 	@Override
-	public ArrayList<Funcionario> listar() {
-		// TODO Auto-generated method stub
-		return null;
+	public ArrayList<Funcionario> listar() throws SQLException {
+		ArrayList<Funcionario> list = new ArrayList<Funcionario>();
+		
+		String sql = "select*from Funcionario";
+		PreparedStatement prepareStatement = conec.prepareStatement(sql);
+		
+		ResultSet resultSet = prepareStatement.executeQuery();
+		
+		while(resultSet.next()){
+			//int codigo = resultSet.getInt(1);
+			String cpf = resultSet.getString(2);
+			String nome = resultSet.getString(3);
+			String endereco = resultSet.getString(4);
+			String email = resultSet.getString(5);
+			String telefone = resultSet.getString(6);
+			
+			Funcionario funcionario = new Funcionario(cpf,nome,endereco,email,telefone);
+			list.add(funcionario);
+		}
+		return list;
 	}
 
 }

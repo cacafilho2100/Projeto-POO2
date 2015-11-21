@@ -11,10 +11,11 @@ public class ControladorFuncionario {
 	private IRepositorioFuncionario repositorioFuncionario;
 	
 	
-	public ControladorFuncionario(){
-		this.repositorioFuncionario = new RepositorioFuncionarioArrayList();
-		this.repositorioFuncionario = new RepositorioFuncionarioMap();
-		this.repositorioFuncionario = new RepositorioFuncionarioSet();
+	public ControladorFuncionario() throws ClassNotFoundException{
+		//this.repositorioFuncionario = new RepositorioFuncionarioArrayList();
+		//this.repositorioFuncionario = new RepositorioFuncionarioMap();
+		//this.repositorioFuncionario = new RepositorioFuncionarioSet();
+		this.repositorioFuncionario = new RepositorioFuncionarioBd();
 	}
 	
 	public void cadastrar(Funcionario funcionario)throws IllegalArgumentException,CPFInvalidoException,FuncionarioJaCadastradoException,CampoObrigatorioInvalidoException, SQLException{
@@ -45,21 +46,21 @@ public class ControladorFuncionario {
 		return repositorioFuncionario.existe(cpfFuncionario);
 	}
 	
-	public void remover (String cpfFuncionario)throws CPFInvalidoException, CampoObrigatorioInvalidoException, FuncionarioNaoEncontradoException{
+	public void remover (String cpfFuncionario)throws CPFInvalidoException, CampoObrigatorioInvalidoException, FuncionarioNaoEncontradoException, SQLException{
 
 		if(cpfFuncionario == cpfFuncionario){
 		repositorioFuncionario.remover(cpfFuncionario);
 		}else{throw new CPFInvalidoException(cpfFuncionario);}
 	}
 	
-	public Funcionario procurar(String cpfFuncionario)  throws FuncionarioNaoEncontradoException, CPFInvalidoException{
+	public Funcionario procurar(String cpfFuncionario)  throws FuncionarioNaoEncontradoException, CPFInvalidoException, SQLException{
 		if(cpfFuncionario == cpfFuncionario){
 			return repositorioFuncionario.procurar(cpfFuncionario);
 			}
 			throw new CPFInvalidoException(cpfFuncionario);
 	}
 	
-	public ArrayList<Funcionario> listar(){
+	public ArrayList<Funcionario> listar() throws SQLException{
 		return repositorioFuncionario.listar();
 	}
 	

@@ -34,7 +34,7 @@ public class Fachada{
 	private ControladorViagem controladorViagem;
 	
 	
-	private Fachada() {
+	private Fachada() throws ClassNotFoundException {
 		this.controladorFornecedor = new ControladorFornecedor();
 		this.controladorFuncionario = new ControladorFuncionario();
 		this.controladorVeiculo = new ControladorVeiculo();
@@ -42,7 +42,7 @@ public class Fachada{
 		this.controladorViagem =  new ControladorViagem();
 	}
 	
-	public static Fachada getInstance(){
+	public static Fachada getInstance() throws ClassNotFoundException{
 		if(Fachada.instance == null){
 			Fachada.instance = new Fachada();
 		}
@@ -62,16 +62,16 @@ public class Fachada{
 		return controladorFuncionario.existe(cpfFuncionario);
 	}
 	
-	public void remorverFuncionario(String cpfFuncionario) throws FuncionarioNaoEncontradoException, CPFInvalidoException, CampoObrigatorioInvalidoException{
+	public void remorverFuncionario(String cpfFuncionario) throws FuncionarioNaoEncontradoException, CPFInvalidoException, CampoObrigatorioInvalidoException, SQLException{
 		controladorFuncionario.remover(cpfFuncionario);
 		
 	}
 	
-	public Funcionario procurarFuncionario(String cpfFuncionario) throws FuncionarioNaoEncontradoException, CPFInvalidoException{
+	public Funcionario procurarFuncionario(String cpfFuncionario) throws FuncionarioNaoEncontradoException, CPFInvalidoException, SQLException{
 		return controladorFuncionario.procurar(cpfFuncionario);
 	}
 	
-	public ArrayList<Funcionario> listarFuncionario(){
+	public ArrayList<Funcionario> listarFuncionario() throws SQLException{
 		return controladorFuncionario.listar();
 	}
 	

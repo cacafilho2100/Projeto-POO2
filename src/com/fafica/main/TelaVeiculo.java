@@ -8,7 +8,7 @@ import com.fafica.veiculo.VeiculoNaoEncontradoException;
 
 public class TelaVeiculo {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ClassNotFoundException {
 		Fachada fachada = Fachada.getInstance();
 		
 		Veiculo veiculo1 = new Veiculo(01,20,"onibus","kha-2100","123456","Amarelo",2000);

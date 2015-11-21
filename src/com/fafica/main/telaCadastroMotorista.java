@@ -10,7 +10,7 @@ import com.fafica.viagem.Viagem;
 
 public class telaCadastroMotorista {
 
-	public static void main(String[] args)throws MotoristaJaCadastradoException, MotoristaNaoEncontradoException, CampoObrigatorioInvalidoException {
+	public static void main(String[] args)throws MotoristaJaCadastradoException, MotoristaNaoEncontradoException, CampoObrigatorioInvalidoException, ClassNotFoundException {
 		Fachada fachada = Fachada.getInstance();
 
 	
