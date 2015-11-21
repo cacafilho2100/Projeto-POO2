@@ -16,8 +16,7 @@ import java.util.List;
 public class RepositorioMotoristaIO implements IRepositorioMotorista {
 	
 	
-	
-    Path path = Paths.get("C:/Users/Ribeiro/git/Projeto-POO2/Files/motorista.txt");
+    Path path = Paths.get("C:/Users/Dennis/git/Projeto-POO2/Files/motorista.txt");
 	Charset utf8 = StandardCharsets.UTF_8;
 	private ArrayList<Motorista> motoristaArrayList;
 
@@ -31,9 +30,9 @@ public  RepositorioMotoristaIO(){
 	public void armazenarMotoristas(Motorista motorista){
 		try( BufferedWriter writer = Files.newBufferedWriter(path, utf8, StandardOpenOption.APPEND)){
 				writer.write(motorista.getIdMotorista() + ";" + motorista.getNomeMotorista() + ";" + motorista.getCpfMotorista() + ";" 
-			+ motorista.getEnderecoMotorista() + ";" + motorista.getEnderecoMotorista() + ";" + motorista.getTelefoneMotorista()); 
+			+ motorista.getEnderecoMotorista() + ";" + motorista.getEnderecoMotorista() + ";" + motorista.getTelefoneMotorista()+"\r\n"); 
 		 }catch(IOException e){
-			 System.out.println("Erro IOException "); 
+			 e.printStackTrace(); 
 		 }			
 	}
 	
@@ -42,7 +41,7 @@ public  RepositorioMotoristaIO(){
 		try(BufferedWriter writer = Files.newBufferedWriter(path, utf8) ){
 			for(Motorista motorista :motoristaArrayList){
 				writer.write(motorista.getIdMotorista() + ";" + motorista.getNomeMotorista() + ";" + motorista.getCpfMotorista() + ";" 
-						+ motorista.getEnderecoMotorista() + ";" + motorista.getEnderecoMotorista() + ";" + motorista.getTelefoneMotorista());
+						+ motorista.getEnderecoMotorista() + ";" + motorista.getEnderecoMotorista() + ";" + motorista.getTelefoneMotorista()+"\r\n");
 			  }	
 			}catch(IOException e){
 				System.out.println("Erro IOException ");
@@ -72,9 +71,8 @@ public  RepositorioMotoristaIO(){
 	public void cadastrar(Motorista motorista) throws MotoristaJaCadastradoException{
 		if(!existe(motorista.getIdMotorista())){
 			armazenarMotoristas(motorista);
-			//System.out.println("Motorista cadastrado");
-		}
-		throw new MotoristaJaCadastradoException();		
+			System.out.println("Motorista cadastrado");
+		}else	throw new MotoristaJaCadastradoException();		
 	}
 		
 	
