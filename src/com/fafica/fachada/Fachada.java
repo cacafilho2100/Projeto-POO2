@@ -78,11 +78,11 @@ public class Fachada{
 	//metodos Veiculos
 	//******************************************************************************************************************************
 	
-	public void cadastrarVeiculo(Veiculo veiculo) throws VeiculoJaCadastradoException, IllegalArgumentException, CampoObrigatorioInvalidoException{
+	public void cadastrarVeiculo(Veiculo veiculo) throws VeiculoJaCadastradoException, IllegalArgumentException, CampoObrigatorioInvalidoException, SQLException{
 		controladorVeiculo.cadastrar(veiculo);
 	}
 	
-	public void atualizarVeiculo(Veiculo veiculo) throws VeiculoNaoEncontradoException, CampoObrigatorioInvalidoException{
+	public void atualizarVeiculo(Veiculo veiculo) throws VeiculoNaoEncontradoException, CampoObrigatorioInvalidoException, SQLException{
 		controladorVeiculo.atualizar(veiculo);
 	}
 	
@@ -90,15 +90,15 @@ public class Fachada{
 		return controladorVeiculo.existe(idVeiculo);
 	}
 	
-	public void removerVeiculo(Integer idVeiculo) throws VeiculoNaoEncontradoException{
+	public void removerVeiculo(Integer idVeiculo) throws VeiculoNaoEncontradoException, SQLException{
 		controladorVeiculo.remover(idVeiculo);
 	}
 	
-	public Veiculo procurarVeiculo(Integer idVeiculo) throws VeiculoNaoEncontradoException{
+	public Veiculo procurarVeiculo(Integer idVeiculo) throws VeiculoNaoEncontradoException, SQLException{
 		return controladorVeiculo.procurar(idVeiculo);
 	}
 	
-	public ArrayList<Veiculo> listarVeiculo(){
+	public ArrayList<Veiculo> listarVeiculo() throws SQLException{
 		return controladorVeiculo.listar();
 	}
 	

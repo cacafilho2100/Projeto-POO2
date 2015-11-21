@@ -1,5 +1,7 @@
 package com.fafica.main;
 
+import java.sql.SQLException;
+
 import com.fafica.fachada.Fachada;
 import com.fafica.util.CampoObrigatorioInvalidoException;
 import com.fafica.veiculo.Veiculo;
@@ -27,6 +29,9 @@ public class TelaVeiculo {
 		} catch (CampoObrigatorioInvalidoException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		
 		try {
@@ -36,6 +41,9 @@ public class TelaVeiculo {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (CampoObrigatorioInvalidoException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -52,6 +60,9 @@ public class TelaVeiculo {
 		} catch (CampoObrigatorioInvalidoException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		
 		System.out.println(fachada.existeVeiculo(03));
@@ -62,6 +73,9 @@ public class TelaVeiculo {
 		} catch (VeiculoNaoEncontradoException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		
 		try {
@@ -69,9 +83,17 @@ public class TelaVeiculo {
 		} catch (VeiculoNaoEncontradoException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		
-		System.out.println(fachada.listarVeiculo());
+		try {
+			System.out.println(fachada.listarVeiculo());
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	
 		
