@@ -15,9 +15,7 @@ import java.util.ArrayList;
 
 public class RepositorioViagemIO implements IRepositorioViagem {
 	
-	
-
-	Path path = Paths.get("C:/Users/Ribeiro/git/Projeto-POO2/ViagemIO/viagem.txt");
+	Path path = Paths.get("C:/Users/Ribeiro/Desktop/Projeto-POO2Mars/ViagemIO/viagem.txt");
 	Charset utf8 = StandardCharsets.UTF_8;
 	private ArrayList<Viagem> viagemArrayList;
 
@@ -29,7 +27,7 @@ public  RepositorioViagemIO(){
 	}
 	
 	public void armazenarViagem(Viagem viagem){
-		try( BufferedWriter writer = Files.newBufferedWriter(path, utf8, StandardOpenOption.APPEND)){
+		try( BufferedWriter writer = Files.newBufferedWriter(path, utf8)){
 				writer.write(viagem.getIdViagem() + ";" + viagem.getDestino()+ ";" + viagem.getCusto() + ";" 
 			+ viagem.getData() +"\r\n"); 
 		 }catch(IOException e){
