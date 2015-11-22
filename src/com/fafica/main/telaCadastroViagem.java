@@ -32,8 +32,8 @@ public class telaCadastroViagem {
    			System.out.println(e.getMessage());
 
    		}
-  /*
-   	 Viagem viagem2 = new Viagem(1, "Caruaru", "900,00 ", " 10/12/2015"  );
+  
+   	 Viagem viagem2 = new Viagem(2, "Caruaru", "900,00 ", " 10/12/2015"  );
 		//fachada.cadastrarViagem(viagem);
 		  //System.out.println(viagem2);
 		try {
@@ -89,7 +89,8 @@ public class telaCadastroViagem {
     	   System.out.println(viagem3);
     	   */
     	
-    	   //System.out.println(fachada.removerViagem(1));
+    	  //System.out.println(fachada.removerViagem(1));
+    	  //System.out.println(fachada.removerViagem(2));
    		
    		
     	  // System.out.println(fachada.existeViagem(1));
