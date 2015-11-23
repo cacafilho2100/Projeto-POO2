@@ -84,7 +84,7 @@ public class TelaFuncionario {
 		System.out.println("Funcionario foi Atualizado");
 	} catch (FuncionarioNaoEncontradoException e) {
 		// TODO Auto-generated catch block
-		e.printStackTrace();
+		e.getMessage();
 	} catch (CPFInvalidoException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
@@ -96,14 +96,14 @@ public class TelaFuncionario {
 		e.printStackTrace();
 	} catch (IOException e) {
 		// TODO Auto-generated catch block
-		e.printStackTrace();
+		e.getMessage();
 	}
 		
 		try {
 			System.out.println(fachada.listarFuncionario());
 		} catch (SQLException e1) {
 			// TODO Auto-generated catch block
-			e1.printStackTrace();
+			e1.getMessage();
 		}
 		//System.out.println(fachada.existeFuncionario("071.611.844-01"));
 		
@@ -118,14 +118,14 @@ public class TelaFuncionario {
 			e.printStackTrace();
 		} catch (FuncionarioNaoEncontradoException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			e.getMessage();
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			e.getMessage();
 		}
 		try {
 			System.out.println(fachada.listarFuncionario());

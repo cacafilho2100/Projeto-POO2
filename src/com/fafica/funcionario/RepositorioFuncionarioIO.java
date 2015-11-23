@@ -12,12 +12,11 @@ import java.nio.file.StandardOpenOption;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import com.fafica.motorista.Motorista;
-import com.fafica.motorista.MotoristaNaoEncontradoException;
+
 
 public class RepositorioFuncionarioIO implements IRepositorioFuncionario {
 	
-	Path path = Paths.get("c:/Users/Cristiano/git/Projeto-POO2/FuncionarioIO/Funcionario.txt");
+	Path path = Paths.get("C:/Users/Cristiano/git/Projeto-POO2/FuncionarioIO/Funcionario.txt");
 	Charset utf8 = StandardCharsets.UTF_8;
 	private ArrayList<Funcionario> list;
 	private Integer index;
@@ -29,7 +28,7 @@ public class RepositorioFuncionarioIO implements IRepositorioFuncionario {
 	}
 	
 	public void armazenarFuncionario(Funcionario funcionario) throws IOException{
-		try(BufferedWriter escrever = Files.newBufferedWriter(path,utf8,StandardOpenOption.APPEND)){
+		try(BufferedWriter escrever = Files.newBufferedWriter(path,utf8)){
 			escrever.write(funcionario.getIdFuncionario()+ ";" +funcionario.getCpfFuncionario()+ ";" +funcionario.getEnderecoFuncionario()+ ";" +funcionario.getNomeFuncionario()+ ";"
 							+funcionario.getEmailFuncionario()+ ";" +funcionario.getTelefoneFuncionario());
 		}catch(IOException e){

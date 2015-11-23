@@ -20,7 +20,19 @@ public class Veiculo {
 		this.setAno(ano);
 	}
 	
+	public Veiculo(String modelo, String placa, String chassi, String cor){
+		this.setModelo(modelo);
+		this.setPlaca(placa);
+		this.setChassi(chassi);
+		this.setCor(cor);
+	}
 	
+	
+	public Veiculo(int parseInt, String string, String modelo2, String placa2, String chassi2, String cor2,
+			String string2) {
+		// TODO Auto-generated constructor stub
+	}
+
 	public void setIdVeiculo(Integer idVeiculo){
 		this.idVeiculo = idVeiculo;
 	}
