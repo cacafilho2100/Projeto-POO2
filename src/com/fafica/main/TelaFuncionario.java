@@ -43,7 +43,7 @@ public class TelaFuncionario {
 			e.printStackTrace();
 		}
 		
-		try {
+		/*try {
 			fachada.cadastrarFuncionario(funcionario02);
 			System.out.println("cadastrado com sucesso");
 		} catch (IllegalArgumentException e1) {
@@ -132,7 +132,7 @@ public class TelaFuncionario {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}*/
 	}
 }
 
