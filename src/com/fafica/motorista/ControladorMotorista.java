@@ -15,7 +15,7 @@ public class ControladorMotorista {
 	
 	public ControladorMotorista(){
 		
-		this.repositorioMotorista = new RepositorioMotoristaIO();
+		this.repositorioMotorista = new RepositorioMotoristaArrayList();
 	}
 
 	public void cadastrar(Motorista motorista)throws IllegalArgumentException, MotoristaJaCadastradoException, MotoristaNaoEncontradoException, CampoObrigatorioInvalidoException, SQLException{
