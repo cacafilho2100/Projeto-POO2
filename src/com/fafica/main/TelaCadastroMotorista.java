@@ -208,7 +208,6 @@ public class TelaCadastroMotorista {
 		table = new JTable();
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
-				{null, null, null, null, null, null},
 			},
 			new String[] {
 				"Id Motorista", "Nome", "CPF", "Endereco", "Salario", "Telefone"

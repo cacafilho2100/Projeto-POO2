@@ -12,7 +12,7 @@ public class ControladorViagem {
 	
 	public ControladorViagem(){
 		
-		this.repositorioViagem = new RepositorioViagemIO();
+		this.repositorioViagem = new RepositorioViagemArrayList();
 		
 	}
 	

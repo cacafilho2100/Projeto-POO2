@@ -177,6 +177,11 @@ public class TelaCadastroViagem {
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
 				{null, null, null, null},
+				{null, null, null, null},
+				{null, null, null, null},
+				{null, null, null, null},
+				{null, null, null, null},
+				{null, null, null, null},
 			},
 			new String[] {
 				"Id Viagem", "Destino", "Custo", "Data"
@@ -253,13 +258,13 @@ public class TelaCadastroViagem {
 	}
 	
 	
-	private void limparTabelaViavem() {
+	private void limparTabelaViagem() {
 		defaultTableModelViagem.setNumRows(0);
 	}
 	
 	
 	private void listar() throws SQLException{
-		limparTabelaViavem();
+		this.limparTabelaViagem();
 		ArrayList<Viagem> viagens = fachada.listarViagem();
 		for(Viagem viagem : viagens){
 			Vector vector = new Vector();
