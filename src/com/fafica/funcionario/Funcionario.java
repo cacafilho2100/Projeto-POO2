@@ -9,7 +9,7 @@ public class Funcionario {
 	private String emailFuncionario;
 	private String telefoneFuncionario;
 	
-	public Funcionario(String nomeFuncionario, String enderecoFuncionario, String cpfFuncionario, String emailFncionario, String telefoneFuncionario){
+	public Funcionario(String nomeFuncionario, String enderecoFuncionario, String cpfFuncionario, String emailFuncionario, String telefoneFuncionario){
 	
 		this.setTelefoneFuncionario(telefoneFuncionario);
 		this.setNomeFuncionario(nomeFuncionario);
@@ -19,7 +19,7 @@ public class Funcionario {
 		
 	}
 	
-	public Funcionario(Integer idFuncionario, String nomeFuncionario, String enderecoFuncionario, String cpfFuncionario, String emailFncionario, String telefoneFuncionario){
+	public Funcionario(Integer idFuncionario, String nomeFuncionario, String enderecoFuncionario, String cpfFuncionario, String emailFuncionario, String telefoneFuncionario){
 		
 		this.setIdFuncionario(idFuncionario);
 		this.setTelefoneFuncionario(telefoneFuncionario);

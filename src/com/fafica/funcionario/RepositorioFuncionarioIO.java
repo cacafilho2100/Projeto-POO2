@@ -29,21 +29,23 @@ public class RepositorioFuncionarioIO implements IRepositorioFuncionario {
 	
 	public void armazenarFuncionario(Funcionario funcionario) throws IOException{
 		try(BufferedWriter escrever = Files.newBufferedWriter(path,utf8)){
-			escrever.write(funcionario.getIdFuncionario()+ ";" +funcionario.getCpfFuncionario()+ ";" +funcionario.getEnderecoFuncionario()+ ";" +funcionario.getNomeFuncionario()+ ";"
+			escrever.write(funcionario.getIdFuncionario()+ ";" +funcionario.getNomeFuncionario()+ ";" +funcionario.getEnderecoFuncionario()+ ";" +funcionario.getCpfFuncionario()+ ";"
 							+funcionario.getEmailFuncionario()+ ";" +funcionario.getTelefoneFuncionario());
 		}catch(IOException e){
 			e.printStackTrace();
+			//System.out.println("Erro");
 		}
 	}
 	
 	public void armazenarFuncionarioArray(ArrayList<Funcionario> list) throws IOException{
 		try(BufferedWriter escrever = Files.newBufferedWriter(path, utf8)){
 			for(Funcionario funcionario : list){
-				escrever.write(funcionario.getIdFuncionario()+ ";" +funcionario.getCpfFuncionario()+ ";" +funcionario.getEnderecoFuncionario()+ ";" +funcionario.getNomeFuncionario()+ ";"
+				escrever.write(funcionario.getIdFuncionario()+ ";" +funcionario.getNomeFuncionario()+ ";" +funcionario.getEnderecoFuncionario()+ ";" +funcionario.getCpfFuncionario()+ ";"
 								+funcionario.getEmailFuncionario()+ ";" +funcionario.getTelefoneFuncionario());
 			}
 		}catch(IOException e){
-			e.printStackTrace();
+			e.printStackTrace(); 
+			//System.out.println("Erro");
 		}
 	}
 	
@@ -67,6 +69,7 @@ public class RepositorioFuncionarioIO implements IRepositorioFuncionario {
 		if(!existe(funcionario.getCpfFuncionario())){
 			funcionario.setIdFuncionario(index);
 			armazenarFuncionario(funcionario);
+			index++;
 		}else{throw new FuncionarioJaCadastradoException();}
 		
 	}
@@ -84,8 +87,8 @@ public class RepositorioFuncionarioIO implements IRepositorioFuncionario {
 			list.remove(funcionarionulo);
 			list.add(funcionario);
 			armazenarFuncionarioArray(list);
-		}
-		throw new FuncionarioNaoEncontradoException();
+			System.out.println("foi atualizado com sucesso");
+		}else{throw new FuncionarioNaoEncontradoException();}
 		
 	}
 
@@ -95,16 +98,15 @@ public class RepositorioFuncionarioIO implements IRepositorioFuncionario {
 		if(existe(cpfFuncionario)){
 			Funcionario funcionarioRemover = null;
 			for(Funcionario funcionario1 : list){
-		if(funcionario1.getCpfFuncionario() == cpfFuncionario){
-			funcionarioRemover = funcionario1;
+				if(funcionario1.getCpfFuncionario() == cpfFuncionario){
+					funcionarioRemover = funcionario1;
 		  }
 		}
 			list.remove(funcionarioRemover);
 			armazenarFuncionarioArray(list);
-			
+			System.out.println("foi removido com sucesso");
 		
-	 }
-		throw new FuncionarioNaoEncontradoException();
+	 }else{throw new FuncionarioNaoEncontradoException();}
 		
 	}
 
@@ -115,9 +117,9 @@ public class RepositorioFuncionarioIO implements IRepositorioFuncionario {
 		}
 		list = recuperandoDados();
 		Funcionario funcionariopro = null;
-		for(Funcionario funcionario1 : list){
-			if(funcionario1.getCpfFuncionario() == cpfFuncionario){
-				funcionariopro = funcionario1;
+		for(Funcionario funcionariobus : list){
+			if(funcionariobus.getCpfFuncionario() == cpfFuncionario){
+				funcionariopro = funcionariobus;
 			}
 		}
 		return funcionariopro;
