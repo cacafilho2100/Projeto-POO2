@@ -176,12 +176,7 @@ public class TelaCadastroViagem {
 		table = new JTable();
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
+				
 			},
 			new String[] {
 				"Id Viagem", "Destino", "Custo", "Data"

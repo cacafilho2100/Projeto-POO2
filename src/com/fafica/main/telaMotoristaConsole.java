@@ -123,7 +123,7 @@ public class telaMotoristaConsole {
 		
 		
 		
-		//System.out.println(fachada.removerMotorista(2));
+		//System.out.println(fachada.removerMotorista(1));
 		
 		//System.out.println(fachada.existeMotorista(2));
 		

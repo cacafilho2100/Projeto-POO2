@@ -15,14 +15,14 @@ public class ControladorMotorista {
 	
 	public ControladorMotorista(){
 		
-		this.repositorioMotorista = new RepositorioMotoristaArrayList();
+		this.repositorioMotorista = new RepositorioMotoristaIO();
 	}
 
 	public void cadastrar(Motorista motorista)throws IllegalArgumentException, MotoristaJaCadastradoException, MotoristaNaoEncontradoException, CampoObrigatorioInvalidoException, SQLException{
 		
 
 		//Validar As Informações de Motorista
-		//if(motorista.getIdMotorista() == motorista.getIdMotorista())throw new MotoristaJaCadastradoException();
+		
 		if(motorista == null){  
 			throw new IllegalArgumentException("Motorista Invalido");
 			
@@ -41,8 +41,6 @@ public class ControladorMotorista {
 	
 	public void atualizar(Motorista motorista)throws  MotoristaJaCadastradoException, MotoristaNaoEncontradoException, CampoObrigatorioInvalidoException, SQLException {
 		
-		//Validar As Informações de Motorista
-		//if (motorista.getNomeMotorista().equals("")) throw new CampoObrigatorioInvalidoException("Nome é nulo ou Inválido.");
 		
 		//Atualização do Motorista
 		repositorioMotorista.atualizar(motorista);
@@ -50,16 +48,15 @@ public class ControladorMotorista {
 	}
 	
 	public boolean remover(int idMotorista)throws  MotoristaJaCadastradoException, MotoristaNaoEncontradoException, CampoObrigatorioInvalidoException, SQLException {
-		//Motorista motorista = null;
 		
-		//idMotorista.idMotorista = null;
-		//motorista = procurar(idMotorista);
+		
+		
 		if(idMotorista == idMotorista){
 		return repositorioMotorista.remover(idMotorista);
 		
 		}
 		//Removendo Motorista
-	  //return repositorioMotorista.remover(idMotorista);
+	  
 		return false;
 		
 	}
@@ -67,7 +64,7 @@ public class ControladorMotorista {
 	public Motorista procurar(int idMotorista)throws  MotoristaJaCadastradoException, MotoristaNaoEncontradoException, CampoObrigatorioInvalidoException, SQLException{
 		//Motorista motorista = null;
 		
-		//motorista = this.repositorioMotorista.procurar(idMotorista);
+		
 		return repositorioMotorista.procurar(idMotorista);
 	}
 	
@@ -79,7 +76,7 @@ public class ControladorMotorista {
 	
 	public ArrayList<Motorista> listar() throws SQLException{
 		
-		//ArrayList<Motorista> motoristas = null;
+		
 	    return repositorioMotorista.listar();
    
 		
