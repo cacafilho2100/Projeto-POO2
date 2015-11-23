@@ -182,6 +182,8 @@ public class TelaCadastroViagem {
 				"Id Viagem", "Destino", "Custo", "Data"
 			}
 		));
+		table.getColumnModel().getColumn(1).setPreferredWidth(474);
+		defaultTableModelViagem = (DefaultTableModel) table.getModel();
 		scrollPane.setViewportView(table);
 		
 		JButton btnNewButton = new JButton("Listar Viagens");
