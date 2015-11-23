@@ -79,27 +79,27 @@ public class Fachada{
 	//metodos Veiculos
 	//******************************************************************************************************************************
 	
-	public void cadastrarVeiculo(Veiculo veiculo) throws VeiculoJaCadastradoException, IllegalArgumentException, CampoObrigatorioInvalidoException, SQLException{
+	public void cadastrarVeiculo(Veiculo veiculo) throws VeiculoJaCadastradoException, IllegalArgumentException, CampoObrigatorioInvalidoException, SQLException, IOException{
 		controladorVeiculo.cadastrar(veiculo);
 	}
 	
-	public void atualizarVeiculo(Veiculo veiculo) throws VeiculoNaoEncontradoException, CampoObrigatorioInvalidoException, SQLException{
+	public void atualizarVeiculo(Veiculo veiculo) throws VeiculoNaoEncontradoException, CampoObrigatorioInvalidoException, SQLException, IOException{
 		controladorVeiculo.atualizar(veiculo);
 	}
 	
-	public Boolean existeVeiculo(Integer idVeiculo){
+	public Boolean existeVeiculo(Integer idVeiculo) throws IOException{
 		return controladorVeiculo.existe(idVeiculo);
 	}
 	
-	public void removerVeiculo(Integer idVeiculo) throws VeiculoNaoEncontradoException, SQLException{
+	public void removerVeiculo(Integer idVeiculo) throws VeiculoNaoEncontradoException, SQLException, IOException{
 		controladorVeiculo.remover(idVeiculo);
 	}
 	
-	public Veiculo procurarVeiculo(Integer idVeiculo) throws VeiculoNaoEncontradoException, SQLException{
+	public Veiculo procurarVeiculo(Integer idVeiculo) throws VeiculoNaoEncontradoException, SQLException, IOException{
 		return controladorVeiculo.procurar(idVeiculo);
 	}
 	
-	public ArrayList<Veiculo> listarVeiculo() throws SQLException{
+	public ArrayList<Veiculo> listarVeiculo() throws SQLException, IOException{
 		return controladorVeiculo.listar();
 	}
 	

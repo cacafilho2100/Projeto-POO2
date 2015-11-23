@@ -1,5 +1,6 @@
 package com.fafica.veiculo;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -16,7 +17,7 @@ public class ControladorVeiculo {
 		this.repositorioVeiculo = new RepositorioVeiculoBd();
 	}
 	
-	public void cadastrar(Veiculo veiculo) throws VeiculoJaCadastradoException, IllegalArgumentException, CampoObrigatorioInvalidoException, SQLException{
+	public void cadastrar(Veiculo veiculo) throws VeiculoJaCadastradoException, IllegalArgumentException, CampoObrigatorioInvalidoException, SQLException, IOException{
 		if(veiculo == null){
 			throw new IllegalArgumentException();
 		}
@@ -26,28 +27,28 @@ public class ControladorVeiculo {
 		repositorioVeiculo.cadastrar(veiculo);
 	}
 	
-	public void atualizar(Veiculo veiculo) throws VeiculoNaoEncontradoException, CampoObrigatorioInvalidoException, SQLException{
+	public void atualizar(Veiculo veiculo) throws VeiculoNaoEncontradoException, CampoObrigatorioInvalidoException, SQLException, IOException{
 		if(veiculo.getidVeiculo().equals(" ")){
 			throw new CampoObrigatorioInvalidoException();
 		}
 		repositorioVeiculo.atualizar(veiculo);
 	}
 	
-	public Boolean existe(Integer idVeiculo){
+	public Boolean existe(Integer idVeiculo) throws IOException{
 		return repositorioVeiculo.existe(idVeiculo);
 	}
 	
-	public void remover(Integer idVeiculo) throws VeiculoNaoEncontradoException, SQLException{
+	public void remover(Integer idVeiculo) throws VeiculoNaoEncontradoException, SQLException, IOException{
 		if(idVeiculo == idVeiculo){
 			repositorioVeiculo.remover(idVeiculo);
 		}
 	}
 	
-	public Veiculo procurar(Integer idVeiculo) throws VeiculoNaoEncontradoException, SQLException{
+	public Veiculo procurar(Integer idVeiculo) throws VeiculoNaoEncontradoException, SQLException, IOException{
 		return repositorioVeiculo.procurar(idVeiculo);
 	}
 	
-	public ArrayList<Veiculo> listar() throws SQLException{
+	public ArrayList<Veiculo> listar() throws SQLException, IOException{
 		return repositorioVeiculo.listar();
 	}
 

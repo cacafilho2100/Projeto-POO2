@@ -28,7 +28,7 @@ public class RepositorioFuncionarioIO implements IRepositorioFuncionario {
 	}
 	
 	public void armazenarFuncionario(Funcionario funcionario) throws IOException{
-		try(BufferedWriter escrever = Files.newBufferedWriter(path,utf8)){
+		try(BufferedWriter escrever = Files.newBufferedWriter(path,utf8,StandardOpenOption.APPEND)){
 			escrever.write(funcionario.getIdFuncionario()+ ";" +funcionario.getNomeFuncionario()+ ";" +funcionario.getEnderecoFuncionario()+ ";" +funcionario.getCpfFuncionario()+ ";"
 							+funcionario.getEmailFuncionario()+ ";" +funcionario.getTelefoneFuncionario());
 		}catch(IOException e){
