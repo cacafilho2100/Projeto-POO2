@@ -9,10 +9,10 @@ import javax.swing.JOptionPane;
 public class ConexaoBanco {
 	
 	
-	public static Connection conexaoBanco() throws ClassNotFoundException {
+	public static Connection conexaoBanco() throws ClassNotFoundException,SQLException {
 		try{
 			Class.forName("org.postgresql.Driver");
-			Connection connec = DriverManager.getConnection("jdbc:postegresql://localhost:5432/bdVlacTurismo","postgres","system");
+			Connection connec = DriverManager.getConnection("jdbc:postegresql://localhost:5432/postgres","postgres","system");
 			return connec;
 		}
 		catch(SQLException erro){

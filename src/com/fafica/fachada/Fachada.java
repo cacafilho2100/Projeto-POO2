@@ -1,5 +1,6 @@
 package com.fafica.fachada;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +35,7 @@ public class Fachada{
 	private ControladorViagem controladorViagem;
 	
 	
-	private Fachada() throws ClassNotFoundException {
+	private Fachada() throws ClassNotFoundException, SQLException {
 		this.controladorFornecedor = new ControladorFornecedor();
 		this.controladorFuncionario = new ControladorFuncionario();
 		this.controladorVeiculo = new ControladorVeiculo();
@@ -42,7 +43,7 @@ public class Fachada{
 		this.controladorViagem =  new ControladorViagem();
 	}
 	
-	public static Fachada getInstance() throws ClassNotFoundException{
+	public static Fachada getInstance() throws ClassNotFoundException, SQLException{
 		if(Fachada.instance == null){
 			Fachada.instance = new Fachada();
 		}
@@ -50,28 +51,28 @@ public class Fachada{
 	}
 	//motodos de funcionario
 	//*******************************************************************************************************************************************************************************************************************************************************
-	public void cadastrarFuncionario(Funcionario funcionario) throws IllegalArgumentException, CPFInvalidoException, FuncionarioJaCadastradoException, CampoObrigatorioInvalidoException, SQLException{
+	public void cadastrarFuncionario(Funcionario funcionario) throws IllegalArgumentException, CPFInvalidoException, FuncionarioJaCadastradoException, CampoObrigatorioInvalidoException, SQLException, IOException, FuncionarioNaoEncontradoException{
 		controladorFuncionario.cadastrar(funcionario);
 	}
 	
-	public void atualizarFuncionario(Funcionario funcionario) throws FuncionarioNaoEncontradoException, CPFInvalidoException, CampoObrigatorioInvalidoException, SQLException{
+	public void atualizarFuncionario(Funcionario funcionario) throws FuncionarioNaoEncontradoException, CPFInvalidoException, CampoObrigatorioInvalidoException, SQLException, IOException{
 		controladorFuncionario.atualizar(funcionario);
 	}
 	
-	public Boolean existeFuncionario(String cpfFuncionario) throws FuncionarioNaoEncontradoException{
+	public Boolean existeFuncionario(String cpfFuncionario) throws FuncionarioNaoEncontradoException, IOException{
 		return controladorFuncionario.existe(cpfFuncionario);
 	}
 	
-	public void remorverFuncionario(String cpfFuncionario) throws FuncionarioNaoEncontradoException, CPFInvalidoException, CampoObrigatorioInvalidoException, SQLException{
+	public void remorverFuncionario(String cpfFuncionario) throws FuncionarioNaoEncontradoException, CPFInvalidoException, CampoObrigatorioInvalidoException, SQLException, IOException{
 		controladorFuncionario.remover(cpfFuncionario);
 		
 	}
 	
-	public Funcionario procurarFuncionario(String cpfFuncionario) throws FuncionarioNaoEncontradoException, CPFInvalidoException, SQLException{
+	public Funcionario procurarFuncionario(String cpfFuncionario) throws FuncionarioNaoEncontradoException, CPFInvalidoException, SQLException, IOException{
 		return controladorFuncionario.procurar(cpfFuncionario);
 	}
 	
-	public ArrayList<Funcionario> listarFuncionario() throws SQLException{
+	public ArrayList<Funcionario> listarFuncionario() throws SQLException, IOException{
 		return controladorFuncionario.listar();
 	}
 	

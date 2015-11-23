@@ -1,4 +1,5 @@
 package com.fafica.main;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import com.fafica.fachada.Fachada;
@@ -10,7 +11,7 @@ import com.fafica.viagem.Viagem;
 
 public class telaCadastroMotorista {
 
-	public static void main(String[] args)throws MotoristaJaCadastradoException, MotoristaNaoEncontradoException, CampoObrigatorioInvalidoException, ClassNotFoundException {
+	public static void main(String[] args)throws MotoristaJaCadastradoException, MotoristaNaoEncontradoException, CampoObrigatorioInvalidoException, ClassNotFoundException, SQLException {
 		Fachada fachada = Fachada.getInstance();
 
 	

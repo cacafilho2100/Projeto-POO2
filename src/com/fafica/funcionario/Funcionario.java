@@ -19,6 +19,17 @@ public class Funcionario {
 		
 	}
 	
+	public Funcionario(Integer idFuncionario, String nomeFuncionario, String enderecoFuncionario, String cpfFuncionario, String emailFncionario, String telefoneFuncionario){
+		
+		this.setIdFuncionario(idFuncionario);
+		this.setTelefoneFuncionario(telefoneFuncionario);
+		this.setNomeFuncionario(nomeFuncionario);
+		this.setEnderecoFuncionario(enderecoFuncionario);
+		this.setCpfFuncionario(cpfFuncionario);
+		this.setEmailFuncionario(emailFuncionario);
+		
+	}
+	
 	public Funcionario(){
 		this.idFuncionario = 0;
 	}

@@ -1,5 +1,6 @@
 package com.fafica.main;
 
+import java.io.IOException;
 import java.sql.SQLException;
 
 import com.fafica.fachada.Fachada;
@@ -11,7 +12,7 @@ import com.fafica.util.CampoObrigatorioInvalidoException;
 
 public class TelaFuncionario {
 
-	public static void main(String[] args) throws CPFInvalidoException, FuncionarioNaoEncontradoException, ClassNotFoundException {
+	public static void main(String[] args) throws CPFInvalidoException, FuncionarioNaoEncontradoException, ClassNotFoundException, SQLException, IOException {
 		Fachada fachada = Fachada.getInstance();
 		
 		Funcionario funcionario01 = new Funcionario("astoufo","rua da peda","071.611.844-01","funfun@gmail.com","1234567");
@@ -37,6 +38,9 @@ public class TelaFuncionario {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		
 		try {
@@ -57,6 +61,9 @@ public class TelaFuncionario {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		
 		try {
@@ -65,6 +72,9 @@ public class TelaFuncionario {
 			// TODO Auto-generated catch block
 			System.out.println(e.getMessage());
 		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -82,6 +92,9 @@ public class TelaFuncionario {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
 	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} catch (IOException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
 	}
@@ -108,6 +121,9 @@ public class TelaFuncionario {
 			e.printStackTrace();
 			
 		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

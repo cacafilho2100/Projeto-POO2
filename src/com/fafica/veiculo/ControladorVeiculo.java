@@ -9,7 +9,7 @@ public class ControladorVeiculo {
 	
 	private IRepositorioVeiculo repositorioVeiculo;
 	
-	public ControladorVeiculo() throws ClassNotFoundException{
+	public ControladorVeiculo() throws ClassNotFoundException, SQLException{
 		//this.repositorioVeiculo = new RepositorioVeiculoArrayList();
 		//this.repositorioVeiculo = new RepositorioVeiculoMap();
 		//this.repositorioVeiculo = new RepositorioVeiculoSet();

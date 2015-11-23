@@ -13,7 +13,7 @@ public class RepositorioFuncionarioBd implements IRepositorioFuncionario {
 	
 	Connection conec;
 	
-	public RepositorioFuncionarioBd() throws ClassNotFoundException {
+	public RepositorioFuncionarioBd() throws ClassNotFoundException, SQLException {
 		this.conec = ConexaoBanco.conexaoBanco();
 		
 	}
