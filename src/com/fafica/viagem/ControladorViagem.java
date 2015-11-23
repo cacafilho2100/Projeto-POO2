@@ -35,8 +35,6 @@ public class ControladorViagem {
 	
 	public void atualizar(Viagem viagem)throws ViagemJaCadastradaException, ViagemNaoEncontradaException, CampoObrigatorioInvalidoException, SQLException {
 		
-		//Validar As Informações de viagem
-		//if (viagem.getDestino().equals("")) throw new CampoObrigatorioInvalidoException("Nome é nulo ou Inválido.");
 		
 		//Atualização da Viagem
 		repositorioViagem.atualizar(viagem);

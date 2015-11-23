@@ -95,7 +95,7 @@ public class RepositorioViagemBd implements IRepositorioViagem{
 		
 		return false;
 	}
-/*
+
 	@Override
 	public ArrayList<Viagem> listar() throws SQLException {
       ArrayList<Viagem> list = new ArrayList<>();
@@ -115,14 +115,10 @@ public class RepositorioViagemBd implements IRepositorioViagem{
 			list.add(viagem);
 		}
 		return list;
-	}*/
-
-
-	@Override
-	public ArrayList<Viagem> listar() throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
 	}
+
+
+	
 }
 
 

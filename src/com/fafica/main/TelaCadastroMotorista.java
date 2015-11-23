@@ -217,29 +217,6 @@ public class TelaCadastroMotorista {
 		defaultTableModelMotorista = (DefaultTableModel) table.getModel();
 		scrollPane.setViewportView(table);
 		
-		/*
-		
-		table = new JTable();
-		table.setModel(new DefaultTableModel(
-			new Object[][] {
-			},
-			new String[] {
-				"C\u00F3digo", "Nome", "Loja"
-			}
-		));
-		table.getColumnModel().getColumn(1).setPreferredWidth(474);
-		defaultTableModelCliente = (DefaultTableModel) table.getModel();
-		scrollPane.setViewportView(table);
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		*/
 		
 		JButton btnListarMotoristas = new JButton("Listar Motoristas");
 		btnListarMotoristas.addActionListener(new ActionListener() {
