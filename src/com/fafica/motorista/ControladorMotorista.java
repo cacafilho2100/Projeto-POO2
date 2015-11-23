@@ -1,5 +1,8 @@
 package com.fafica.motorista;
+import java.sql.SQLException;
 import java.util.ArrayList;
+
+
 
 
 import com.fafica.util.CampoObrigatorioInvalidoException;
@@ -15,7 +18,7 @@ public class ControladorMotorista {
 		this.repositorioMotorista = new RepositorioMotoristaIO();
 	}
 
-	public void cadastrar(Motorista motorista)throws IllegalArgumentException, MotoristaJaCadastradoException, MotoristaNaoEncontradoException, CampoObrigatorioInvalidoException {
+	public void cadastrar(Motorista motorista)throws IllegalArgumentException, MotoristaJaCadastradoException, MotoristaNaoEncontradoException, CampoObrigatorioInvalidoException, SQLException{
 		
 
 		//Validar As Informações de Motorista
@@ -36,7 +39,7 @@ public class ControladorMotorista {
 		
 	}
 	
-	public void atualizar(Motorista motorista)throws  MotoristaJaCadastradoException, MotoristaNaoEncontradoException, CampoObrigatorioInvalidoException {
+	public void atualizar(Motorista motorista)throws  MotoristaJaCadastradoException, MotoristaNaoEncontradoException, CampoObrigatorioInvalidoException, SQLException {
 		
 		//Validar As Informações de Motorista
 		//if (motorista.getNomeMotorista().equals("")) throw new CampoObrigatorioInvalidoException("Nome é nulo ou Inválido.");
@@ -46,7 +49,7 @@ public class ControladorMotorista {
 			
 	}
 	
-	public boolean remover(int idMotorista)throws  MotoristaJaCadastradoException, MotoristaNaoEncontradoException, CampoObrigatorioInvalidoException {
+	public boolean remover(int idMotorista)throws  MotoristaJaCadastradoException, MotoristaNaoEncontradoException, CampoObrigatorioInvalidoException, SQLException {
 		//Motorista motorista = null;
 		
 		//idMotorista.idMotorista = null;
@@ -61,7 +64,7 @@ public class ControladorMotorista {
 		
 	}
 
-	public Motorista procurar(int idMotorista)throws  MotoristaJaCadastradoException, MotoristaNaoEncontradoException, CampoObrigatorioInvalidoException{
+	public Motorista procurar(int idMotorista)throws  MotoristaJaCadastradoException, MotoristaNaoEncontradoException, CampoObrigatorioInvalidoException, SQLException{
 		//Motorista motorista = null;
 		
 		//motorista = this.repositorioMotorista.procurar(idMotorista);
@@ -74,7 +77,7 @@ public class ControladorMotorista {
 	}
 	
 	
-	public ArrayList<Motorista> listar(){
+	public ArrayList<Motorista> listar() throws SQLException{
 		
 		//ArrayList<Motorista> motoristas = null;
 	    return repositorioMotorista.listar();

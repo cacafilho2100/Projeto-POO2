@@ -108,13 +108,13 @@ public class Fachada{
 //...................................................................................................................................	
     
 
-    public void cadastrarMotorista(Motorista motorista) throws MotoristaJaCadastradoException, MotoristaNaoEncontradoException, CampoObrigatorioInvalidoException{
+    public void cadastrarMotorista(Motorista motorista) throws MotoristaJaCadastradoException, MotoristaNaoEncontradoException, CampoObrigatorioInvalidoException,  SQLException{
          
     	 controladorMotorista.cadastrar(motorista);
 
      }
 
-    public void atualizarMotorista(Motorista motorista) throws MotoristaJaCadastradoException, MotoristaNaoEncontradoException, CampoObrigatorioInvalidoException{
+    public void atualizarMotorista(Motorista motorista) throws MotoristaJaCadastradoException, MotoristaNaoEncontradoException, CampoObrigatorioInvalidoException, SQLException{
          
     	 controladorMotorista.atualizar(motorista);
      }
@@ -124,19 +124,19 @@ public class Fachada{
          return controladorMotorista.existe(idMotorista);
     }
 
-    public boolean removerMotorista(int idMotorista) throws MotoristaJaCadastradoException, MotoristaNaoEncontradoException, CampoObrigatorioInvalidoException{
+    public boolean removerMotorista(int idMotorista) throws MotoristaJaCadastradoException, MotoristaNaoEncontradoException, CampoObrigatorioInvalidoException, SQLException{
    
     	return controladorMotorista.remover(idMotorista);
        
      }
 
-    public Motorista procurarMotorista(int idMotorista) throws MotoristaJaCadastradoException, MotoristaNaoEncontradoException, CampoObrigatorioInvalidoException{
+    public Motorista procurarMotorista(int idMotorista) throws MotoristaJaCadastradoException, MotoristaNaoEncontradoException, CampoObrigatorioInvalidoException, SQLException{
 
          return controladorMotorista.procurar(idMotorista);
 
      }
 
-    public ArrayList<Motorista> listarMotorista(){
+    public ArrayList<Motorista> listarMotorista() throws SQLException {
         
     	return controladorMotorista.listar();
     }
@@ -144,13 +144,13 @@ public class Fachada{
                                                           //Metodos de Viagem
   //...................................................................................................................................	
     
-    public void cadastrarViagem(Viagem viagem) throws ViagemJaCadastradaException, ViagemNaoEncontradaException, CampoObrigatorioInvalidoException {
+    public void cadastrarViagem(Viagem viagem) throws ViagemJaCadastradaException, ViagemNaoEncontradaException, CampoObrigatorioInvalidoException, SQLException {
         
    	 controladorViagem.cadastrar(viagem);
 
     }
 
-   public void atualizarViagem(Viagem viagem) throws ViagemJaCadastradaException, ViagemNaoEncontradaException, CampoObrigatorioInvalidoException {
+   public void atualizarViagem(Viagem viagem) throws ViagemJaCadastradaException, ViagemNaoEncontradaException, CampoObrigatorioInvalidoException, SQLException {
    	 
 	   controladorViagem.atualizar(viagem);
     }
@@ -160,19 +160,19 @@ public class Fachada{
         return  controladorViagem.existe(idViagem);
    }
 
-   public boolean removerViagem(Integer idViagem) throws ViagemJaCadastradaException, ViagemNaoEncontradaException, CampoObrigatorioInvalidoException {
+   public boolean removerViagem(Integer idViagem) throws ViagemJaCadastradaException, ViagemNaoEncontradaException, CampoObrigatorioInvalidoException, SQLException {
 
        return  controladorViagem.remover(idViagem);
 
     }
 
-   public Viagem procurarViagem(Integer idViagem) throws ViagemJaCadastradaException, ViagemNaoEncontradaException, CampoObrigatorioInvalidoException {
+   public Viagem procurarViagem(Integer idViagem) throws ViagemJaCadastradaException, ViagemNaoEncontradaException, CampoObrigatorioInvalidoException, SQLException {
 
         return controladorViagem.procurar(idViagem);
 
     }
 
-   public ArrayList<Viagem> listarViagem(){
+   public ArrayList<Viagem> listarViagem() throws SQLException {
        
    	return controladorViagem.listar();
    }

@@ -1,5 +1,6 @@
 package com.fafica.viagem;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import com.fafica.util.CampoObrigatorioInvalidoException;
@@ -15,7 +16,7 @@ public class ControladorViagem {
 		
 	}
 	
-   public void cadastrar(Viagem viagem)throws ViagemJaCadastradaException, ViagemNaoEncontradaException, CampoObrigatorioInvalidoException {
+   public void cadastrar(Viagem viagem)throws ViagemJaCadastradaException, ViagemNaoEncontradaException, CampoObrigatorioInvalidoException, SQLException {
 		
 
 		//Validar as Informações de viagem
@@ -32,7 +33,7 @@ public class ControladorViagem {
 		
 	}
 	
-	public void atualizar(Viagem viagem)throws ViagemJaCadastradaException, ViagemNaoEncontradaException, CampoObrigatorioInvalidoException {
+	public void atualizar(Viagem viagem)throws ViagemJaCadastradaException, ViagemNaoEncontradaException, CampoObrigatorioInvalidoException, SQLException {
 		
 		//Validar As Informações de viagem
 		//if (viagem.getDestino().equals("")) throw new CampoObrigatorioInvalidoException("Nome é nulo ou Inválido.");
@@ -42,7 +43,7 @@ public class ControladorViagem {
 			
 	}
 	
-	public boolean remover(Integer idViagem)throws ViagemJaCadastradaException, ViagemNaoEncontradaException, CampoObrigatorioInvalidoException {
+	public boolean remover(Integer idViagem)throws ViagemJaCadastradaException, ViagemNaoEncontradaException, CampoObrigatorioInvalidoException, SQLException {
 		//Viagem viagem = null;
 
 		
@@ -55,7 +56,7 @@ public class ControladorViagem {
 		
 	}
 	
-	public Viagem procurar(Integer idViagem)throws ViagemJaCadastradaException, ViagemNaoEncontradaException, CampoObrigatorioInvalidoException{
+	public Viagem procurar(Integer idViagem)throws ViagemJaCadastradaException, ViagemNaoEncontradaException, CampoObrigatorioInvalidoException, SQLException{
 		//Viagem viagem = null;
 		
 		 return repositorioViagem.procurar(idViagem);
@@ -68,7 +69,7 @@ public class ControladorViagem {
 	}
 	
 	
-	public ArrayList<Viagem> listar(){
+	public ArrayList<Viagem> listar() throws SQLException{
 	
         return repositorioViagem.listar();
 		

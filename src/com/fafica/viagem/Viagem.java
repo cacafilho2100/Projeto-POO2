@@ -19,7 +19,7 @@ public class Viagem {
 		this.setCusto(custo);	
 		this.setData(data);
 	}
-	*/		
+		*/	
 	
 	public Viagem(int idViagem, String destino, String custo, String data){
 		//this.setMotorista(motorista);
@@ -29,7 +29,8 @@ public class Viagem {
 		this.setData(data);
 	}
 
-/*
+
+	/*
 	public Motorista getMotorista(){
 		return motorista;
 	}
