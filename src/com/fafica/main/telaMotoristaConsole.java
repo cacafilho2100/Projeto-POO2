@@ -9,7 +9,7 @@ import com.fafica.motorista.MotoristaNaoEncontradoException;
 import com.fafica.util.CampoObrigatorioInvalidoException;
 import com.fafica.viagem.Viagem;
 
-public class telaCadastroMotorista {
+public class telaMotoristaConsole {
 
 	public static void main(String[] args)throws MotoristaJaCadastradoException, MotoristaNaoEncontradoException, CampoObrigatorioInvalidoException, ClassNotFoundException, SQLException {
 		Fachada fachada = Fachada.getInstance();

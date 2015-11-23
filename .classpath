@@ -7,5 +7,6 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
 	<classpathentry kind="lib" path="BDDrivers/postgresql-9.3-1102.jdbc4.jar"/>
+	<classpathentry kind="lib" path="/FAFICAPOO20152/sqljdbc.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

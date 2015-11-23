@@ -9,7 +9,7 @@ import com.fafica.viagem.Viagem;
 import com.fafica.viagem.ViagemJaCadastradaException;
 import com.fafica.viagem.ViagemNaoEncontradaException;
 
-public class telaCadastroViagem {
+public class telaViagemConsole {
 	
        public static void main(String[] args) throws ViagemJaCadastradaException, ViagemNaoEncontradaException, CampoObrigatorioInvalidoException, ClassNotFoundException, SQLException {
     	   Fachada fachada = Fachada.getInstance();

@@ -48,6 +48,8 @@ public class Motorista {
 	}
     */
 	
+	
+
 	public int getIdMotorista() {
 		return idMotorista;
 	}
