@@ -13,11 +13,11 @@ public class ControladorFuncionario {
 	
 	
 	public ControladorFuncionario() throws ClassNotFoundException, SQLException{
-		//this.repositorioFuncionario = new RepositorioFuncionarioArrayList();
+		this.repositorioFuncionario = new RepositorioFuncionarioArrayList();
 		//this.repositorioFuncionario = new RepositorioFuncionarioMap();
 		//this.repositorioFuncionario = new RepositorioFuncionarioSet();
 		//this.repositorioFuncionario = new RepositorioFuncionarioBd();
-		this.repositorioFuncionario = new RepositorioFuncionarioIO();
+		//this.repositorioFuncionario = new RepositorioFuncionarioIO();
 	}
 	
 	public void cadastrar(Funcionario funcionario)throws IllegalArgumentException,CPFInvalidoException,FuncionarioJaCadastradoException,CampoObrigatorioInvalidoException, SQLException, IOException, FuncionarioNaoEncontradoException{

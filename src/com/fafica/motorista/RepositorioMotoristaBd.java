@@ -35,12 +35,7 @@ public class RepositorioMotoristaBd implements IRepositorioMotorista {
 		
 		
 		prepareStatement.execute();
-		/*
-		ResultSet resultSet = prepareStatement.getGeneratedKeys();
-		Integer idMotorista = 0;
-		while(resultSet.next()){
-			idMotorista = resultSet.getInt(1);
-		}*/
+		
 	}
 
 
