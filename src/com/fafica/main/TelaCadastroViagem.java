@@ -314,6 +314,7 @@ public class TelaCadastroViagem {
 			JOptionPane.showMessageDialog(frame, "ERROR", "ERRO", JOptionPane.ERROR_MESSAGE);
 		}
 	}
+
 		
 }
 

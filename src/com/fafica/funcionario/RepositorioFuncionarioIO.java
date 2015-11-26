@@ -29,7 +29,7 @@ public class RepositorioFuncionarioIO implements IRepositorioFuncionario {
 	
 	public void armazenarFuncionario(Funcionario funcionario) throws IOException{
 		try(BufferedWriter escrever = Files.newBufferedWriter(path,utf8,StandardOpenOption.APPEND)){
-			escrever.write(funcionario.getIdFuncionario()+ ";" +funcionario.getNomeFuncionario()+ ";" +funcionario.getEnderecoFuncionario()+ ";" +funcionario.getCpfFuncionario()+ ";"
+			escrever.write(funcionario.getIdFuncionario()+ ";" +funcionario.getNomeFuncionario()+ ";" +funcionario.getEnderecoFuncionario()+ ";" +funcionario.getCpfFuncionario()+"\r\n;" 
 							+funcionario.getEmailFuncionario()+ ";" +funcionario.getTelefoneFuncionario());
 		}catch(IOException e){
 			e.printStackTrace();
@@ -40,7 +40,7 @@ public class RepositorioFuncionarioIO implements IRepositorioFuncionario {
 	public void armazenarFuncionarioArray(ArrayList<Funcionario> list) throws IOException{
 		try(BufferedWriter escrever = Files.newBufferedWriter(path, utf8)){
 			for(Funcionario funcionario : list){
-				escrever.write(funcionario.getIdFuncionario()+ ";" +funcionario.getNomeFuncionario()+ ";" +funcionario.getEnderecoFuncionario()+ ";" +funcionario.getCpfFuncionario()+ ";"
+				escrever.write(funcionario.getIdFuncionario()+ ";" +funcionario.getNomeFuncionario()+ ";" +funcionario.getEnderecoFuncionario()+ ";" +funcionario.getCpfFuncionario()+ "\r\n;"
 								+funcionario.getEmailFuncionario()+ ";" +funcionario.getTelefoneFuncionario());
 			}
 		}catch(IOException e){

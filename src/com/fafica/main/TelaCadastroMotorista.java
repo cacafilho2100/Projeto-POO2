@@ -342,7 +342,7 @@ public class TelaCadastroMotorista {
 		
 		try {
 			fachada.removerMotorista(Integer.parseInt(textId2.getText()));
-			JOptionPane.showMessageDialog(frame, "Cliente Removido Com Sucesso");
+			JOptionPane.showMessageDialog(frame, "Motorista Removido Com Sucesso");
 			limparCampos();
 
 		} catch (NumberFormatException e) {

@@ -19,6 +19,7 @@ public class RepositorioMotoristaIO implements IRepositorioMotorista {
     Path path = Paths.get("C:/Users/Ribeiro/git/Projeto-POO2/MotoristaIO/motorista.txt");
 	Charset utf8 = StandardCharsets.UTF_8;
 	private ArrayList<Motorista> motoristaArrayList;
+	
 
 	
 public  RepositorioMotoristaIO(){
@@ -30,18 +31,18 @@ public  RepositorioMotoristaIO(){
 	public void armazenarMotoristas(Motorista motorista){
 		try( BufferedWriter writer = Files.newBufferedWriter(path, utf8, StandardOpenOption.APPEND)){
 				writer.write(motorista.getIdMotorista() + ";" + motorista.getNomeMotorista() + ";" + motorista.getCpfMotorista() + ";" 
-			+ motorista.getEnderecoMotorista() + ";" + motorista.getEnderecoMotorista() + ";" + motorista.getTelefoneMotorista()+"\r\n"); 
+			+ motorista.getEnderecoMotorista() + ";" + motorista.getSalarioMotorista() + ";" + motorista.getTelefoneMotorista()+"\r\n"); 
 		 }catch(IOException e){
 			 e.printStackTrace(); 
 		 }			
 	}
-	
+
 	
 	public void  armazenarMotoristaArray(ArrayList<Motorista> motoristaArrayList){
 		try(BufferedWriter writer = Files.newBufferedWriter(path, utf8) ){
 			for(Motorista motorista :motoristaArrayList){
 				writer.write(motorista.getIdMotorista() + ";" + motorista.getNomeMotorista() + ";" + motorista.getCpfMotorista() + ";" 
-						+ motorista.getEnderecoMotorista() + ";" + motorista.getEnderecoMotorista() + ";" + motorista.getTelefoneMotorista()+"\r\n");
+						+ motorista.getEnderecoMotorista() + ";" + motorista.getSalarioMotorista() + ";" + motorista.getTelefoneMotorista()+"\r\n");
 			  }	
 			}catch(IOException e){
 				System.out.println("Erro IOException ");
