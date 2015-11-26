@@ -33,14 +33,14 @@ public  RepositorioMotoristaIO(){
 				writer.write(motorista.getIdMotorista() + ";" + motorista.getNomeMotorista() + ";" + motorista.getCpfMotorista() + ";" 
 			+ motorista.getEnderecoMotorista() + ";" + motorista.getSalarioMotorista() + ";" + motorista.getTelefoneMotorista()+"\r\n"); 
 		 }catch(IOException e){
-			 e.printStackTrace(); 
+			 System.out.println("Erro IOException ");
 		 }			
 	}
 
 	
 	public void  armazenarMotoristaArray(ArrayList<Motorista> motoristaArrayList){
 		try(BufferedWriter writer = Files.newBufferedWriter(path, utf8) ){
-			for(Motorista motorista :motoristaArrayList){
+			for(Motorista motorista : motoristaArrayList){
 				writer.write(motorista.getIdMotorista() + ";" + motorista.getNomeMotorista() + ";" + motorista.getCpfMotorista() + ";" 
 						+ motorista.getEnderecoMotorista() + ";" + motorista.getSalarioMotorista() + ";" + motorista.getTelefoneMotorista()+"\r\n");
 			  }	

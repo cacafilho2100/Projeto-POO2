@@ -12,7 +12,7 @@ public class ConexaoBanco {
 	public static Connection conexaoBanco() throws ClassNotFoundException{
 		try{
 			Class.forName("org.postgresql.Driver");
-			Connection connec = DriverManager.getConnection("jdbc:postegresql://localhost:5432/vlacTurismos","postgres","system");
+			Connection connec = DriverManager.getConnection("jdbc:postegresql://localhost:5432/vlacTurismos","system","system");
 			System.out.println("conectado bd");
 			return connec;
 		}

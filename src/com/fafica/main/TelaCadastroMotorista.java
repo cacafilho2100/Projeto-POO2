@@ -283,7 +283,7 @@ public class TelaCadastroMotorista {
 			fachada.atualizarMotorista(motorista);
 			JOptionPane.showMessageDialog(frame, "Motorista atualizado com sucesso!");
 			limparCampos();
-		}catch(IllegalArgumentException e) {
+		} catch(IllegalArgumentException e) {
 			JOptionPane.showMessageDialog(frame, e.getMessage(), "ERRO", JOptionPane.ERROR_MESSAGE);
 		} catch (CampoObrigatorioInvalidoException e) {
 			JOptionPane.showMessageDialog(frame, e.getMessage(), "ERRO", JOptionPane.ERROR_MESSAGE);
