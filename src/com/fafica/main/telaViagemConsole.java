@@ -4,7 +4,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import com.fafica.fachada.Fachada;
+import com.fafica.motorista.Motorista;
 import com.fafica.util.CampoObrigatorioInvalidoException;
+import com.fafica.veiculo.Veiculo;
 import com.fafica.viagem.Viagem;
 import com.fafica.viagem.ViagemJaCadastradaException;
 import com.fafica.viagem.ViagemNaoEncontradaException;
@@ -16,6 +18,10 @@ public class telaViagemConsole {
 		
     	
     	 Viagem viagem = new Viagem(1 , "Recife", "300,00 ", " 01/10/2016" );
+    	 Motorista motorista = new Motorista(12, "Doido", "108.", "Rua 00", "1.000,00", "99885-4894");
+    	 Veiculo veiculo1 = new Veiculo(01,20,"onibus","kha-2100","123456","Amarelo",2000);
+    	 viagem.setMotorista(motorista);
+    	 viagem.setVeiculo(veiculo1);
    		 //fachada.cadastrarViagem(viagem);
    		  //System.out.println(viagem);
    		try {
@@ -35,6 +41,10 @@ public class telaViagemConsole {
    		}
   
    	 Viagem viagem2 = new Viagem(2, "Caruaru", "900,00 ", " 10/12/2015"  );
+   	 Motorista motorista2 = new Motorista(1," Victor","884.592.667-85","Rua 89","90.000,00","3714-9874");
+   	 Veiculo veiculo2 = new Veiculo(01,30,"van","kah-1512","789456","branca",2003);
+   	 viagem.setMotorista(motorista2);
+   	 viagem.setVeiculo(veiculo2);
 		//fachada.cadastrarViagem(viagem);
 		  //System.out.println(viagem2);
 		try {

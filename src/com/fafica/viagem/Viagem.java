@@ -1,6 +1,7 @@
 package com.fafica.viagem;
 
 import com.fafica.motorista.Motorista;
+import com.fafica.veiculo.Veiculo;
 
 public class Viagem {
 	
@@ -9,6 +10,8 @@ public class Viagem {
 	private String destino;
 	private String custo;
 	private String data;
+	private Motorista motorista;
+	private Veiculo veiculo;
 	//private Motorista motorista;
 	
 	
@@ -21,6 +24,9 @@ public class Viagem {
 	}
 		*/	
 	
+	
+
+
 	public Viagem(int idViagem, String destino, String custo, String data){
 		//this.setMotorista(motorista);
 		this.setIdViagem(idViagem);
@@ -40,6 +46,25 @@ public class Viagem {
 	}
 
 */
+	public Motorista getMotorista() {
+		return motorista;
+	}
+
+
+	public void setMotorista(Motorista motorista) {
+		this.motorista = motorista;
+	}
+
+
+	public Veiculo getVeiculo() {
+		return veiculo;
+	}
+
+
+	public void setVeiculo(Veiculo veiculo) {
+		this.veiculo = veiculo;
+	}
+	
 	public String getDestino() {
 		return destino;
 	}
@@ -72,7 +97,7 @@ public class Viagem {
 
 	@Override
 	public String toString() {
-		return "Viagem [ idViagem = "+ idViagem + " destino= " + destino + ", custo = " + custo + " data = " + data + "]";
+		return "Viagem [ idViagem = "+ idViagem + " destino= " + destino + ", custo = " + custo + " data = " + data + ",motorista = "+ motorista + ",veiculo = "+ veiculo +"]";
 	}
 	
 	

@@ -25,13 +25,15 @@ public class RepositorioViagemBd implements IRepositorioViagem{
 	
 	public void cadastrar(Viagem viagem) throws ViagemJaCadastradaException, SQLException {
 		
-		String sql = "insert into Viagem (idViagem,destino,custo,data) values(?,?,?,?)";
+		String sql = "insert into Viagem (idViagem,destino,custo,data,idMotorista,idVeiculo) values(?,?,?,?,?,?)";
 		PreparedStatement prepareStatement = conec.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
 		
 		prepareStatement.setInt(1, viagem.getIdViagem());
 		prepareStatement.setString(2, viagem.getDestino());
 		prepareStatement.setString(3, viagem.getCusto());
 		prepareStatement.setString(4, viagem.getData());
+		prepareStatement.setInt(5, viagem.getMotorista().getIdMotorista());
+		prepareStatement.setInt(6, viagem.getVeiculo().getidVeiculo());
 	
 		prepareStatement.execute();
 		
