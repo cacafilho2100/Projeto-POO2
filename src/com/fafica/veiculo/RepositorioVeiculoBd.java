@@ -8,13 +8,15 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import com.fafica.ConexaoBanco.ConexaoBanco;
+import com.fafica.ConexaoBanco.ConexaoBancoMysql;
 
 public class RepositorioVeiculoBd implements IRepositorioVeiculo {
 
 Connection conec ;
 	
 	public RepositorioVeiculoBd() throws ClassNotFoundException, SQLException{
-		this.conec = ConexaoBanco.conexaoBanco();
+		this.conec = ConexaoBancoMysql.conexaoBanco();
+		
 	}
 
 	@Override

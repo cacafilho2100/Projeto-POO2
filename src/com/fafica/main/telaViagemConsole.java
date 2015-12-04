@@ -1,8 +1,12 @@
 package com.fafica.main;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import com.fafica.ConexaoBanco.ConexaoBancoMysql;
 import com.fafica.fachada.Fachada;
 import com.fafica.motorista.Motorista;
 import com.fafica.util.CampoObrigatorioInvalidoException;
@@ -11,10 +15,13 @@ import com.fafica.viagem.Viagem;
 import com.fafica.viagem.ViagemJaCadastradaException;
 import com.fafica.viagem.ViagemNaoEncontradaException;
 
+
 public class telaViagemConsole {
 	
        public static void main(String[] args) throws ViagemJaCadastradaException, ViagemNaoEncontradaException, CampoObrigatorioInvalidoException, ClassNotFoundException, SQLException {
     	   Fachada fachada = Fachada.getInstance();
+    	   
+    	   Connection conn  = ConexaoBancoMysql.conexaoBanco();
 		
     	
     	 Viagem viagem = new Viagem(1 , "Recife", "300,00 ", " 01/10/2016" );
@@ -24,7 +31,7 @@ public class telaViagemConsole {
     	 viagem.setVeiculo(veiculo1);
    		 //fachada.cadastrarViagem(viagem);
    		  //System.out.println(viagem);
-   		try {
+   	/*	try {
    			fachada.cadastrarViagem(viagem);
    			//System.out.println(" cadastrado com sucesso");
    		} catch (IllegalArgumentException e) {
@@ -38,7 +45,7 @@ public class telaViagemConsole {
    			// TODO Auto-generated catch block
    			System.out.println(e.getMessage());
 
-   		}
+   		}*/
   
    	 Viagem viagem2 = new Viagem(2, "Caruaru", "900,00 ", " 10/12/2015"  );
    	 Motorista motorista2 = new Motorista(1," Victor","884.592.667-85","Rua 89","90.000,00","3714-9874");
@@ -47,7 +54,7 @@ public class telaViagemConsole {
    	 viagem.setVeiculo(veiculo2);
 		//fachada.cadastrarViagem(viagem);
 		  //System.out.println(viagem2);
-		try {
+		/*try {
 			//System.out.println("Cadastrado com sucesso");
 			fachada.cadastrarViagem(viagem2);
 		} catch (IllegalArgumentException e1) {
@@ -59,7 +66,7 @@ public class telaViagemConsole {
 		} catch (CampoObrigatorioInvalidoException e1) {
 			System.out.println(e1.getMessage());
 			
-		}
+		}*/
 		
 		 //System.out.println(fachada.removerViagem(1));
 		/*
@@ -124,7 +131,55 @@ public class telaViagemConsole {
     	 //System.out.println(fachada.removerViagem(1));
    	
    		 //System.out.println(fachada.existeViagem(1));
-       
+   	 
+   	/*try{
+     PreparedStatement subSelect = conn.prepareStatement("select destino, data from viagem where destino ='Recife'and idViagem = (select idViagem from viagemwhere idViagem = 1)");
+     ResultSet resultado = subSelect.executeQuery(); 
+     while(resultado.next()){
+    	 String destino = resultado.getString("destino");
+    	 String data = resultado.getString("data");
+    	 System.out.println("Destino = "+destino+" data = "+data);
+     }
+    }catch(SQLException e){
+    	e.getMessage();
+    }*/
+   	
+   	/*try{ 
+   	PreparedStatement subdelet = conn.prepareStatement("delete from viagem where idViagem = (select idViagem  from viagem where idViagem = 1 )");
+   	subdelet.executeUpdate(); 
+   	}catch(SQLException e){
+   		e.getMessage();
+   	} */
+   	 
+   	 /*try{
+   	 PreparedStatement ijoin = conn.prepareStatement("select motorista.idMotorista, motorista.nomeMotorista, viagem.idViagem, viagem.destino, viagem.data, viagem.custo from motorista inner join viagem on viagem.idMotorista = motorista.idMotorista;");
+   	 ResultSet  resultado1 = ijoin.executeQuery();
+   	 while(resultado1.next()){
+   		 int idMotorista = resultado1.getInt("idMotorista");
+   		 String nomeMotorista = resultado1.getString("nomeMotorista");
+   		 int idViagem = resultado1.getInt("idViagem");
+   		 String destino = resultado1.getString("destino");
+   		 String data = resultado1.getString("data");
+   		 String custo = resultado1.getString("custo");
+   		 System.out.println("idMotorista = "+idMotorista+" nomeMotorista = "+nomeMotorista+" idViagem = "+idViagem+" destino = "+destino+" data = "+data+" custo = "+custo);
+   	 }
+   	 }catch(SQLException e){
+   		 e.getMessage();
+   	 }*/
+   	 
+   	/* try{
+   	 PreparedStatement ojoin = conn.prepareStatement("select veiculo.placa ,veiculo.modelo, viagem.data, viagem.destino from veiculo full outer join viagem on viagem.idVeiculo = veiculo.idVeiculo");
+   	 ResultSet resultado2 = ojoin.executeQuery();
+   	 while(resultado2.next()){
+   		 String placa = resultado2.getString("placa");
+   		 String modelo = resultado2.getString("modelo");
+   		 String data = resultado2.getString("data");
+   		 String destino = resultado2.getString("destino");
+   		 System.out.println("placa = "+placa+" modelo = "+modelo+" data = "+data+" destino = "+destino);
+   	 }
+       }catch(SQLException e){
+    	   e.getMessage();
+       }*/
        }
 
 }

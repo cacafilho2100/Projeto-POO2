@@ -1,7 +1,11 @@
 package com.fafica.main;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import com.fafica.ConexaoBanco.ConexaoBancoMysql;
 import com.fafica.fachada.Fachada;
 import com.fafica.motorista.Motorista;
 import com.fafica.motorista.MotoristaJaCadastradoException;
@@ -13,6 +17,8 @@ public class telaMotoristaConsole {
 
 	public static void main(String[] args)throws MotoristaJaCadastradoException, MotoristaNaoEncontradoException, CampoObrigatorioInvalidoException, ClassNotFoundException, SQLException {
 		Fachada fachada = Fachada.getInstance();
+		
+		Connection conn  = ConexaoBancoMysql.conexaoBanco();
 
 	
       //Motorista motorista = new Motorista(12, "Doido", "108.", "Rua 00", "1.000,00", "99885-4894");
@@ -177,6 +183,18 @@ public class telaMotoristaConsole {
 			e.printStackTrace();
 		}
 */
+		
+		/* try{
+	   	 PreparedStatement subSelect2 = conn.prepareStatement("select nomeMotorista,salarioMotorista, telefoneMotorista, enderecoMotorista from motorista where salarioMotorista = '1.000,00'and enderecoMotorista =( select enderecoMotorista from motorista where enderecoMotorista = 'Rua 10')");
+	     ResultSet resultado = subSelect2.executeQuery();
+	     while(resultado.next()){
+	    	 String nomeMotorista = resultado.getString("nomeMotorista");
+	    	 String salarioMotorista = resultado.getString("salarioMotorista");
+	    	 System.out.println("Salario = "+salarioMotorista+" nome = "+nomeMotorista);
+	     }
+	     }catch(SQLException e){
+	    	 e.getMessage();
+	   	 }*/
 	
 	
    }	

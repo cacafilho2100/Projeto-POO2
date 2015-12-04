@@ -9,6 +9,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import com.fafica.ConexaoBanco.ConexaoBanco;
+import com.fafica.ConexaoBanco.ConexaoBancoMysql;
 import com.fafica.motorista.Motorista;
 
 
@@ -18,7 +19,7 @@ public class RepositorioViagemBd implements IRepositorioViagem{
 	 Connection conec;
 		
 		public RepositorioViagemBd() throws ClassNotFoundException, SQLException {
-			this.conec = ConexaoBanco.conexaoBanco();
+			this.conec = ConexaoBancoMysql.conexaoBanco();
 			
 		}
 
@@ -49,9 +50,10 @@ public class RepositorioViagemBd implements IRepositorioViagem{
 		prepareStatement.setString(2, viagem.getDestino());
 		prepareStatement.setString(3, viagem.getCusto());
 		prepareStatement.setString(4, viagem.getData());
+		prepareStatement.setInt(5, viagem.getMotorista().getIdMotorista());
+		prepareStatement.setInt(6, viagem.getVeiculo().getidVeiculo());
 		
-		
-		prepareStatement.setInt(5, viagem.getIdViagem());
+		prepareStatement.setInt(7, viagem.getIdViagem());
 		
 		prepareStatement.executeUpdate();
 		
@@ -84,7 +86,6 @@ public class RepositorioViagemBd implements IRepositorioViagem{
 			String destino = resultSet.getString(3);
 			String custo = resultSet.getString(4);
 			String data = resultSet.getString(5);
-			
 			
 			Viagem viagem = new Viagem(id,destino,custo,data);
 			return viagem;

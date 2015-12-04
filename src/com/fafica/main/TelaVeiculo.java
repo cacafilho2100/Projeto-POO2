@@ -1,8 +1,10 @@
 package com.fafica.main;
 
 import java.io.IOException;
+import java.sql.Connection;
 import java.sql.SQLException;
 
+import com.fafica.ConexaoBanco.ConexaoBancoMysql;
 import com.fafica.fachada.Fachada;
 import com.fafica.util.CampoObrigatorioInvalidoException;
 import com.fafica.veiculo.Veiculo;
@@ -13,6 +15,8 @@ public class TelaVeiculo {
 
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
 		Fachada fachada = Fachada.getInstance();
+		
+		Connection conn  = ConexaoBancoMysql.conexaoBanco();
 		
 		Veiculo veiculo1 = new Veiculo(01,20,"onibus","kha-2100","123456","Amarelo",2000);
 		Veiculo veiculo2 = new Veiculo(01,30,"van","kah-1512","789456","branca",2003);

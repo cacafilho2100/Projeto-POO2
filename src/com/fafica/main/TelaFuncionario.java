@@ -1,8 +1,12 @@
 package com.fafica.main;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import com.fafica.ConexaoBanco.ConexaoBancoMysql;
 import com.fafica.fachada.Fachada;
 import com.fafica.funcionario.CPFInvalidoException;
 import com.fafica.funcionario.Funcionario;
@@ -15,12 +19,15 @@ public class TelaFuncionario {
 	public static void main(String[] args) throws CPFInvalidoException, FuncionarioNaoEncontradoException, ClassNotFoundException, SQLException, IOException {
 		Fachada fachada = Fachada.getInstance();
 		
+		Connection conn  = ConexaoBancoMysql.conexaoBanco();
+		
+		
 		Funcionario funcionario01 = new Funcionario("astoufo","rua da peda","071.611.844-01","funfun@gmail.com","1234567");
 		Funcionario funcionario02 = new Funcionario("maria","fim do mundo","754.621.443-26","maria@gmail.com","32165498");
 		Funcionario funcionario03 = new Funcionario("sorte","perto","754.621.443-26","sorte@hotmail.com","123456789");
 		
 		
-		try {
+		/*try {
 			fachada.cadastrarFuncionario(funcionario01);
 			System.out.println("cadastrado com sucesso");
 		} catch (IllegalArgumentException e1) {
@@ -41,7 +48,7 @@ public class TelaFuncionario {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}*/
 		
 		/*try {
 			fachada.cadastrarFuncionario(funcionario02);
@@ -64,7 +71,7 @@ public class TelaFuncionario {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}*/
 		
 		try {
 			System.out.println(fachada.procurarFuncionario("071.611.844-01"));
@@ -79,7 +86,7 @@ public class TelaFuncionario {
 			e.printStackTrace();
 		}
 		
-		try {
+		/*try {
 		fachada.atualizarFuncionario(funcionario03);
 		System.out.println("Funcionario foi Atualizado");
 	} catch (FuncionarioNaoEncontradoException e) {
@@ -133,6 +140,14 @@ public class TelaFuncionario {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}*/
+		
+		/*try{
+		PreparedStatement subSlect = conn.prepareStatement("update funcionario set nomefuncionario = 'Francisco' where idfuncionario = (select max(idfuncionario) from funcionario)");
+		subSlect.executeUpdate();
+		}catch(SQLException e){
+			e.getMessage();
+		}*/	
+		
 	}
 }
 
